@@ -13,6 +13,7 @@ class Footer extends React.Component {
   })
 
     return (
+        <div>
         <div id="page-builder-8a680e58-fc47-748c-e39f-29c29b5638ae"></div>
     <Helmet>
 
@@ -547,6 +548,7 @@ class Footer extends React.Component {
     i.parentNode.insertBefore(u, i)
     })(window, document, 'script', '/shared_res/agility/page-builder/assets/js/nwc.min.js', 'nwc')`}</script>
         </Helmet>
+          </div>
     )
   }
 }

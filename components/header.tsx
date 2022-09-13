@@ -1,34 +1,65 @@
 import Link from 'next/link'
 import React from 'react'
+import {Helmet} from "react-helmet";
 
 const Header: React.FC = () => {
+// <Link href="/">
+//                   <a className="text-gray-500 hover:text-pink-700">Home</a>
+//                 </Link>
 
-
-  return (<header className="bg-white sm:h-20 py-5 border-b sm:sticky top-0">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center">
-            <div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
-              <img src="/react-bricks-logo.svg" className="w-48" alt="React Bricks" />
-              <div className="sm:ml-8 flex space-x-5 text-center">
-                <Link href="/">
-                  <a className="text-gray-500 hover:text-pink-700">Home</a>
-                </Link>
-                <Link href="/about-us">
-                  <a className="text-gray-500 hover:text-pink-700">About us</a>
-                </Link>
-                <Link href="/blog">
-                  <a className="text-gray-500 hover:text-pink-700">Blog</a>
-                </Link>
-              </div>
+  return (
+      <nav className="navbar navbar-expand-md navbar-dark">
+            <Helmet>
+              <link rel="stylesheet" href="./header.css"></link>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"></link>
+            </Helmet>
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="134" height="24" fill="currentColor" viewBox="0 0 134 24">
+    <path d="M123.714 17.075c-.446.39-1.213.857-2.35.857h-.218c-1.129 0-1.894-.466-2.34-.855-1.152-1.008-1.728-2.821-1.718-5.382.027-5 2.549-5.748 4.055-5.748h.241c1.498 0 4.023.749 4.05 5.748.012 2.56-.571 4.367-1.72 5.38zM121.332 3.85l-.074.005-.073-.005c-1.876 0-7.984.592-8.011 8.149 0 7.879 6.701 8.28 8.043 8.28h.081c.844 0 3.762-.158 5.84-2.2 1.458-1.426 2.191-3.475 2.186-6.08-.01-7.557-6.118-8.149-7.992-8.149z"></path>
+    <path d="M24.786 22.722c-1.483-.536-3.63-2.134-4.892-3.636-1.578-1.752-5.386-6.727-5.426-6.775-.528-.665-1.106-1.448-1.717-2.275-1.666-2.25-3.555-4.8-5.442-6.315v16.505H9.58v-8.518l.05.062c.622.764 1.287 1.618 1.933 2.45 1.064 1.368 2.163 2.783 3.06 3.801.613.713 2.251 2.44 2.727 2.827 2.098 1.983 5.489 3.218 8.858 3.218 1.463 0 2.87-.228 4.17-.663v-.106a8.85 8.85 0 01-1.713.162c-1.287 0-2.63-.253-3.879-.737z"></path>
+    <path d="M10.37 5.047c1.58 1.753 5.502 6.727 5.54 6.776.532.663 1.108 1.447 1.723 2.275 1.667 2.25 3.55 4.801 5.435 6.312V3.85h-2.27v8.575l-.049-.058c-.618-.767-1.287-1.628-1.934-2.456-1.062-1.369-2.161-2.782-3.056-3.8-.613-.71-2.372-2.44-2.845-2.826C10.824 1.298 7.428.067 4.057.067 2.594.067 1.307.29 0 .73v.106A8.654 8.654 0 011.717.672c1.286 0 2.512.252 3.761.738 1.482.536 3.63 2.133 4.893 3.637z"></path>
+    <path d="M98.739 12.26c-1.848-1.574-3.937-1.986-5.502-3.048-1.087-.865-1.037-2.028-.471-2.635 1.33-1.471 4.034-.861 4.693-.71.805.203 1.235.407 1.991.763V4.8c-3.27-.965-8.484-1.88-10.519 1.418-.761 1.372-.95 3.808 1.23 5.283 2.18 1.724 5.969 2.537 6.395 3.957.284.76-.049 1.522-.57 2.03-1.942 1.824-5.254.705-7.247-.206v1.98c2.18.962 4.929 1.214 7.394.708 1.66-.405 3.556-1.878 3.84-3.704.331-1.826-.048-2.99-1.234-4.007zM110.8 12.26c-1.849-1.574-3.937-1.986-5.5-3.048-1.091-.865-1.039-2.028-.473-2.635 1.333-1.471 4.03-.861 4.695-.71.802.203 1.233.407 1.988.763V4.8c-3.267-.965-8.482-1.88-10.521 1.418-.76 1.372-.947 3.808 1.231 5.283 2.183 1.724 5.973 2.537 6.397 3.957.286.76-.049 1.522-.568 2.03-1.946 1.824-5.258.705-7.249-.206v1.98c2.18.962 4.926 1.214 7.396.708 1.657-.405 3.558-1.878 3.84-3.704.327-1.826-.052-2.99-1.236-4.007zM77.045 19.834l10.52-.005v-1.878h-6.877v-5.163l5.482-.002v-1.823l-5.482-.003V6.18l6.876-.007V4.297H77.045v15.537zM46.914 12.26c-1.85-1.574-3.935-1.986-5.5-3.048-1.09-.865-1.04-2.028-.473-2.635 1.33-1.471 4.03-.861 4.695-.71.807.203 1.231.407 1.991.763V4.8c-3.272-.965-8.484-1.88-10.522 1.418-.762 1.372-.95 3.808 1.234 5.283 2.175 1.724 5.965 2.537 6.39 3.957.286.76-.046 1.522-.567 2.03-1.944 1.824-5.257.705-7.248-.206v1.98c2.182.962 4.93 1.214 7.393.708 1.662-.405 3.556-1.878 3.843-3.704.33-1.826-.048-2.99-1.236-4.007zM25.298 19.834l10.517-.005v-1.878h-6.878v-5.163l5.48-.002v-1.823l-5.48-.003V6.18l6.878-.007V4.297H25.298v15.537zM57.508 11.276c-.993 1.069-2.663.919-4.073.816V6.167s2.93-.656 4.178.972c.684.899.73 3.064-.105 4.137zm-.777-7.147h-6.903v15.874h3.656s.003-.358.003-.97l-.052-4.847s5.48.357 7.15-1.841c1.2-1.375 1.303-3.57.782-5.309-.678-1.94-2.603-2.861-4.636-2.907zM70.62 11.276c-.97 1.05-2.605.899-3.99.795V6.266s2.874-.646 4.096.952c.675.881.717 3.002-.105 4.058zm2.92 1.05c1.178-1.353 1.281-3.506.77-5.209-.663-1.899-2.555-2.801-4.546-2.853h-6.77v15.569h3.587l-.05-5.71s.66.055 1.745-.004l3.466 5.747h3.948l-3.98-6.392c.686-.27 1.443-.64 1.83-1.149zM131.38 20.096c-1.03 0-1.852-.754-1.852-1.76 0-.956.822-1.76 1.852-1.76.974 0 1.796.804 1.796 1.76 0 1.006-.822 1.76-1.796 1.76zm0-3.723c-1.132 0-2.056.861-2.056 1.964 0 1.106.924 1.959 2.056 1.959 1.076 0 2-.853 2-1.96 0-1.102-.924-1.963-2-1.963z"></path>
+    <path d="M131.529 18.184h-.668v-.699h.668c.211 0 .411.048.411.347 0 .203-.152.352-.411.352zm.411.152c.053-.051.362-.152.362-.552 0-.403-.257-.607-.719-.607h-1.081v2.215h.359v-.904h.62c.354 0 .459.147.459.552 0 .149 0 .25.053.352h.413c-.104-.102-.104-.352-.104-.603 0-.352-.205-.453-.362-.453z"></path>
+</svg>
+            </a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav mx-auto">
+                <li className="nav-item">
+                    <Link href="/">
+                        <a className="nav-link active" aria-current="page">Home</a>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link href="/order/capsules/original">
+                        <a className="nav-link">Capsules</a>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link href="/b-corp">
+                        <a className="nav-link">B-Corp</a>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link href="/contact">
+                        <a className="nav-link">Contact</a>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link href="/admin" prefetch={false}>
+                      <a className="py-2 px-5 rounded text-white font-medium bg-cyan-500 hover:bg-cyan-600 hover:shadow-lg transition duration-200">
+                        Edit content
+                      </a>
+                    </Link>
+                </li>
+              </ul>
             </div>
-            <Link href="/admin" prefetch={false}>
-              <a className="py-2 px-5 rounded text-white font-medium bg-cyan-500 hover:bg-cyan-600 hover:shadow-lg transition duration-200">
-                Edit content
-              </a>
-            </Link>
           </div>
-        </div>
-      </header>)
+        </nav>
+        )
 }
 
 export default Header
