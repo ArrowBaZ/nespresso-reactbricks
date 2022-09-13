@@ -1,0 +1,335 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Machine Specifications",
+  "description": "Machine Specifications section displays an Heading + list of machine specifications - https://dsu-confluence.nestle.biz/display/EUXUI/52.+Machine+Specifications+-+NEXT+V1",
+  "required": [
+    "copywriting",
+    "layout",
+    "campaign"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "",
+          "default": "Specifications"
+        },
+        "specs": {
+          "type": "array",
+          "options": {
+            "collapsed": true
+          },
+          "title": "Items",
+          "items": {
+            "type": "object",
+            "title": "Item",
+            "headerTemplate": "{{ i1 }} - {{ self.heading }}",
+            "required": [
+              "icon",
+              "heading",
+              "description"
+            ],
+            "properties": {
+              "icon": {
+                "type": "string",
+                "title": "Icon",
+                "description": "Choose your icon from the list",
+                "enum": [
+                  "machine_technology_machine-ol",
+                  "machine_technology_machine-vl",
+                  "machine_details_deluxe-version",
+                  "machine_details_machine-tutorial-ol",
+                  "machine_details_machine-tutorial-vl",
+                  "machine_warranty_warranty-ol",
+                  "machine_warranty_warranty-vl",
+                  "machine_features_generic",
+                  "machine_features_auto-clean-system",
+                  "machine_features_automatic-off",
+                  "machine_features_blend-specific-brewing",
+                  "machine_features_bluetooth",
+                  "machine_features_capsule-ejection-ol",
+                  "machine_features_capsule-ejection-vl",
+                  "machine_features_centrifusion",
+                  "machine_features_cold-foam-ol",
+                  "machine_features_cold-foam-vl",
+                  "machine_features_descale-alert",
+                  "machine_features_descale",
+                  "machine_features_digital-display",
+                  "machine_features_dimensions",
+                  "machine_features_eco-mode",
+                  "machine_features_energy-class",
+                  "machine_features_fast-heat-up",
+                  "machine_features_hot-foam-ol",
+                  "machine_features_hot-foam-vl",
+                  "machine_features_hot-milk",
+                  "machine_features_hot-foam",
+                  "machine_features_hot-water",
+                  "machine_features_low-water-alert",
+                  "machine_features_manual-lever",
+                  "machine_features_milk-frothing",
+                  "machine_features_mobile-push-notification",
+                  "machine_features_one-touch",
+                  "machine_features_power-off",
+                  "machine_features_pump-pressure-bar",
+                  "machine_features_rinse",
+                  "machine_features_settings",
+                  "machine_features_steam",
+                  "machine_features_temperature-settings-invert",
+                  "machine_features_temperature-settings",
+                  "machine_features_temperature",
+                  "machine_features_ultra-compact",
+                  "machine_features_water-tank",
+                  "machine_features_weight"
+                ]
+              },
+              "heading": {
+                "type": "string",
+                "title": "Specification heading",
+                "description": ""
+              },
+              "description": {
+                "type": "string",
+                "title": "Specification description",
+                "description": ""
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "default": {
+              "icon": "machine_features_fast-heat-up",
+              "heading": "Fast-heat-up time",
+              "description": "30sec."
+            }
+          },
+          "default": [
+            {
+              "icon": "machine_features_fast-heat-up",
+              "heading": "Fast-heat-up time",
+              "description": "30sec."
+            },
+            {
+              "icon": "machine_features_one-touch",
+              "heading": "One-touch cup sizes",
+              "description": "Espresso, Double Espresso, Gran Lungo, Mug, Alto"
+            },
+            {
+              "icon": "machine_features_generic",
+              "heading": "Movable cup support for large recipes",
+              "description": "Adjustable cup holder"
+            },
+            {
+              "icon": "machine_features_energy-class",
+              "heading": "Energy consumption class",
+              "description": "A+"
+            },
+            {
+              "icon": "machine_features_automatic-off",
+              "heading": "Automatic power off",
+              "description": "Yes"
+            },
+            {
+              "icon": "machine_features_water-tank",
+              "heading": "Water tank capacity",
+              "description": "1.1 L"
+            },
+            {
+              "icon": "machine_features_dimensions",
+              "heading": "Dimensions (w x d x h) (cm)",
+              "description": "5.5 x 16.9 x 12.4 in / 142 x 429 x 314 mm"
+            },
+            {
+              "icon": "machine_features_weight",
+              "heading": "Weight",
+              "description": "~4.0 kg – 8.8 lbs"
+            },
+            {
+              "icon": "machine_features_bluetooth",
+              "heading": "Special features",
+              "description": "Connectivity"
+            }
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "specs"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/AZqFC",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "",
+              "default": ""
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 620 x 496 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/machine-specifications/right-image_d_1x.png"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 1240 x 992 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/machine-specifications/right-image_d_2x.png"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_machine_specifications"
+          ],
+          "title": "Creative on site",
+          "default": "before_machine_specifications",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_machine_specifications",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Footer logos",
+  "required": [
+    "copywriting",
+    "campaign"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "default": "100% Secure Payments"
+        },
+        "size": {
+          "type": "string",
+          "title": "Size",
+          "description": "Size of icons or images",
+          "options": {
+            "enum_titles": [
+              "24px",
+              "32px",
+              "64px"
+            ]
+          },
+          "enum": [
+            "24",
+            "32",
+            "64"
+          ],
+          "default": "24"
+        },
+        "is_app_download": {
+          "type": "string",
+          "title": "App Download links ?",
+          "description": "Choose Yes, in case you want to set automatically links for app download",
+          "options": {
+            "enum_titles": [
+              "No",
+              "Yes"
+            ]
+          },
+          "enum": [
+            "false",
+            "true"
+          ],
+          "default": "false"
+        },
+        "items": {
+          "type": "array",
+          "title": "Logos",
+          "items": {
+            "type": "object",
+            "headerTemplate": "Logo {{i}} - {{self.label}}",
+            "required": [
+              "label",
+              "icon"
+            ],
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label",
+                "description": "Name of the logo for Accessibility, or Image alt description"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Icon",
+                "options": {
+                  "enum_titles": [
+                    "Mastercard",
+                    "Visa",
+                    "American Express",
+                    "Paypal",
+                    "Apple Pay",
+                    "Google Pay",
+                    "Bcorp",
+                    "Post Finance",
+                    "BVR",
+                    "LSV",
+                    "Twint",
+                    "Ideal",
+                    "Klarna",
+                    "Android Google PLay",
+                    "IOS Apple Store",
+                    "Huawei AppGallery"
+                  ]
+                },
+                "enum": [
+                  "mastercard-card",
+                  "visa-card",
+                  "amex-card",
+                  "paypal-card",
+                  "apple-pay",
+                  "payment-google-pay",
+                  "payment-bcorp",
+                  "payment-postfinance",
+                  "payment-bvr",
+                  "payment-lsv",
+                  "payment-twint",
+                  "payment-ideal",
+                  "payment-klarna",
+                  "android",
+                  "apple",
+                  "huawei"
+                ],
+                "description": "Choose the right icon for your logo, if the one you want is not in the list please use the image field"
+              },
+              "image": {
+                "type": "string",
+                "title": "Image",
+                "description": "Image is used in case you can not find the good icon in the previous field, please upload your own image"
+              },
+              "link": {
+                "type": "string",
+                "title": "Link",
+                "description": "Non mandatory, use it if you want the logo to have a link to a specific page (ie for downloading Android or Apple app)"
+              },
+              "target_blank": {
+                "type": "string",
+                "title": "Do you want to open the link in a new tab?",
+                "description": "Choose Yes, in case you want to open the link in a new tab (target=\"_blank\")",
+                "options": {
+                  "enum_titles": [
+                    "No",
+                    "Yes"
+                  ]
+                },
+                "enum": [
+                  "false",
+                  "true"
+                ]
+              }
+            },
+            "default": {
+              "label": "Mastercard",
+              "icon": "mastercard-card",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            }
+          },
+          "default": [
+            {
+              "label": "Mastercard",
+              "icon": "mastercard-card",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            },
+            {
+              "label": "Visa",
+              "icon": "visa-card",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            },
+            {
+              "label": "American Express",
+              "icon": "amex-card",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            },
+            {
+              "label": "Paypal",
+              "icon": "paypal-card",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            },
+            {
+              "label": "Apple pay",
+              "icon": "apple-pay",
+              "image": "",
+              "link": "/{market}/{lang}/payment-methods",
+              "target_blank": ""
+            }
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "size",
+        "is_app_download",
+        "items"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_footer_logos"
+          ],
+          "title": "Creative on site",
+          "default": "before_footer_logos",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_footer_logos",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

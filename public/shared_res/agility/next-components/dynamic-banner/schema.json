@@ -1,0 +1,375 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Dynamic Banner",
+  "description": "Message allows to the user to buy at least X capsules to get the first gift. For the second one, the user should be buying capsules until get the number of capsules stipulated. (Some markets choose to have just 1 gift, so a secundary message advise about if the user goes to the second gift the first will be replaced). Message allows to the user to buy at least X capsules to get the gift. https://wiki.nespresso.com/x/RX11CQ",
+  "properties": {
+    "options": {
+      "type": "object",
+      "title": "Options",
+      "required": [
+        "standard_banner",
+        "offer_both_gifts",
+        "sticky_mobile",
+        "sticky_desktop"
+      ],
+      "properties": {
+        "standard_banner": {
+          "type": "boolean",
+          "title": "Personalized Standard Banner",
+          "description": "When set true, the component is without the capsule meter. You just need to change the Heading and Description.",
+          "default": false
+        },
+        "offer_both_gifts": {
+          "type": "boolean",
+          "title": "Offer both gifts",
+          "description": "Only valid to 2 threshold offers. When set to true, the component allows to offer both gifts. If not, only one of the gifts will be offered, and a disclaimer will appear on the first gifts reached.",
+          "default": false
+        },
+        "sticky_mobile": {
+          "type": "boolean",
+          "title": "Make the banner sticky on mobile",
+          "description": "When set true, the component will float at the bottom on mobile",
+          "default": false
+        },
+        "sticky_desktop": {
+          "type": "boolean",
+          "title": "Make the banner sticky on desktop",
+          "description": "When set true, the component will float at the top on desktop",
+          "default": false
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    },
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "label_expand": {
+          "type": "string",
+          "title": "Button expand label (for accessiblity)",
+          "default": "Expand banner "
+        },
+        "label_collapse": {
+          "type": "string",
+          "title": "Button collapse label (for accessiblity)",
+          "default": "Collapse banner"
+        },
+        "badge": {
+          "type": "string",
+          "title": "Sticker text",
+          "default": "Exclusive Offer"
+        },
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "default": "Get a Gift for Free!"
+        },
+        "description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Description",
+          "description": "eg: A. Standard (Buy a machine and <b>get the new Lume Cups Collection</b>) B. One Threshold (Buy <b>50 Capsules</b> to get the new Lume Collection) C. Two Threshold (Buy <b>100 Capsules</b> to get the new Lume Collection <b>or buy 100 capsules</b> to get an Aeroccino)",
+          "default": "Buy <b>50 Capsules</b> to get the new Lume Collection <b>or buy 100 capsules</b> to get an Aeroccino"
+        },
+        "technology": {
+          "type": "string",
+          "title": "Technology",
+          "options": {
+            "enum_titles": [
+              "Both",
+              "Original",
+              "Vertuo"
+            ]
+          },
+          "enum": [
+            "both",
+            "original",
+            "vertuo"
+          ],
+          "default": "both",
+          "description": "To restrict the capsules count for OL, VL or both. By default, both capsules are covered."
+        },
+        "exclude": {
+          "type": "string",
+          "title": "Exclude SKUs",
+          "description": "Option to exclude specific SKUs from increasing the count of the progress bar. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50)",
+          "default": ""
+        },
+        "gifts_image": {
+          "type": "string",
+          "title": "Main gifts image on the left",
+          "description": "Collage of gifts images",
+          "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/aeroccino-coffee-cups.png"
+        },
+        "gifts_image_alt": {
+          "type": "string",
+          "title": "Alternate text for Main gift image",
+          "default": "Aeroccino & Coffee cups"
+        },
+        "disclaimer_txt": {
+          "type": "string",
+          "title": "Disclaimer text below the capsule meter (will be displayed only if you have 2 threshold, and you are offering only one gift)",
+          "default": ""
+        },
+        "a11y_disclaimer_label": {
+          "type": "string",
+          "title": "Disclaimer translation for screen readers (accessiblity)",
+          "default": "Disclaimer"
+        },
+        "first_threshold_image": {
+          "type": "string",
+          "title": "First threshold gift image",
+          "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/coffee-cups.png"
+        },
+        "first_threshold_image_alt": {
+          "type": "string",
+          "title": "Alternate text for First threshold gift image",
+          "default": "Coffee cups"
+        },
+        "first_threshold_capsules": {
+          "type": "string",
+          "title": "First threshold capsule count eligible to receive the gift",
+          "description": "If the capsule is empty or 0 we consider as the first threshold is not available",
+          "default": "50"
+        },
+        "first_threshold_description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "First threshold description",
+          "default": "Add <b>{countPlaceholder} capsules more</b> to get the Lume collection!",
+          "description": "{countPlaceholder} do not remove/replace/translate. This is a placeholder for capsule count which is automatically calculated."
+        },
+        "second_threshold_image": {
+          "type": "string",
+          "title": "Second/Final threshold gift image URL",
+          "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/aeroccino.png"
+        },
+        "second_threshold_image_alt": {
+          "type": "string",
+          "title": "Alternate text for Second/Final threshold gift image",
+          "default": "Aeroccino"
+        },
+        "second_threshold_capsules": {
+          "type": "string",
+          "title": "Second/Final capsule count eligible to receive the gift",
+          "default": "100"
+        },
+        "second_threshold_heading": {
+          "type": "string",
+          "title": "Second threshold heading",
+          "default": "Great! The Lume Collection is Yours!"
+        },
+        "second_threshold_description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Second threshold description",
+          "default": "Add <b>{countPlaceholder} capsules more</b> to get your Aeroccino",
+          "description": "{countPlaceholder} do not remove/replace/translate. This is a placeholder for capsule count which is automatically calculated."
+        },
+        "success_heading": {
+          "type": "string",
+          "title": "Heading after successfully completing the total capsules purchase",
+          "default": "Congratulations! You did it!"
+        },
+        "success_description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Description after successfully completing the total capsules purchase",
+          "default": "Your Gift will be reflected at the checkout."
+        },
+        "popin": {
+          "type": "object",
+          "title": "Popin",
+          "required": [
+            "id",
+            "text",
+            "image",
+            "image_alt",
+            "heading",
+            "description",
+            "close"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Unique name for the popin",
+              "description": "Unique identifier for the popin (without space). Please keep as is.",
+              "default": "promo-dynamicBanner"
+            },
+            "text": {
+              "type": "string",
+              "title": "Link text",
+              "description": "Link text of the popin",
+              "default": "*See Terms and Conditions"
+            },
+            "image": {
+              "type": "string",
+              "title": "Popin image",
+              "description": "Image URL of the image inside popin 300 x 225 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/gift.png"
+            },
+            "image_alt": {
+              "type": "string",
+              "title": "Alternate text for Popin image",
+              "default": "gift"
+            },
+            "heading": {
+              "type": "string",
+              "title": "Popin heading",
+              "default": "Our Terms and Conditions"
+            },
+            "description": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "title": "Popin description",
+              "default": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including advertising or promotional materials. Entry instructions are deemed to form part of these Terms and Conditions and by participating all participants will be deemed to have accepted and be bound by them. Please retain a copy for your information.</p><p><b>1. This promotion is open to all residents of the UK,</b> Channel Islands, Isle of Man and Republic of Ireland, aged 18 or over and excludes employees and their immediate families of Nestle S.A. and Nespresso, its agents or anyone professionally connected to the promotion. Participants must register or be registered with Nespresso to qualify for the offer.</p><p><b>2. Applicants must have purchased any Nespresso Essenza Mini or Essenza Mini Bundle and registered with Nespresso during the stated promotion period</b> (10.06.2020 and 18.08.2020) to qualify for the offer. The offer consists of 100 complimentary pre-selected Original Line capsules as a first gift, and one month’s free Nespresso Coffee Subscription worth £25/€30 as a second gift when they go on to register and activate a Coffee Subscription by 23:59 on 31.12.2020. The 100 complimentary capsules will be made up of a pre-selected Original Line range chosen by Nespresso which cannot be changed/substituted for any other variants.</p><p><b>3. The stated Nespresso machine must be purchased between the stated dates from one of the associated Nespresso retail partners,</b> or directly from Nespresso or by calling Nespresso on Freephone 0800 442 442 (UK), or 1800 812 660 (ROI), or at www.nespresso.com, or via the Nespresso App, or visiting a Nespresso Boutique where available. Maximum of one offer per machine purchased per Nespresso Member. Any additional machines purchased during the stated promotional period will not qualify for the offer. The qualifying Nespresso Coffee machine must be purchased in the UK, Channel Island, Isle of Man or Republic of Ireland. Due to the continuing COVID-19 situation, participants should check their local Nespresso Boutique opening days and times as these may vary. This can be done using www.nespresso.com/uk/en/store-locator. This page is updated regularly with the latest information and news relating to Nespresso Boutiques.</p>"
+            },
+            "close": {
+              "type": "string",
+              "title": "Label Close (accessibility)",
+              "default": "Close"
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "label_expand",
+        "label_collapse",
+        "badge",
+        "heading",
+        "description",
+        "technology",
+        "exclude",
+        "gifts_image",
+        "gifts_image_alt",
+        "disclaimer_txt",
+        "a11y_disclaimer_label",
+        "first_threshold_image",
+        "first_threshold_image_alt",
+        "first_threshold_capsules",
+        "first_threshold_description",
+        "second_threshold_image",
+        "second_threshold_image_alt",
+        "second_threshold_capsules",
+        "second_threshold_heading",
+        "second_threshold_description",
+        "success_heading",
+        "success_description",
+        "popin"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "required": [
+        "background_color",
+        "contrast"
+      ],
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "default": "#454547",
+          "description": "e.g. `#000` `rgba(0, 0, 0, .3)`"
+        },
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "dark",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_dynamic_promo_banner"
+          ],
+          "title": "Creative on site",
+          "default": "before_dynamic_promo_banner",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_dynamic_promo_banner",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "options",
+    "layout",
+    "copywriting"
+  ]
+}

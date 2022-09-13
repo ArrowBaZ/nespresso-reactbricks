@@ -1,0 +1,30 @@
+{
+    "name": "rating-reviews",
+    "version": "1.1.1",
+    "description": "rating-reviews element",
+    "folder": "/shared_res/agility/next-components/rating-reviews/",
+    "tag": "nb-rating-reviews",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/rating-reviews/v1.1/css/rating-reviews.css",
+        "module": "/shared_res/agility/next-components/rating-reviews/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/rating-reviews/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/rating-reviews/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/rating/",
+        "/shared_res/agility/next-components/dropdown/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/form/",
+        "/shared_res/agility/next-components/star-rating/",
+        "/shared_res/agility/next-components/checkbox/",
+        "/shared_res/agility/next-components/input-text/",
+        "/shared_res/agility/next-components/textarea/",
+        "/shared_res/agility/next-components/loader/"
+    ]
+}

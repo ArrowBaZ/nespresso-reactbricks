@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Navigation Bubbles",
+  "properties": {
+    "padding_top": {
+      "type": "string",
+      "title": "Padding top",
+      "enum": [
+        "pt0",
+        "pt7",
+        "pt8",
+        "pt9",
+        "pt10"
+      ],
+      "options": {
+        "enum_titles": [
+          "None (0px desktop / 0px mobile)",
+          "Small (40px desktop / 32px mobile)",
+          "Medium (64px desktop / 40px mobile)",
+          "Large (80px desktop / 64px mobile)",
+          "Extra large (120px desktop / 80px mobile)"
+        ]
+      },
+      "description": "Recommended padding is Large",
+      "default": "pt9"
+    },
+    "padding_bottom": {
+      "type": "string",
+      "title": "Padding bottom",
+      "enum": [
+        "pb0",
+        "pb7",
+        "pb8",
+        "pb9",
+        "pb10"
+      ],
+      "options": {
+        "enum_titles": [
+          "None (0px desktop / 0px mobile)",
+          "Small (40px desktop / 32px mobile)",
+          "Medium (64px desktop / 40px mobile)",
+          "Large (80px desktop / 64px mobile)",
+          "Extra large (120px desktop / 80px mobile)"
+        ]
+      },
+      "description": "Recommended padding is Large",
+      "default": "pb9"
+    },
+    "isSticky": {
+      "type": "boolean",
+      "title": "Is sticky",
+      "description": "Check this to do the navigation bubbles bar as “stick” to the top",
+      "default": false
+    },
+    "bubbles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "headerTemplate": "Bubble #{{i}} - {{ self.label }}",
+        "required": [
+          "link",
+          "label",
+          "theme",
+          "visual"
+        ],
+        "properties": {
+          "link": {
+            "type": "string",
+            "title": "Section ID (or PLP HMC Category ID)",
+            "description": "Section ID, it will scroll to this category. Please use #- it will be replaced with space.",
+            "default": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]"
+          },
+          "label": {
+            "type": "string",
+            "description": "Bubble Label",
+            "default": "Ispirazione Italiana"
+          },
+          "visual": {
+            "type": "object",
+            "required": [
+              "src",
+              "src_retina",
+              "alt"
+            ],
+            "properties": {
+              "src": {
+                "type": "string",
+                "description": "Visual file",
+                "default": "/shared_res/agility/next-components/assets/bubble/ol/round/Ispirazione Italiana Range_Ispirazione Ristretto Italiano_L.png"
+              },
+              "src_retina": {
+                "type": "string",
+                "description": "Visual file for big screen",
+                "default": "/shared_res/agility/n-components/festive-bf-2021/navigation-bubbles/best-sellers_XL.png"
+              },
+              "alt": {
+                "type": "string",
+                "description": "Visual alternative text",
+                "default": "Vertuo capsule"
+              }
+            }
+          },
+          "theme": {
+            "type": "string",
+            "description": "Category color",
+            "options": {
+              "enum_titles": [
+                "mostRecommended",
+                "offersBundle",
+                "offersMachine",
+                "offersAccessory",
+                "offersCoffee"
+              ]
+            },
+            "enum": [
+              "#527082",
+              "#528268",
+              "#6D5282",
+              "#825252",
+              "#828052"
+            ],
+            "default": "#527082"
+          }
+        }
+      },
+      "description": "One item equal one bubble, one bubble is an anchor to the category",
+      "default": [
+        {
+          "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+          "label": "Ispirazione Italiana",
+          "visual": {
+            "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Ispirazione Italiana Range_Ispirazione Ristretto Italiano_L.png",
+            "alt": "Ispirazione Italiana anchor to go to coffee range"
+          }
+        },
+        {
+          "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+          "label": "Espresso & Lungo",
+          "visual": {
+            "src": "/shared_res/agility/next-components/assets/bubble/ol/round/World Explorations_Stockholm_L.png",
+            "alt": "Espresso & Lungo anchor to go to coffee range"
+          }
+        },
+        {
+          "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+          "label": "Barista Creations",
+          "visual": {
+            "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Barista Creations Range_Chiaro_L.png",
+            "alt": "Barista Creations anchor to go to coffee range"
+          }
+        },
+        {
+          "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+          "label": "Master Origins",
+          "state": "default",
+          "visual": {
+            "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Origins_Colombia_L.png",
+            "alt": "Master Origins anchor to go to coffee range"
+          }
+        }
+      ]
+    },
+    "a11y_slider_previous_button": {
+      "type": "string",
+      "title": "a11y Button to slide left",
+      "description": "Hidden text for Accessibility.",
+      "default": "Slide menu to previous item"
+    },
+    "a11y_slider_next_button": {
+      "type": "string",
+      "title": "a11y Button to slide right",
+      "description": "Hidden text for Accessibility.",
+      "default": "Slide menu to next item"
+    }
+  }
+}

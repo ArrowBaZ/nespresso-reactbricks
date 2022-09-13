@@ -1,0 +1,813 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Instructions",
+  "description": "https://dsu-confluence.nestle.biz/x/icdsCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Title",
+          "description": "Top title of Instructions",
+          "default": "How To Use Your Machine"
+        },
+        "showNavigation": {
+          "type": "boolean",
+          "title": "Show Navigation?",
+          "description": "If it is false, then the navigation will not be displayed. It is useful if you only want to display one unique machine's instructions",
+          "default": true
+        },
+        "a11y_slider_previous_button": {
+          "type": "string",
+          "title": "a11y Button to slide left",
+          "description": "Hidden text for Accessibility.",
+          "default": "Slide menu left"
+        },
+        "a11y_slider_next_button": {
+          "type": "string",
+          "title": "a11y Button to slide right",
+          "description": "Hidden text for Accessibility.",
+          "default": "Slide menu right"
+        },
+        "navigations": {
+          "type": "array",
+          "title": "Navigation",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "seo_label",
+              "icon",
+              "selected",
+              "has_video",
+              "visual",
+              "video",
+              "steps"
+            ],
+            "headerTemplate": "{{ i1 }} - {{ self.label }}",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label of the link",
+                "description": "",
+                "default": "Creatista"
+              },
+              "seo_label": {
+                "type": "string",
+                "title": "SEO of the link",
+                "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+                "default": "Creatista"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Icon",
+                "description": "URL of the machine's icon for this link",
+                "default": false
+              },
+              "selected": {
+                "type": "boolean",
+                "title": "Is menu selected?",
+                "description": "Will select the menu by default. On Original PLP, set it to true for Original link and false for other.",
+                "default": false
+              },
+              "has_video": {
+                "type": "boolean",
+                "title": "Has Video?",
+                "description": "If it is selected, then a Popin with a Video inside will be available",
+                "default": false
+              },
+              "visual": {
+                "type": "object",
+                "title": "Visual",
+                "required": [
+                  "mobile",
+                  "desktop",
+                  "retina"
+                ],
+                "properties": {
+                  "mobile": {
+                    "type": "string",
+                    "title": "Mobile visual source",
+                    "description": "URL to image 750 x 850 pixels (width x height)",
+                    "default": "/shared_res/agility/next-components/assets/instructions/creatista_S.png"
+                  },
+                  "desktop": {
+                    "type": "string",
+                    "title": "Desktop visual source",
+                    "description": "URL to image 750 x 850 pixels (width x height)",
+                    "default": "/shared_res/agility/next-components/assets/instructions/creatista_L.png"
+                  },
+                  "retina": {
+                    "type": "string",
+                    "title": "Retina visual source",
+                    "description": "URL to image 750 x 850 pixels (width x height)",
+                    "default": "/shared_res/agility/next-components/assets/instructions/creatista_XL.png"
+                  }
+                },
+                "options": {
+                  "collapsed": true
+                }
+              },
+              "video": {
+                "type": "object",
+                "title": "Video",
+                "required": [
+                  "a11y_play_video",
+                  "video_id",
+                  "video_mobile",
+                  "display_ui_controls",
+                  "cc_policy_language",
+                  "video_service"
+                ],
+                "options": {
+                  "collapsed": true
+                },
+                "properties": {
+                  "a11y_play_video": {
+                    "type": "string",
+                    "title": "a11y Play Video",
+                    "default": "Play video"
+                  },
+                  "video_id": {
+                    "type": "string",
+                    "title": "Video provider ID",
+                    "description": "Video id of the choose video service",
+                    "default": "Nl0qvx8Pv4w"
+                  },
+                  "video_mobile": {
+                    "type": "string",
+                    "title": "Video provider ID (Mobile)",
+                    "description": "Video id of the choose video service for mobile devices (if different)",
+                    "default": ""
+                  },
+                  "display_ui_controls": {
+                    "type": "string",
+                    "title": "Video UI Controls",
+                    "description": "Video service (Youtube)",
+                    "options": {
+                      "enum_titles": [
+                        "Yes",
+                        "No"
+                      ]
+                    },
+                    "enum": [
+                      "1",
+                      "0"
+                    ],
+                    "default": "1"
+                  },
+                  "cc_policy_language": {
+                    "type": "string",
+                    "title": "Language of Closed caption",
+                    "description": "Language of closed caption of Youtube video, Ex- es-Es, en",
+                    "default": ""
+                  },
+                  "video_service": {
+                    "type": "string",
+                    "title": "Video services",
+                    "description": "Video service (Youtube, Youku)",
+                    "options": {
+                      "enum_titles": [
+                        "Youtube",
+                        "Youku"
+                      ]
+                    },
+                    "enum": [
+                      "youtube",
+                      "youku"
+                    ],
+                    "default": "youtube"
+                  }
+                }
+              },
+              "steps": {
+                "type": "array",
+                "title": "Steps",
+                "options": {
+                  "collapsed": true
+                },
+                "items": {
+                  "type": "object",
+                  "options": {
+                    "collapsed": true
+                  },
+                  "headerTemplate": "{{ i1 }} - {{ self.heading }}",
+                  "required": [
+                    "heading",
+                    "description"
+                  ],
+                  "properties": {
+                    "heading": {
+                      "type": "string",
+                      "title": "Title",
+                      "description": "",
+                      "default": "Step 1"
+                    },
+                    "description": {
+                      "type": "string",
+                      "format": "html",
+                      "options": {
+                        "wysiwyg": false
+                      },
+                      "title": "Description",
+                      "description": "",
+                      "default": ""
+                    }
+                  }
+                },
+                "default": [
+                  {
+                    "heading": "Step 1",
+                    "description": "Turn your machine on and wait 25 seconds for the steady lights."
+                  },
+                  {
+                    "heading": "Step 2",
+                    "description": "Turn your machine on and wait 25 seconds for the steady lights."
+                  },
+                  {
+                    "heading": "Step 3",
+                    "description": "Turn your machine on and wait 25 seconds for the steady lights."
+                  }
+                ]
+              }
+            },
+            "default": {
+              "label": "Essenza Mini",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/ol/essenza.png",
+              "selected": true,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_service": "youtube",
+                "video_id": "gKdPsDk_Nto",
+                "video_mobile": "XJmV6FCLfi4",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water. Then turn your machine ON and wait 25s for the steady lights."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lift the lever completely and insert your capsule into the slot."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever and place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Press the Espresso (40ml) or Lungo (110ml) button to start. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Once finished, lift the lever to eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            }
+          },
+          "default": [
+            {
+              "label": "Essenza Mini",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/ol/essenza.png",
+              "selected": true,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_service": "youtube",
+                "video_id": "gKdPsDk_Nto",
+                "video_mobile": "XJmV6FCLfi4",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water. Then turn your machine ON and wait 25s for the steady lights."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lift the lever completely and insert your capsule into the slot."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever and place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Press the Espresso (40ml) or Lungo (110ml) button to start. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Once finished, lift the lever to eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "Inissia",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/ol/inissia.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water. Then turn your machine ON and wait 25s for the steady lights."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lift the lever completely and insert your capsule into the slot."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever and place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Press the Espresso (40ml) or Lungo (110ml) button to start. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Once finished, lift the lever to eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "Pixie",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/ol/pixie.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water. Then turn your machine ON and wait 25s for the steady lights."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lift the lever completely and insert your capsule into the slot."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever and place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Press the Espresso (40ml) or Lungo (110ml) button to start. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Once finished, lift the lever to eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "Citiz",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/ol/citiz.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water. Then turn your machine ON and wait 25s for the steady lights."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lift the lever completely and insert your capsule into the slot."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever and place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Press the Espresso (40ml) or Lungo (110ml) button to start. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Once finished, lift the lever to eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "Vertuo Next",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/vl/next.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Turn your machine ON by pressing the button and wait 30s while machine is heating up. When the button is steady white, the machine is ready to use."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Unlock the lever and open the machine completely to put your Vertuo capsule. Close the head & turn the handle left to the lock symbol."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Adjust the position of the cup support & place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Press the button to start your coffee preparation. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Once finished, a steady light will appear. Turn the handle to the right and open the head to automatically eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 7",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "Vertuo Plus",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/vl/plus.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Turn your machine ON by pressing the button and wait 40s while machine is heating up. When the light is steady green, the machine is ready to use."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Open the machine by slightly pushing the lever upwards – the head will open automatically - and insert your Vertuo capsule. Push the lever down."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Adjust the position of the cup support & place your cup under the coffee outlet."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "Press the coffee button to start your coffee preparation. It will stop automatically, but you can stop it manually by pressing again."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Once finished, a steady light will appear. Open the head to automatically eject the capsule into the used capsule container."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Enjoy your coffee!"
+                }
+              ]
+            },
+            {
+              "label": "B2B Aguila",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/b2b/aguila.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Insert your capsule into the slot located on top of where you placed your cup."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Lower the lever on the side where the cup is placed."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Select your coffee - Ristretto, Espresso or Lungo - from the buttons above your cup or select your milk-coffee recipe from the list in the top right-hand corner."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Once finished, lift the lever on the side where the coffee is placed and enjoy your coffee."
+                }
+              ]
+            },
+            {
+              "label": "B2B Zenius",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/b2b/zenius.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Ensure water tank is filled with fresh potable water and switch on the machine."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Open the lever and insert your capsule into the slot located on top  of where you placed your cup."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Lower the lever. Select your coffee - Ristretto, Espresso or Lungo - from the buttons above your cup."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "Once finished, lift the lever on the side where the coffee is placed."
+                },
+                {
+                  "heading": "Hot Water",
+                  "description": "Place the cup on the tray and press the hot water button."
+                }
+              ]
+            },
+            {
+              "label": "B2B Gemini",
+              "seo_label": "Discover the machine",
+              "icon": "/shared_res/agility/next-components/assets/commons/instructions/icons/b2b/gemini.png",
+              "selected": false,
+              "has_video": true,
+              "visual": {
+                "mobile": "https://via.placeholder.com/750x421",
+                "desktop": "https://via.placeholder.com/1920x1080",
+                "retina": "https://via.placeholder.com/2336x1314"
+              },
+              "video": {
+                "video_id": "",
+                "video_mobile": "",
+                "display_ui_controls": "1",
+                "cc_policy_language": "en",
+                "video_service": "youtube"
+              },
+              "steps": [
+                {
+                  "heading": "Step 1",
+                  "description": "Place your cup under one of the coffee extraction heads."
+                },
+                {
+                  "heading": "Step 2",
+                  "description": "Insert your capsule into the slot located on top of where you placed your cup."
+                },
+                {
+                  "heading": "Step 3",
+                  "description": "Select your coffee – Ristretto, Espresso or Lungo - from the buttons above your cup."
+                },
+                {
+                  "heading": "Step 4",
+                  "description": "For a Machiatto, place your cup underneath the milk frother and press the «+» button briefly for a touch of milk froth."
+                },
+                {
+                  "heading": "Step 5",
+                  "description": "For a Cappuccino, move the dial on the Autocappucinatore to the left. For a a Latte, press the cup button in addition for milk to start pouring into your cup."
+                },
+                {
+                  "heading": "Step 6",
+                  "description": "Once finished, a steady light will appear, and your capsule will be automatically ejected into the used capsule container. Enjoy your coffee!"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "showNavigation",
+        "a11y_slider_previous_button",
+        "a11y_slider_next_button",
+        "navigations"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_instructions"
+          ],
+          "title": "Creative on site",
+          "default": "before_instructions",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_instructions",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+    "name": "instructions",
+    "version": "1.1.1",
+    "description": "instructions",
+    "folder": "/shared_res/agility/next-components/instructions/",
+    "tag": "nb-instructions",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/instructions/v1.1/css/instructions.css",
+        "module": "/shared_res/agility/next-components/instructions/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/instructions/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/instructions/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/navigation-bar/",
+        "/shared_res/agility/next-components/video/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/slider-menu/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "904",
+            "desktop": "642"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "disclaimer",
+  "properties": {
+    "text": {
+      "type": "string",
+      "format": "html",
+      "options": {
+        "wysiwyg": false
+      },
+      "title": "Text",
+      "description": "Disclaimer text",
+      "default": "All prices are standards and exclude taxes and eco-participation"
+    },
+    "content": {
+      "type": "string",
+      "title": "Tooltip Content",
+      "description": "Tooltip content",
+      "default": "Tooltip example"
+    }
+  }
+}

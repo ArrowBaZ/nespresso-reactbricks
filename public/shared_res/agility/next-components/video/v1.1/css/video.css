@@ -1,0 +1,1 @@
+nb-video{background:#17171a;display:block}nb-video>*,nb-video>div>iframe{display:block;height:100%;width:100%}@media screen and (min-width:768px){nb-video{aspect-ratio:16/9}}@media screen and (max-width:767px){nb-video>*{bottom:0;left:0;position:absolute;right:0;top:0}nb-video>div{height:auto!important;width:auto!important;z-index:0}}

@@ -1,0 +1,30 @@
+{
+    "name": "pdp",
+    "version": "1.1.1",
+    "description": "pdp element",
+    "folder": "/shared_res/agility/next-components/pdp/",
+    "tag": "nb-pdp",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/pdp/v1.1/css/pdp.css",
+        "module": "/shared_res/agility/next-components/pdp/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/pdp/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/pdp/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/disclaimer/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/tooltip/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/add-to-cart/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "600",
+            "mobile": "750"
+        }
+    }
+}

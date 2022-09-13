@@ -1,0 +1,20 @@
+{
+    "name": "card-immersive",
+    "version": "1.1.1",
+    "description": "Display Card Immersive",
+    "folder": "/shared_res/agility/next-components/card-immersive/",
+    "tag": "nb-card-immersive",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/card-immersive/v1.1/css/card-immersive.css",
+        "module": "/shared_res/agility/next-components/card-immersive/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/card-immersive/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/card-immersive/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

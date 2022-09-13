@@ -1,0 +1,14 @@
+{
+    "name": "Form",
+    "version": "1.1.1",
+    "description": "Form",
+    "folder": "/shared_res/agility/next-components/form/",
+    "tag": "nb-form",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/form/v1.1/css/form.css",
+        "module": "/shared_res/agility/next-components/form/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/form/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/form/preview.png"
+}

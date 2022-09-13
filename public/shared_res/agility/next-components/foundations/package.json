@@ -1,0 +1,14 @@
+{
+    "name": "foundations",
+    "version": "1.1.1",
+    "description": "Foundations",
+    "folder": "/shared_res/agility/next-components/foundations/",
+    "tag": "nb-foundations",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/foundations/v1.1/css/foundations.css",
+        "module": "/shared_res/agility/next-components/foundations/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/foundations/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": []
+}

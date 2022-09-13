@@ -1,0 +1,15 @@
+{
+    "name": "plp-segment",
+    "version": "1.1.1",
+    "description": "plp-segment element",
+    "folder": "/shared_res/agility/next-components/plp-segment/",
+    "tag": "nb-plp-segment",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-segment/v1.1/css/plp-segment.css",
+        "module": "/shared_res/agility/next-components/plp-segment/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-segment/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-segment/preview.svg",
+    "scriptDependencies": []
+}

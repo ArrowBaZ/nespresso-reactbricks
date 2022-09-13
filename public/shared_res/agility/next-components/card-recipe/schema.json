@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "card-recipe",
+  "options": {
+    "collapsed": true
+  },
+  "properties": {
+    "heading": {
+      "type": "string",
+      "title": "Heading",
+      "default": "Latte Macchiato Speculoos"
+    },
+    "time": {
+      "type": "string",
+      "title": "Time",
+      "default": "3 min"
+    },
+    "difficulty": {
+      "type": "string",
+      "title": "difficulty",
+      "default": "EASY"
+    },
+    "visual": {
+      "type": "object",
+      "required": [
+        "src",
+        "alt"
+      ],
+      "title": "Visual",
+      "options": {
+        "collapsed": true
+      },
+      "properties": {
+        "src": {
+          "type": "object",
+          "required": [
+            "desktop"
+          ],
+          "title": "Visual source",
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "desktop": {
+              "type": "string",
+              "title": "Desktop visual source",
+              "default": "/shared_res/agility/next-components/assets/card/recipe/visual.jpg"
+            }
+          }
+        },
+        "alt": {
+          "type": "string",
+          "title": "Visual alternative text",
+          "default": "Recipe"
+        }
+      }
+    }
+  }
+}

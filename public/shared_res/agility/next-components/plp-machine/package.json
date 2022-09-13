@@ -1,0 +1,33 @@
+{
+    "name": "plp-machine",
+    "version": "1.2.1",
+    "description": "plp element",
+    "folder": "/shared_res/agility/next-components/plp-machine/",
+    "tag": "nb-plp-machine",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-machine/v1.1/css/plp-machine.css",
+        "module": "/shared_res/agility/next-components/plp-machine/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-machine/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-machine/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/sku-machine/",
+        "/shared_res/agility/next-components/add-to-cart/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/card-labels/",
+        "/shared_res/agility/next-components/colors/",
+        "/shared_res/agility/next-components/rating/",
+        "/shared_res/agility/next-components/energy-label/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/link/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "800",
+            "desktop": "800"
+        }
+    }
+}

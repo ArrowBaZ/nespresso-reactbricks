@@ -1,0 +1,336 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Gallery",
+  "description": "https://dsu-confluence.nestle.biz/x/UqoaCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "a11y_heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "Hidden heading for Accessibility and SEO",
+          "default": "Vertuo Next image gallery"
+        },
+        "a11y_labels": {
+          "type": "object",
+          "required": [
+            "prev",
+            "next",
+            "nav",
+            "expand",
+            "close"
+          ],
+          "properties": {
+            "prev": {
+              "type": "string",
+              "title": "Previous button label",
+              "description": "Label for Accessibility",
+              "default": "Previous image"
+            },
+            "next": {
+              "type": "string",
+              "title": "Next button label",
+              "description": "Label for Accessibility",
+              "default": "Next image"
+            },
+            "nav": {
+              "type": "string",
+              "title": "Pagination bullets label",
+              "description": "Label for Accessibility (used in mobile modal interface)",
+              "default": "Goto slide"
+            },
+            "expand": {
+              "type": "string",
+              "title": "Expand label",
+              "description": "Label for Accessibility (button on images opens a modal with bigger images)",
+              "default": "Press SPACE to enter full screen mode"
+            },
+            "close": {
+              "type": "string",
+              "title": "Close button label",
+              "description": "Label for Accessibility (used to close the modal)",
+              "default": "Close full screen mode"
+            }
+          }
+        },
+        "slides": {
+          "type": "array",
+          "title": "Images items",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "required": [
+              "description",
+              "path",
+              "thumb",
+              "modal"
+            ],
+            "properties": {
+              "description": {
+                "type": "string",
+                "title": "Alt image description",
+                "description": "Please give the best meaningful description, because for Accessibility this is the most important part for blind users"
+              },
+              "path": {
+                "type": "string",
+                "title": "Images path",
+                "description": "Path to your machine images (e.g. /shared_res/agility/next-components/assets/gallery/machines/vertuo-next/)"
+              },
+              "thumb": {
+                "type": "string",
+                "title": "Thumb image url",
+                "description": "Image displayed in the section slider"
+              },
+              "modal": {
+                "type": "string",
+                "title": "Modal image url",
+                "description": "Image displayed in the modal full screen mode"
+              }
+            },
+            "default": {
+              "description": "Vertuo Next White front view",
+              "path": "/shared_res/agility/next-components/assets/gallery/machines/vertuo-next/",
+              "thumb": "vertuo-next_white_front-view_thumb.jpg",
+              "modal": "vertuo-next_white_front-view_modal.jpg"
+            }
+          },
+          "default": [
+            {
+              "description": "Vertuo Next White front view",
+              "path": "/shared_res/agility/next-components/assets/gallery/machines/vertuo-next/",
+              "thumb": "vertuo-next_white_front-view_thumb.jpg",
+              "modal": "vertuo-next_white_front-view_modal.jpg"
+            },
+            {
+              "description": "Vertuo Plus Deluxe black front view",
+              "path": "/shared_res/agility/next-components/assets/gallery/machines/vertuo-plus-deluxe/",
+              "thumb": "vertuo-plus-deluxe_black_front-view_thumb.jpg",
+              "modal": "vertuo-plus-deluxe_black_front-view_modal.jpg"
+            },
+            {
+              "description": "Vertuo Next Cherry Red front view",
+              "path": "/shared_res/agility/next-components/assets/gallery/machines/vertuo-next/",
+              "thumb": "vertuo-next_cherry-red_front-view_thumb.jpg",
+              "modal": "vertuo-next_cherry-red_front-view_modal.jpg"
+            },
+            {
+              "description": "Vertuo Evoluo Black front view",
+              "path": "/shared_res/agility/next-components/assets/gallery/machines/vertuo-evoluo/",
+              "thumb": "vertuo-evoluo_black_front-view_thumb.jpg",
+              "modal": "vertuo-evoluo_black_front-view_modal.jpg"
+            }
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "a11y_heading",
+        "a11y_labels",
+        "slides"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/AZqFC",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "URL to image 750 x 562 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/gallery/background-banner_m_2x.jpg"
+            },
+            "tablet": {
+              "type": "string",
+              "title": "URL image Tablet",
+              "description": "URL to image 2048 x 874 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/gallery/background-banner_t_2x.jpg"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 1760 x 437 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/gallery/background-banner_d_1x.jpg"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 3520 x 874 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/gallery/background-banner_d_2x.jpg"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "tablet",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_gallery"
+          ],
+          "title": "Creative on site",
+          "default": "before_gallery",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_gallery",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

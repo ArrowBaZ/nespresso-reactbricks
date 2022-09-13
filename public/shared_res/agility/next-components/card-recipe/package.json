@@ -1,0 +1,15 @@
+{
+    "name": "card-recipe",
+    "version": "1.1.1",
+    "description": "card-recipe element",
+    "folder": "/shared_res/agility/next-components/card-recipe/",
+    "tag": "nb-card-recipe",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/card-recipe/v1.1/css/card-recipe.css",
+        "module": "/shared_res/agility/next-components/card-recipe/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/card-recipe/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/card-recipe/preview.svg",
+    "scriptDependencies": []
+}

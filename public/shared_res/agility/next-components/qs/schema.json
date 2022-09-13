@@ -1,0 +1,126 @@
+{
+  "type": "object",
+  "title": "Quantity Selector",
+  "description": "Used for Gift Card only",
+  "options": {
+    "collapsed": true
+  },
+  "required": [
+    "a11y_qs_label",
+    "a11y_qs_description",
+    "a11y_predefined_quantity",
+    "a11y_predefined_description",
+    "a11y_add_label",
+    "quantities",
+    "step",
+    "max",
+    "a11y_custom_quantity",
+    "a11y_custom_description",
+    "label_choose_quantity",
+    "label_button_ok"
+  ],
+  "properties": {
+    "a11y_qs_label": {
+      "type": "string",
+      "title": "Quantity Selector: Main label",
+      "description": "Label for Accessibility",
+      "default": "Quantity selector"
+    },
+    "a11y_qs_description": {
+      "type": "string",
+      "title": "Quantity Selector: Main description",
+      "description": "Description for Accessibility",
+      "default": "Select a product quantity to add to your basket. To exit this quantity selector press ESCAPE key"
+    },
+    "a11y_predefined_quantity": {
+      "type": "string",
+      "title": "Quantity Selector: Predefined quantity label",
+      "description": "Label for Accessibility",
+      "default": "Choose a predefined quantity"
+    },
+    "a11y_predefined_description": {
+      "type": "string",
+      "title": "Quantity Selector: Predefined quantity description",
+      "description": "Description for Accessibility",
+      "default": "You can select predefined quantities using the buttons list below"
+    },
+    "a11y_add_label": {
+      "type": "string",
+      "title": "Quantity Selector: Add button Label",
+      "description": "Label for Accessibility",
+      "default": "Add"
+    },
+    "quantities": {
+      "type": "array",
+      "title": "Quantity Selector: Quantities",
+      "options": {
+        "collapsed": true,
+        "hidden": true
+      },
+      "items": {
+        "type": "number",
+        "minItems": 15,
+        "maxItems": 15,
+        "default": 0
+      },
+      "default": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "step": {
+      "type": "number",
+      "title": "Quantity Selector: Step",
+      "description": "Step for adding products",
+      "options": {
+        "hidden": true
+      },
+      "default": 1
+    },
+    "max": {
+      "type": "number",
+      "title": "Quantity Selector: Maximum quantity",
+      "description": "Maximum quantity",
+      "options": {
+        "hidden": true
+      },
+      "default": 9990
+    },
+    "a11y_custom_quantity": {
+      "type": "string",
+      "title": "Quantity Selector: Custom quantity label",
+      "description": "Label for Accessibility",
+      "default": "Choose a custom quantity"
+    },
+    "a11y_custom_description": {
+      "type": "string",
+      "title": "Quantity Selector: Custom quantity description",
+      "description": "Description for Accessibility",
+      "default": "You can select a custom quantity using the field below. To validate press SPACE or ENTER key"
+    },
+    "label_choose_quantity": {
+      "type": "string",
+      "title": "Quantity Selector: Choose quantity label",
+      "description": "Input number placeholder",
+      "default": "Choose a quantity"
+    },
+    "label_button_ok": {
+      "type": "string",
+      "title": "Quantity Selector: Ok button label",
+      "default": "Ok"
+    }
+  }
+}

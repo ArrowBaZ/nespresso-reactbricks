@@ -1,0 +1,414 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Footer links",
+  "required": [
+    "campaign",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "Hidden heading for accessibility",
+          "default": "Bottom page links"
+        },
+        "columns": {
+          "type": "array",
+          "title": "Columns",
+          "options": {
+            "collapsed": false
+          },
+          "items": {
+            "type": "object",
+            "headerTemplate": "Column #{{i}} - {{ self.heading }}",
+            "options": {
+              "collapsed": true
+            },
+            "required": [
+              "heading",
+              "links"
+            ],
+            "properties": {
+              "heading": {
+                "type": "string",
+                "title": "Heading",
+                "description": "Please use lowercase for A11y, uppercase will be set by CSS"
+              },
+              "links": {
+                "type": "array",
+                "title": "Links",
+                "options": {
+                  "collapsed": false
+                },
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "link"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Link label",
+                      "description": "Displayed link label"
+                    },
+                    "link": {
+                      "type": "string",
+                      "title": "Link url",
+                      "description": "This should be a valid url, please double check"
+                    },
+                    "target_blank": {
+                      "type": "string",
+                      "title": "Do you want to open the link in a new tab?",
+                      "description": "Choose Yes, in case you want to open the link in a new tab (target=\"_blank\")",
+                      "options": {
+                        "enum_titles": [
+                          "No",
+                          "Yes"
+                        ]
+                      },
+                      "enum": [
+                        "false",
+                        "true"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "heading": "Products",
+              "links": [
+                {
+                  "label": "Coffee",
+                  "link": "/{market}/{lang}/order/capsules/vertuo",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Machines",
+                  "link": "/{market}/{lang}/order/machines/vertuo",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Accessories",
+                  "link": "/{market}/{lang}/order/accessories/original",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Benefits",
+                  "link": "/{market}/{lang}/benefits",
+                  "target_blank": ""
+                },
+                {
+                  "label": "My Subscription",
+                  "link": "/{market}/{lang}/coffee-subscription",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Easy Order",
+                  "link": "/{market}/{lang}/standing-orders",
+                  "target_blank": ""
+                }
+              ]
+            }
+          },
+          "default": [
+            {
+              "heading": "Products",
+              "links": [
+                {
+                  "label": "Coffee",
+                  "link": "/{market}/{lang}/order/capsules/vertuo",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Machines",
+                  "link": "/{market}/{lang}/order/machines/vertuo",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Accessories",
+                  "link": "/{market}/{lang}/order/accessories/original",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Benefits",
+                  "link": "/{market}/{lang}/benefits",
+                  "target_blank": ""
+                },
+                {
+                  "label": "My Subscription",
+                  "link": "/{market}/{lang}/coffee-subscription",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Easy Order",
+                  "link": "/{market}/{lang}/standing-orders",
+                  "target_blank": ""
+                }
+              ]
+            },
+            {
+              "heading": "About Nespresso",
+              "links": [
+                {
+                  "label": "Store Locator",
+                  "link": "/{market}/{lang}/store-locator",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Coffee Expertise",
+                  "link": "/{market}/{lang}/coffee-expertise",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Our Choices",
+                  "link": "/{market}/{lang}/our-choices",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Recycling Solutions",
+                  "link": "/{market}/{lang}/recycling",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Nespresso & You",
+                  "link": "/{market}/{lang}/benefits",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Careers",
+                  "link": "/careers/?m={market}&l={lang}#/",
+                  "target_blank": "true"
+                },
+                {
+                  "label": "Nespresso Professional",
+                  "link": "/pro/{market}/{lang}/",
+                  "target_blank": "true"
+                }
+              ]
+            },
+            {
+              "heading": "Assistance",
+              "links": [
+                {
+                  "label": "Nespresso Services",
+                  "link": "/{market}/{lang}/services",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Machine Assistance",
+                  "link": "/{market}/{lang}/machine-assistance",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Order Tracking",
+                  "link": "/{market}/{lang}/track-your-order",
+                  "target_blank": ""
+                },
+                {
+                  "label": "FAQ",
+                  "link": "/{market}/{lang}/service-faq",
+                  "target_blank": ""
+                }
+              ]
+            }
+          ]
+        },
+        "contact": {
+          "type": "object",
+          "headerTemplate": "Column #Last - {{ self.heading }}",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "heading",
+            "links"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "title": "Heading",
+              "description": "Please use lowercase for A11y, uppercase will be set by CSS",
+              "default": "Contact us"
+            },
+            "links": {
+              "type": "array",
+              "title": "Links",
+              "options": {
+                "collapsed": false
+              },
+              "items": {
+                "type": "object",
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "properties": {
+                  "icon": {
+                    "type": "string",
+                    "title": "Icon",
+                    "options": {
+                      "enum_titles": [
+                        "Phone",
+                        "Live chat",
+                        "Help",
+                        "Information"
+                      ]
+                    },
+                    "enum": [
+                      "phone",
+                      "live-chat",
+                      "help",
+                      "information"
+                    ],
+                    "description": "Choose the right icon to put before the main label"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "Link label",
+                    "description": "Main label displayed after the icon"
+                  },
+                  "link": {
+                    "type": "string",
+                    "title": "Link url",
+                    "description": "If phone, make sure to prefix with tel:+countrycode / If live-chat keep the #live-chat url as default (if your market does not support live-chat, please remove this item)"
+                  },
+                  "target_blank": {
+                    "type": "string",
+                    "title": "Do you want to open the link in a new tab?",
+                    "description": "Choose Yes, in case you want to open the link in a new tab (target=\"_blank\")",
+                    "options": {
+                      "enum_titles": [
+                        "No",
+                        "Yes"
+                      ]
+                    },
+                    "enum": [
+                      "false",
+                      "true"
+                    ]
+                  },
+                  "phone": {
+                    "type": "string",
+                    "title": "Phone number",
+                    "description": "Displayed phone number"
+                  },
+                  "sublabel_first_line": {
+                    "type": "string",
+                    "title": "Sublabel line 1",
+                    "description": "This will be displayed in lighter grey / Leave empty if no need of sublabel"
+                  },
+                  "sublabel_second_line": {
+                    "type": "string",
+                    "title": "Sublabel line 2",
+                    "description": "This will be displayed in lighter grey / Leave empty if no need of sublabel"
+                  }
+                },
+                "default": {
+                  "label": "Chat with us",
+                  "link": "#live-chat",
+                  "icon": "live-chat",
+                  "phone": "",
+                  "sublabel_first_line": "",
+                  "sublabel_second_line": "",
+                  "target_blank": ""
+                }
+              },
+              "default": [
+                {
+                  "label": "Chat with us",
+                  "link": "#live-chat",
+                  "icon": "live-chat",
+                  "phone": "",
+                  "sublabel_first_line": "",
+                  "sublabel_second_line": "",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Original Line",
+                  "link": "tel:+410800555253",
+                  "icon": "phone",
+                  "phone": "0800 55 52 53",
+                  "sublabel_first_line": "Available 24/7",
+                  "sublabel_second_line": "Free call from a landline",
+                  "target_blank": ""
+                },
+                {
+                  "label": "Vertuo Line",
+                  "link": "tel:+410800555253",
+                  "icon": "phone",
+                  "phone": "0800 55 52 53",
+                  "sublabel_first_line": "Available 24/7",
+                  "sublabel_second_line": "Free call from a landline",
+                  "target_blank": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "columns",
+        "contact"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_footer_links"
+          ],
+          "title": "Creative on site",
+          "default": "before_footer_links",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_footer_links",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

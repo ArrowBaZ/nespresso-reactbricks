@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Link",
+  "required": [
+    "intensity",
+    "intensity_label",
+    "a11y_intensity_max"
+  ],
+  "properties": {
+    "intensity": {
+      "type": "string",
+      "title": "Coffee intensity",
+      "description": "OL intensity is from 4 to 14, VL intensity is from 4 to 12",
+      "default": "9"
+    },
+    "min_intensity": {
+      "type": "string",
+      "title": "Min intensity",
+      "default": "4"
+    },
+    "max_intensity": {
+      "type": "string",
+      "title": "Max intensity",
+      "default": "14"
+    },
+    "intensity_label": {
+      "type": "string",
+      "title": "Intensity Label",
+      "default": "intensity"
+    },
+    "a11y_intensity_max": {
+      "type": "string",
+      "title": "Alternative text for Intensity max in intensity component",
+      "description": "Intensity max for OL is 14, Intensity max for VL is 12",
+      "default": "max of {max_intensity}"
+    }
+  }
+}

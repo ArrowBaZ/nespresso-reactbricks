@@ -1,0 +1,510 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Footer bottom",
+  "required": [
+    "campaign",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "languages": {
+          "type": "object",
+          "title": "Languages",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "country",
+            "dropdown",
+            "langs"
+          ],
+          "properties": {
+            "country": {
+              "type": "object",
+              "title": "Country",
+              "options": {
+                "collapsed": true
+              },
+              "required": [
+                "label_a11y",
+                "label_country",
+                "icon",
+                "location_link"
+              ],
+              "properties": {
+                "label_a11y": {
+                  "type": "string",
+                  "title": "Label A11y",
+                  "description": "Label for Accessibility",
+                  "default": "Website country location is"
+                },
+                "label_country": {
+                  "type": "string",
+                  "title": "Country Label",
+                  "description": "Your country name",
+                  "default": "Switzerland"
+                },
+                "icon": {
+                  "type": "string",
+                  "title": "Country icon",
+                  "description": "Leave empty if you want a PNG flag to be displayed instead of the globe icon",
+                  "default": ""
+                },
+                "location_link": {
+                  "type": "object",
+                  "title": "Location link",
+                  "required": [
+                    "label",
+                    "link"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Link label",
+                      "description": "Label for accessibility",
+                      "default": "Go to country location page"
+                    },
+                    "link": {
+                      "type": "string",
+                      "title": "Link url",
+                      "description": "{market} and {lang} will be auto-replaced by your market code and active language",
+                      "default": "/{market}/{lang}/country"
+                    }
+                  }
+                }
+              }
+            },
+            "dropdown": {
+              "type": "object",
+              "options": {
+                "collapsed": true
+              },
+              "required": [
+                "label_dropdown",
+                "aa_description",
+                "aa_listbox_description",
+                "aa_select_description"
+              ],
+              "properties": {
+                "label_dropdown": {
+                  "type": "string",
+                  "title": "Dropdown label",
+                  "description": "Label for Accessibility",
+                  "default": "Language"
+                },
+                "aa_description": {
+                  "type": "string",
+                  "title": "Dropdown A11y Description",
+                  "description": "Information read by SR on how to interact with dropdown",
+                  "default": "You can select different sorting values from this listbox. To interact with this listbox press SPACE or ENTER key."
+                },
+                "aa_listbox_description": {
+                  "type": "string",
+                  "title": "Listbox A11y Description",
+                  "description": "Information read by SR on how to interact inside dropdown listbox options",
+                  "default": "You can navigate through the options using UP or DOWN arrows keys. To exit this listbox press ESCAPE key."
+                },
+                "aa_select_description": {
+                  "type": "string",
+                  "title": "Select A11y Description",
+                  "description": "Information read by SR on how to select an option",
+                  "default": "To select this option press SPACE or ENTER key."
+                }
+              }
+            },
+            "langs": {
+              "type": "array",
+              "title": "Lang items",
+              "options": {
+                "collapsed": true
+              },
+              "items": {
+                "type": "object",
+                "required": [
+                  "code",
+                  "label"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "title": "Lang code",
+                    "description": "Two letters code of your language (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "Lang label",
+                    "description": "Displayed lang label"
+                  }
+                },
+                "default": {
+                  "code": "en",
+                  "label": "English"
+                }
+              },
+              "default": [
+                {
+                  "code": "en",
+                  "label": "English"
+                },
+                {
+                  "code": "fr",
+                  "label": "French"
+                },
+                {
+                  "code": "de",
+                  "label": "German"
+                },
+                {
+                  "code": "it",
+                  "label": "Italian"
+                }
+              ]
+            }
+          }
+        },
+        "big_links": {
+          "type": "array",
+          "title": "Big links items",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "link"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Link label",
+                "description": "Displayed link label"
+              },
+              "link": {
+                "type": "string",
+                "title": "Link url",
+                "description": "{market} and {lang} will be auto-replaced by your market code and active language"
+              },
+              "target_blank": {
+                "type": "string",
+                "title": "Do you want to open the link in a new tab?",
+                "description": "Choose Yes, in case you want to open the link in a new tab (target=\"_blank\")",
+                "options": {
+                  "enum_titles": [
+                    "No",
+                    "Yes"
+                  ]
+                },
+                "enum": [
+                  "false",
+                  "true"
+                ]
+              }
+            },
+            "default": {
+              "label": "Legal Mentions",
+              "link": "/{market}/{lang}/legal",
+              "target_blank": ""
+            }
+          },
+          "default": [
+            {
+              "label": "Legal Mentions",
+              "link": "/{market}/{lang}/legal",
+              "target_blank": ""
+            },
+            {
+              "label": "Contact",
+              "link": "/{market}/{lang}/service-customer-care",
+              "target_blank": ""
+            },
+            {
+              "label": "Nespresso Professional",
+              "link": "/pro/{market}/{lang}/",
+              "target_blank": "true"
+            }
+          ]
+        },
+        "small_links": {
+          "type": "array",
+          "title": "Small links items",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "link",
+              "script"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Link label",
+                "description": "Displayed link label"
+              },
+              "link": {
+                "type": "string",
+                "title": "Link url",
+                "description": "{market} and {lang} will be auto-replaced by your market code and active language"
+              },
+              "script": {
+                "type": "string",
+                "title": "Do you want to open cookie consent popin?",
+                "description": "Choose Yes, in case you want to open Cookie consent popin(eg: https://www.nespresso.com/at). Ignore if not applicable",
+                "options": {
+                  "enum_titles": [
+                    "No",
+                    "Yes"
+                  ]
+                },
+                "enum": [
+                  "false",
+                  "true"
+                ]
+              },
+              "target_blank": {
+                "type": "string",
+                "title": "Do you want to open the link in a new tab?",
+                "description": "Choose Yes, in case you want to open the link in a new tab (target=\"_blank\")",
+                "options": {
+                  "enum_titles": [
+                    "No",
+                    "Yes"
+                  ]
+                },
+                "enum": [
+                  "false",
+                  "true"
+                ]
+              }
+            },
+            "default": {
+              "label": "Cookies",
+              "link": "/{market}/{lang}/legal#evidon-options-panel",
+              "script": "true",
+              "target_blank": ""
+            }
+          },
+          "default": [
+            {
+              "label": "Cookies",
+              "link": "/{market}/{lang}/legal#evidon-options-panel",
+              "script": "true",
+              "target_blank": ""
+            },
+            {
+              "label": "Accessibility",
+              "link": "/{market}/{lang}/accessibility",
+              "script": "false",
+              "target_blank": ""
+            },
+            {
+              "label": "Sitemap",
+              "link": "/{market}/{lang}/sitemap",
+              "script": "false",
+              "target_blank": ""
+            }
+          ]
+        },
+        "socials": {
+          "type": "object",
+          "title": "Social links",
+          "description": "",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "heading",
+            "links"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "title": "Social links main label",
+              "description": "Label displayed before social icons",
+              "default": "Follow Nespresso on"
+            },
+            "links": {
+              "type": "array",
+              "title": "Social links items",
+              "options": {
+                "collapsed": true
+              },
+              "items": {
+                "type": "object",
+                "required": [
+                  "label",
+                  "link",
+                  "icon"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Link label",
+                    "description": "Label for Accessibility"
+                  },
+                  "link": {
+                    "type": "string",
+                    "title": "Link url",
+                    "description": "{market} and {lang} will be auto-replaced by your market code and active language"
+                  },
+                  "icon": {
+                    "type": "string",
+                    "title": "Icon",
+                    "description": "Choose the social network icon to display",
+                    "options": {
+                      "enum_titles": [
+                        "Facebook",
+                        "Twitter",
+                        "Instagram",
+                        "YouTube",
+                        "Pinterest",
+                        "Linkedin"
+                      ]
+                    },
+                    "enum": [
+                      "facebook",
+                      "twitter",
+                      "instagram",
+                      "youtube",
+                      "pinterest",
+                      "linkedin"
+                    ]
+                  }
+                },
+                "default": {
+                  "label": "Facebook",
+                  "link": "https://www.facebook.com/Nespresso",
+                  "icon": "facebook"
+                }
+              },
+              "default": [
+                {
+                  "label": "Facebook",
+                  "link": "https://www.facebook.com/Nespresso",
+                  "icon": "facebook"
+                },
+                {
+                  "label": "Twitter",
+                  "link": "https://www.twitter.com/nespresso",
+                  "icon": "twitter"
+                },
+                {
+                  "label": "Instagram",
+                  "link": "https://www.instagram.com/nespresso",
+                  "icon": "instagram"
+                },
+                {
+                  "label": "Youtube",
+                  "link": "https://www.youtube.com/user/nespresso",
+                  "icon": "youtube"
+                },
+                {
+                  "label": "Pinterest",
+                  "link": "https://www.pinterest.com/nespresso/",
+                  "icon": "pinterest"
+                },
+                {
+                  "label": "Linkedin",
+                  "link": "https://es.linkedin.com/company/nestl-nespresso",
+                  "icon": "linkedin"
+                }
+              ]
+            }
+          }
+        },
+        "page_top": {
+          "type": "string",
+          "title": "Page top label",
+          "description": "Page top anchor link label",
+          "default": "Top of the page"
+        },
+        "homepage_label": {
+          "type": "string",
+          "title": "Home page label",
+          "description": "Label for Accessibility on Nespresso Logo",
+          "default": "Nespresso home page"
+        },
+        "copyright": {
+          "type": "string",
+          "title": "Copyright label",
+          "description": "Brand + (date added automatically)",
+          "default": "Nestlé Nespresso S.A."
+        },
+        "copyright_a11y": {
+          "type": "string",
+          "title": "Copyright A11y label",
+          "description": "Label for Accessibility",
+          "default": "Copyright"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "languages",
+        "big_links",
+        "small_links",
+        "socials",
+        "page_top",
+        "homepage_label",
+        "copyright",
+        "copyright_a11y"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_footer_bottom"
+          ],
+          "title": "Creative on site",
+          "default": "before_footer_bottom",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_footer_bottom",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+.nb-layout-cards-2-col-inner{display:flex;flex-wrap:wrap;gap:1.5rem;padding-bottom:.5rem;padding-top:.5rem}@media screen and (min-width:768px){.nb-layout-cards-2-col-inner{gap:.5rem;padding-bottom:1rem}.nb-layout-cards-2-col-inner>*{flex:0 1 calc(50% - 20px)}}

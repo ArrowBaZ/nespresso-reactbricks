@@ -1,0 +1,928 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Recipes",
+  "description": "This component is used in the Coffee PDP. The main purpose of this component is to inform the user about recipes that can be done using the main product being displayed on the page (ie. recipes related to Ispirazione Italia Venezia).  https://wiki.nespresso.com/x/MBEHCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "Recipe title",
+          "default": "Cook with ispirazione venezia"
+        },
+        "description": {
+          "type": "string",
+          "description": "Recipe description",
+          "default": "<p>Treat yourself to signature recipe for Nespresso.</p><p>Iced espresso and coconut combine to create a fresh and indulgent coffee drink, topped off with a touch of cotton candy.</p>"
+        },
+        "recipes": {
+          "type": "array",
+          "description": "Recipes list",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "headerTemplate": "{{ i1 }} - {{ self.card.heading }}",
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "modal": {
+                "type": "object",
+                "options": {
+                  "collapsed": true
+                },
+                "properties": {
+                  "header": {
+                    "type": "object",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "title": "Header",
+                    "required": [
+                      "subtitle",
+                      "metas"
+                    ],
+                    "properties": {
+                      "heading": {
+                        "type": "string",
+                        "title": "Recipe title",
+                        "default": "Iced Latte Salted Caramel"
+                      },
+                      "subtitle": {
+                        "type": "string",
+                        "title": "Recipe subtitle",
+                        "default": "Easy to create, easy to enjoy. It’s all about having a refreshing moment with Ice Leggero and this tasteful iced Caramel Latte."
+                      },
+                      "metas": {
+                        "type": "object",
+                        "options": {
+                          "collapsed": true
+                        },
+                        "title": "Recipes meta data",
+                        "required": [
+                          "time",
+                          "difficulty"
+                        ],
+                        "properties": {
+                          "time": {
+                            "type": "string",
+                            "title": "Amount of time required",
+                            "default": "2 min"
+                          },
+                          "difficulty": {
+                            "type": "string",
+                            "title": "Difficulty",
+                            "default": "Easy"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "requirements": {
+                    "type": "object",
+                    "title": "Recipe requirements",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "required": [
+                      "ingredients",
+                      "materials"
+                    ],
+                    "properties": {
+                      "heading": {
+                        "type": "string",
+                        "title": "Requirements title",
+                        "default": "What you need"
+                      },
+                      "ingredients": {
+                        "type": "object",
+                        "options": {
+                          "collapsed": true
+                        },
+                        "title": "Recipe ingredients",
+                        "required": [
+                          "items"
+                        ],
+                        "properties": {
+                          "heading": {
+                            "type": "string",
+                            "title": "Ingredients list title",
+                            "default": "Ingredients"
+                          },
+                          "items": {
+                            "type": "array",
+                            "title": "Ingredients list",
+                            "options": {
+                              "collapsed": true
+                            },
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "label"
+                              ],
+                              "headerTemplate": "{{ i1 }} - {{ self.label }}",
+                              "properties": {
+                                "label": {
+                                  "type": "string",
+                                  "title": "Ingredient label",
+                                  "default": "Ginger"
+                                },
+                                "proportion": {
+                                  "type": "string",
+                                  "title": "Ingredient proportion",
+                                  "default": "10gr"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "materials": {
+                        "type": "object",
+                        "options": {
+                          "collapsed": true
+                        },
+                        "title": "Recipe materials",
+                        "required": [
+                          "items"
+                        ],
+                        "properties": {
+                          "heading": {
+                            "type": "string",
+                            "title": "Materials list title",
+                            "default": "Materials"
+                          },
+                          "items": {
+                            "type": "array",
+                            "options": {
+                              "collapsed": true
+                            },
+                            "title": "Materials list",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "label"
+                              ],
+                              "headerTemplate": "{{ i1 }} - {{ self.label }}",
+                              "properties": {
+                                "label": {
+                                  "type": "string",
+                                  "title": "Material label",
+                                  "default": "Vertuo Coffee Mug"
+                                },
+                                "visual": {
+                                  "type": "object",
+                                  "required": [
+                                    "src",
+                                    "alt"
+                                  ],
+                                  "properties": {
+                                    "src": {
+                                      "type": "object",
+                                      "required": [
+                                        "desktop"
+                                      ],
+                                      "options": {
+                                        "collapsed": true
+                                      },
+                                      "title": "Visual source",
+                                      "properties": {
+                                        "desktop": {
+                                          "type": "string",
+                                          "title": "Desktop visual source",
+                                          "default": "/shared_res/agility/next-components/assets/recipes/material.png"
+                                        }
+                                      }
+                                    },
+                                    "alt": {
+                                      "type": "string",
+                                      "title": "Visual alternative text",
+                                      "default": "Vertuo Coffee Mug"
+                                    }
+                                  },
+                                  "options": {
+                                    "collapsed": true
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "instructions": {
+                    "type": "object",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "title": "Recipe instructions",
+                    "required": [
+                      "steps"
+                    ],
+                    "properties": {
+                      "heading": {
+                        "type": "string",
+                        "title": "Instructions title",
+                        "default": "How to make"
+                      },
+                      "steps": {
+                        "type": "array",
+                        "options": {
+                          "collapsed": true
+                        },
+                        "title": "Instructions steps",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "substeps"
+                          ],
+                          "headerTemplate": "Step {{ i1 }} - {{ self.heading }}",
+                          "properties": {
+                            "heading": {
+                              "type": "string",
+                              "title": "Step title",
+                              "default": "For the vanilla coffee oil"
+                            },
+                            "substeps": {
+                              "type": "array",
+                              "title": "Sub steps",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "text"
+                                ],
+                                "headerTemplate": "Substep {{ i1 }}",
+                                "properties": {
+                                  "text": {
+                                    "type": "string",
+                                    "title": "Substep text",
+                                    "default": "Peel the squash"
+                                  },
+                                  "visual": {
+                                    "type": "object",
+                                    "required": [
+                                      "src",
+                                      "alt"
+                                    ],
+                                    "properties": {
+                                      "src": {
+                                        "type": "object",
+                                        "required": [
+                                          "desktop"
+                                        ],
+                                        "options": {
+                                          "collapsed": true
+                                        },
+                                        "title": "Visual source",
+                                        "properties": {
+                                          "desktop": {
+                                            "type": "string",
+                                            "title": "Desktop visual source",
+                                            "default": "/shared_res/agility/next-components/assets/recipes/visual.png"
+                                          }
+                                        }
+                                      },
+                                      "alt": {
+                                        "type": "string",
+                                        "title": "Visual alternative text",
+                                        "default": "Squash"
+                                      }
+                                    },
+                                    "options": {
+                                      "collapsed": true
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "visual": {
+                    "type": "object",
+                    "required": [
+                      "src",
+                      "alt"
+                    ],
+                    "properties": {
+                      "src": {
+                        "type": "object",
+                        "required": [
+                          "desktop"
+                        ],
+                        "options": {
+                          "collapsed": true
+                        },
+                        "title": "Visual source",
+                        "properties": {
+                          "mobile": {
+                            "type": "string",
+                            "title": "Mobile visual source",
+                            "default": "/shared_res/agility/next-components/assets/recipes/video_S.png"
+                          },
+                          "desktop": {
+                            "type": "string",
+                            "title": "Desktop visual source",
+                            "default": "/shared_res/agility/next-components/assets/recipes/video_L.png"
+                          }
+                        }
+                      },
+                      "alt": {
+                        "type": "string",
+                        "title": "Visual alternative text",
+                        "default": "Loyalty program"
+                      }
+                    },
+                    "options": {
+                      "collapsed": true
+                    }
+                  },
+                  "link": {
+                    "type": "object",
+                    "title": "Link",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "required": [
+                      "label",
+                      "target"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "title": "Link label",
+                        "default": "Go to recipe page"
+                      },
+                      "target": {
+                        "type": "string",
+                        "title": "Link target",
+                        "default": "https://www.nespresso.com"
+                      }
+                    }
+                  },
+                  "video": {
+                    "type": "object",
+                    "title": "Video",
+                    "required": [
+                      "a11y_play_video",
+                      "video_id",
+                      "video_mobile",
+                      "display_ui_controls",
+                      "cc_policy_language",
+                      "video_service"
+                    ],
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "a11y_play_video": {
+                        "type": "string",
+                        "title": "a11y Play Video",
+                        "default": "Play video"
+                      },
+                      "video_id": {
+                        "type": "string",
+                        "title": "Video provider ID",
+                        "description": "Video id of the choose video service",
+                        "default": ""
+                      },
+                      "video_mobile": {
+                        "type": "string",
+                        "title": "Video provider ID (Mobile)",
+                        "description": "Video id of the choose video service for mobile devices (if different)",
+                        "default": ""
+                      },
+                      "display_ui_controls": {
+                        "type": "string",
+                        "title": "Video UI Controls",
+                        "description": "Video service (Youtube)",
+                        "options": {
+                          "enum_titles": [
+                            "Yes",
+                            "No"
+                          ]
+                        },
+                        "enum": [
+                          "1",
+                          "0"
+                        ],
+                        "default": "1"
+                      },
+                      "cc_policy_language": {
+                        "type": "string",
+                        "title": "Language of Closed caption",
+                        "description": "Language of closed caption of Youtube video, Ex- es-Es, en",
+                        "default": ""
+                      },
+                      "video_service": {
+                        "type": "string",
+                        "title": "Video services",
+                        "description": "Video service (Youtube, Youku)",
+                        "options": {
+                          "enum_titles": [
+                            "Youtube",
+                            "Youku"
+                          ]
+                        },
+                        "enum": [
+                          "youtube",
+                          "youku"
+                        ],
+                        "default": "youtube"
+                      }
+                    },
+                    "default": ""
+                  }
+                }
+              },
+              "card": {
+                "type": "object",
+                "options": {
+                  "collapsed": true
+                },
+                "properties": {
+                  "heading": {
+                    "type": "string",
+                    "title": "Heading",
+                    "default": "Latte Macchiato Speculoos"
+                  },
+                  "time": {
+                    "type": "string",
+                    "title": "Time",
+                    "default": "3 min"
+                  },
+                  "difficulty": {
+                    "type": "string",
+                    "title": "difficulty",
+                    "default": "EASY"
+                  },
+                  "visual": {
+                    "type": "object",
+                    "required": [
+                      "src",
+                      "alt"
+                    ],
+                    "title": "Visual",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "src": {
+                        "type": "object",
+                        "required": [
+                          "desktop"
+                        ],
+                        "title": "Visual source",
+                        "options": {
+                          "collapsed": true
+                        },
+                        "properties": {
+                          "desktop": {
+                            "type": "string",
+                            "title": "Desktop visual source",
+                            "default": "/shared_res/agility/next-components/assets/card/recipe/visual.jpg"
+                          }
+                        }
+                      },
+                      "alt": {
+                        "type": "string",
+                        "title": "Visual alternative text",
+                        "default": "Recipe"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "card": {
+                "heading": "Latte Macchiato Speculoos",
+                "time": "3 min",
+                "difficulty": "EASY",
+                "visual": {
+                  "src": {
+                    "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/card/recipe/visual_large.png"
+                  },
+                  "alt": "Recipe Result"
+                },
+                "single": "true"
+              },
+              "modal": {
+                "link": {
+                  "label": "Go to recipe page",
+                  "target": "https://www.nespresso.com"
+                },
+                "header": {
+                  "heading": "Iced Latte Salted Caramel",
+                  "subheading": "Easy to create, easy to enjoy. It’s all about having a refreshing moment with Ice Leggero and this tasteful iced Caramel Latte.",
+                  "metas": {
+                    "time": "2 min",
+                    "difficulty": "Easy"
+                  }
+                },
+                "requirements": {
+                  "heading": "What you need",
+                  "ingredients": {
+                    "heading": "Ingredients",
+                    "items": [
+                      {
+                        "label": "Ginger",
+                        "proportion": "10gr"
+                      },
+                      {
+                        "label": "Sprigs of thyme",
+                        "proportion": ""
+                      },
+                      {
+                        "label": "Freshly ground salt and pepper",
+                        "proportion": ""
+                      }
+                    ]
+                  },
+                  "materials": {
+                    "heading": "Materials",
+                    "items": [
+                      {
+                        "label": "Vertuo Coffee Mug",
+                        "visual": {
+                          "src": {
+                            "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/material.png"
+                          },
+                          "alt": "Vertuo Coffee Mug"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "instructions": {
+                  "heading": "How to make",
+                  "steps": [
+                    {
+                      "heading": "For the vanilla coffee oil",
+                      "substeps": [
+                        {
+                          "text": "In an empty bottle, put the oil, grapeseed, ground coffee and vanilla",
+                          "visual": {}
+                        },
+                        {
+                          "text": "Infuse",
+                          "visual": {}
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "For the sliced squash",
+                      "substeps": [
+                        {
+                          "text": "Peel the squash",
+                          "visual": {
+                            "src": {
+                              "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/visual.png"
+                            },
+                            "alt": "ping"
+                          }
+                        },
+                        {
+                          "text": "Cut 4 slices 2cm thick and detail using a cookie cutter to 7cm in diameter",
+                          "visual": {}
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "visual": {
+                  "src": {
+                    "mobile": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/video_S.png",
+                    "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/video_L.png"
+                  },
+                  "alt": "Video"
+                }
+              }
+            }
+          },
+          "default": [
+            {
+              "card": {
+                "heading": "Latte Macchiato Speculoos",
+                "time": "3 min",
+                "difficulty": "EASY",
+                "visual": {
+                  "src": {
+                    "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/card/recipe/visual_large.png"
+                  },
+                  "alt": "Recipe Result"
+                },
+                "single": "true"
+              },
+              "modal": {
+                "link": {
+                  "label": "Go to recipe page",
+                  "target": "https://www.nespresso.com"
+                },
+                "header": {
+                  "heading": "Iced Latte Salted Caramel",
+                  "subheading": "Easy to create, easy to enjoy. It’s all about having a refreshing moment with Ice Leggero and this tasteful iced Caramel Latte.",
+                  "metas": {
+                    "time": "2 min",
+                    "difficulty": "Easy"
+                  }
+                },
+                "requirements": {
+                  "heading": "What you need",
+                  "ingredients": {
+                    "heading": "Ingredients",
+                    "items": [
+                      {
+                        "label": "Ginger",
+                        "proportion": "10gr"
+                      },
+                      {
+                        "label": "Sprigs of thyme",
+                        "proportion": ""
+                      },
+                      {
+                        "label": "Freshly ground salt and pepper",
+                        "proportion": ""
+                      }
+                    ]
+                  },
+                  "materials": {
+                    "heading": "Materials",
+                    "items": [
+                      {
+                        "label": "Vertuo Coffee Mug",
+                        "visual": {
+                          "src": {
+                            "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/material.png"
+                          },
+                          "alt": "Vertuo Coffee Mug"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "instructions": {
+                  "heading": "How to make",
+                  "steps": [
+                    {
+                      "heading": "For the vanilla coffee oil",
+                      "substeps": [
+                        {
+                          "text": "In an empty bottle, put the oil, grapeseed, ground coffee and vanilla",
+                          "visual": {}
+                        },
+                        {
+                          "text": "Infuse",
+                          "visual": {}
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "For the sliced squash",
+                      "substeps": [
+                        {
+                          "text": "Peel the squash",
+                          "visual": {
+                            "src": {
+                              "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/visual.png"
+                            },
+                            "alt": "ping"
+                          }
+                        },
+                        {
+                          "text": "Cut 4 slices 2cm thick and detail using a cookie cutter to 7cm in diameter",
+                          "visual": {}
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "visual": {
+                  "src": {
+                    "mobile": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/video_S.png",
+                    "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/video_L.png"
+                  },
+                  "alt": "Video"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "description",
+        "recipes"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/4lQHCQ",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 600 x 472 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/recipes/pattern.png"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "desktop",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_recipes"
+          ],
+          "title": "Creative on site",
+          "default": "before_recipes",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_recipes",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    },
+    "options": {
+      "type": "object",
+      "title": "Shared translations",
+      "required": [
+        "a11y_recipe",
+        "a11y_time",
+        "a11y_difficulty",
+        "a11y_open_modal"
+      ],
+      "properties": {
+        "a11y_recipe": {
+          "type": "string",
+          "title": "Recipe translation for A11y",
+          "description": "For accessibility purpose",
+          "default": "Recipe"
+        },
+        "a11y_time": {
+          "type": "string",
+          "title": "Time translation for A11y",
+          "description": "For accessibility purpose",
+          "default": "Cooking time"
+        },
+        "a11y_difficulty": {
+          "type": "string",
+          "title": "Difficulty translation for A11y",
+          "description": "For accessibility purpose",
+          "default": "Recipe difficulty"
+        },
+        "a11y_open_modal": {
+          "type": "string",
+          "title": "Button Open Modal translation for A11y",
+          "description": "For accessibility purpose, keep {heading} in the string where you want the title of your recipe to be read",
+          "default": "Open {heading} cooking information"
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting",
+    "options"
+  ]
+}

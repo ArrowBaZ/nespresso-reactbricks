@@ -1,0 +1,19 @@
+{
+    "name": "plp-filter-results",
+    "version": "1.0.0",
+    "description": "plp filter results",
+    "folder": "/shared_res/agility/next-components/plp-filter-results/",
+    "tag": "nb-filter-results",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-filter-results/v1.1/css/plp-filter-results.css",
+        "module": "/shared_res/agility/next-components/plp-filter-results/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-filter-results/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-filter-results/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

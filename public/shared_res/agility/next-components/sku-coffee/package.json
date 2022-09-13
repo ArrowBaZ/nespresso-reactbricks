@@ -1,0 +1,24 @@
+{
+    "name": "sku-coffee",
+    "version": "1.1.0",
+    "description": "SKU component for Coffee",
+    "folder": "/shared_res/agility/next-components/sku-coffee/",
+    "tag": "nb-sku-coffee",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/sku-coffee/v1.1/css/sku-coffee.css",
+        "module": "/shared_res/agility/next-components/sku-coffee/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/sku-coffee/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/sku-coffee/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/add-to-cart/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/card-labels/",
+        "/shared_res/agility/next-components/intensity/",
+        "/shared_res/agility/next-components/bundle-details/",
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/loader/"
+    ]
+}

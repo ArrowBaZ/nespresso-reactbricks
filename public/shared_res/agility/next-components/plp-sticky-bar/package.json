@@ -1,0 +1,15 @@
+{
+    "name": "plp-sticky-bar",
+    "version": "1.1.1",
+    "description": "plp-sticky-bar element",
+    "folder": "/shared_res/agility/next-components/plp-sticky-bar/",
+    "tag": "plp-sticky-bar",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-sticky-bar/v1.1/css/plp-sticky-bar.css",
+        "module": "/shared_res/agility/next-components/plp-sticky-bar/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-sticky-bar/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-sticky-bar/preview.svg",
+    "scriptDependencies": []
+}

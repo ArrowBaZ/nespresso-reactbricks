@@ -1,0 +1,29 @@
+{
+    "name": "highlighted-card-container",
+    "version": "1.1.1",
+    "description": "highlighted-card-container element",
+    "folder": "/shared_res/agility/next-components/highlighted-card-container/",
+    "tag": "nb-highlighted-card-container",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/highlighted-card-container/v1.1/css/highlighted-card-container.css",
+        "module": "/shared_res/agility/next-components/highlighted-card-container/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/highlighted-card-container/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/highlighted-card-container/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/highlighted-card/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "904",
+            "desktop": "642"
+        }
+    }
+}

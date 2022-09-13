@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "title": "Cup size",
+  "headerTemplate": "{{ i1 }} - {{ self.label }}",
+  "required": [
+    "image",
+    "label",
+    "a11y_label",
+    "volume"
+  ],
+  "properties": {
+    "image": {
+      "type": "object",
+      "title": "Image",
+      "required": [
+        "predefined",
+        "custom"
+      ],
+      "properties": {
+        "predefined": {
+          "type": "string",
+          "title": "Predefined",
+          "description": "Choose your image from the list",
+          "enum": [
+            "ol_ristretto",
+            "ol_espresso",
+            "ol_lungo",
+            "vl_espresso",
+            "vl_double-espresso",
+            "vl_gran-lungo",
+            "vl_mug",
+            "vl_alto",
+            "vl_carafe"
+          ]
+        },
+        "custom": {
+          "type": "string",
+          "title": "Image path",
+          "description": "Put your own image path if needed, 326x326px transparent PNG (Leave empty to use predefined image)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    },
+    "label": {
+      "type": "string",
+      "title": "Coffee cup size name",
+      "description": "Cup size name displayed under image (Ristretto, Espresso...)"
+    },
+    "a11y_label": {
+      "type": "string",
+      "title": "Cup size translation",
+      "description": "Label for accessibility"
+    },
+    "volume": {
+      "type": "object",
+      "title": "Volume",
+      "required": [
+        "automatic",
+        "size",
+        "unit",
+        "override"
+      ],
+      "properties": {
+        "automatic": {
+          "type": "boolean",
+          "title": "Use automatic volume ?",
+          "description": "Keep enabled if you want automatic volume display (then choose size and unit in the fields below)"
+        },
+        "size": {
+          "type": "string",
+          "title": "Size",
+          "description": "Choose your size from the list",
+          "enum": [
+            "ristretto",
+            "espresso",
+            "double_espresso",
+            "lungo",
+            "gran_lungo",
+            "mug",
+            "alto",
+            "carafe"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "title": "Size",
+          "description": "Choose your unit from the list",
+          "enum": [
+            "oz",
+            "ml"
+          ]
+        },
+        "override": {
+          "type": "string",
+          "title": "Override automatic cup size",
+          "description": "For other unit systems (or if you want to display both oz + ml volumes for example) To enable, you have to set automatic to false"
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    }
+  },
+  "options": {
+    "collapsed": true
+  }
+}

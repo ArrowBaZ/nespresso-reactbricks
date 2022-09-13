@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Language Selector",
+  "required": [
+    "campaign",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "languages": {
+          "type": "object",
+          "title": "Languages",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "country",
+            "dropdown",
+            "langs"
+          ],
+          "properties": {
+            "country": {
+              "type": "object",
+              "title": "Country",
+              "options": {
+                "collapsed": true
+              },
+              "required": [
+                "label_a11y",
+                "label_country"
+              ],
+              "properties": {
+                "label_a11y": {
+                  "type": "string",
+                  "title": "Label A11y",
+                  "description": "Label for Accessibility",
+                  "default": "Tap or click on the bar to select your language"
+                },
+                "label_country": {
+                  "type": "string",
+                  "title": "Country Label",
+                  "description": "Label before the language name inside the dropdown",
+                  "default": "Language"
+                }
+              }
+            },
+            "dropdown": {
+              "type": "object",
+              "options": {
+                "collapsed": true
+              },
+              "required": [
+                "label_dropdown",
+                "aa_description",
+                "aa_listbox_description",
+                "aa_select_description"
+              ],
+              "properties": {
+                "label_dropdown": {
+                  "type": "string",
+                  "title": "Dropdown label",
+                  "description": "Label for Accessibility",
+                  "default": "Language"
+                },
+                "aa_description": {
+                  "type": "string",
+                  "title": "Dropdown A11y Description",
+                  "description": "Information read by SR on how to interact with dropdown",
+                  "default": "You can select different sorting values from this listbox. To interact with this listbox press SPACE or ENTER key."
+                },
+                "aa_listbox_description": {
+                  "type": "string",
+                  "title": "Listbox A11y Description",
+                  "description": "Information read by SR on how to interact inside dropdown listbox options",
+                  "default": "You can navigate through the options using UP or DOWN arrows keys. To exit this listbox press ESCAPE key."
+                },
+                "aa_select_description": {
+                  "type": "string",
+                  "title": "Select A11y Description",
+                  "description": "Information read by SR on how to select an option",
+                  "default": "To select this option press SPACE or ENTER key."
+                }
+              }
+            },
+            "langs": {
+              "type": "array",
+              "title": "Lang items",
+              "options": {
+                "collapsed": true
+              },
+              "items": {
+                "type": "object",
+                "required": [
+                  "code",
+                  "label"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "title": "Lang code",
+                    "description": "Two letters code of your language (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "Lang label",
+                    "description": "Displayed lang label"
+                  }
+                },
+                "default": {
+                  "code": "en",
+                  "label": "English"
+                }
+              },
+              "default": [
+                {
+                  "code": "en",
+                  "label": "English"
+                },
+                {
+                  "code": "fr",
+                  "label": "French"
+                },
+                {
+                  "code": "de",
+                  "label": "German"
+                },
+                {
+                  "code": "it",
+                  "label": "Italian"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "languages"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_language_selector"
+          ],
+          "title": "Creative on site",
+          "default": "before_language_selector",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_language_selector",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

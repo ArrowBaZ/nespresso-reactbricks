@@ -1,0 +1,27 @@
+{
+    "name": "dynamic-banner",
+    "version": "1.0.0",
+    "description": "Display PLP dynamic banner",
+    "folder": "/shared_res/agility/next-components/dynamic-banner/",
+    "tag": "nb-dynamic-banner",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/dynamic-banner/v1.1/css/dynamic-banner.css",
+        "module": "/shared_res/agility/next-components/dynamic-banner/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/dynamic-banner/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "preview": "/shared_res/agility/next-components/dynamic-banner/preview.png",
+    "layout": {
+        "minHeight": {
+            "mobile": "0",
+            "desktop": "110"
+        }
+    }
+}

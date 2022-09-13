@@ -1,0 +1,521 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "PLP Product Card Expandable",
+  "properties": {
+    "sku": {
+      "type": "string",
+      "title": "SKU",
+      "description": "SKU id to enable \"add to cart button\"",
+      "default": ""
+    },
+    "strikethrough_price": {
+      "type": "string",
+      "title": "Strikethrough Price",
+      "description": "Strikethrough price to display",
+      "default": ""
+    },
+    "a11y_product_card": {
+      "type": "string",
+      "title": "Product card accessibility label",
+      "default": "",
+      "description": "Introduce product for screen readers and accessibility."
+    },
+    "labels": {
+      "type": "array",
+      "title": "Product label(s)",
+      "items": {
+        "type": "object",
+        "headerTemplate": "{{ i1 }} - {{ self.name }}",
+        "properties": {
+          "bgColor": {
+            "type": "string",
+            "title": "Product Label Background"
+          },
+          "color": {
+            "type": "string",
+            "title": "Product Label Color Code"
+          },
+          "name": {
+            "type": "string",
+            "title": "Product Label Text"
+          }
+        },
+        "required": [
+          "bgColor",
+          "color",
+          "name"
+        ]
+      },
+      "default": [
+        {
+          "bgColor": "#876C43",
+          "color": "#fff",
+          "name": "NEW"
+        }
+      ]
+    },
+    "highlighted": {
+      "type": "boolean",
+      "title": "Is highlighted?",
+      "default": false
+    },
+    "variant": {
+      "type": "object",
+      "title": "Product type",
+      "options": {
+        "collapsed": true
+      },
+      "oneOf": [
+        {
+          "title": "Accessory",
+          "additionalProperties": false,
+          "properties": {
+            "is_accessory": {
+              "type": "boolean",
+              "default": true,
+              "options": {
+                "hidden": true
+              }
+            },
+            "logos": {
+              "type": "object",
+              "title": "Logos",
+              "required": [
+                "only_vertuo_next"
+              ],
+              "properties": {
+                "only_vertuo_next": {
+                  "type": "boolean",
+                  "title": "Show Only Vertuo Next logo",
+                  "description": "This logo is mainly for carafe",
+                  "default": false
+                }
+              }
+            },
+            "a11y_price": {
+              "type": "string",
+              "title": "Alternative text for Price",
+              "description": "Display the price (local devise per sleeve)",
+              "default": "euros per sleeve"
+            }
+          },
+          "default": {
+            "is_accessory": true
+          }
+        },
+        {
+          "title": "Capsule",
+          "additionalProperties": false,
+          "properties": {
+            "is_capsule": {
+              "type": "boolean",
+              "default": true,
+              "options": {
+                "hidden": true
+              }
+            },
+            "number_of_sleeves": {
+              "type": "string",
+              "title": "Number Of Sleeves",
+              "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+            },
+            "number_of_capsules": {
+              "type": "string",
+              "title": "Number Of Capsules",
+              "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+            },
+            "bundle_details": {
+              "type": "object",
+              "title": "Bundle Details",
+              "options": {
+                "collapsed": true
+              },
+              "properties": {
+                "popin_link_text": {
+                  "type": "string",
+                  "title": "Popin Link Text",
+                  "description": "Text to open the bundle popin"
+                },
+                "popin_label_close": {
+                  "type": "string",
+                  "title": "Bundle label Close",
+                  "description": "Bundle label Close"
+                },
+                "description": {
+                  "type": "string",
+                  "format": "html",
+                  "options": {
+                    "wysiwyg": false
+                  },
+                  "title": "Description",
+                  "description": "Description text for the bundle. Leave this blank to apply the description through API"
+                },
+                "other_skus": {
+                  "type": "string",
+                  "title": "SKUs inside the Bundle",
+                  "description": "List down the SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50,7553.50,7583.50)",
+                  "default": "7713.20,7715.20,7714.20,7711.20,7712.20"
+                },
+                "other_skus_quantity": {
+                  "type": "string",
+                  "title": "Quantity of each SKUs inside the Bundle",
+                  "description": "List down the quantity of each SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 20,10,20,20)",
+                  "default": "10,10,10,10,10"
+                }
+              },
+              "required": [
+                "popin_link_text",
+                "popin_label_close",
+                "description",
+                "other_skus",
+                "other_skus_quantity"
+              ]
+            },
+            "a11y_price": {
+              "type": "string",
+              "title": "Alternative text for Price",
+              "description": "Display the price (local devise per sleeve)",
+              "default": "euros per sleeve"
+            },
+            "logos": {
+              "type": "array",
+              "title": "Card logos",
+              "options": {
+                "collapsed": true
+              },
+              "items": {
+                "type": "object",
+                "headerTemplate": "{{ self.name }}",
+                "properties": {
+                  "alt": {
+                    "type": "string",
+                    "title": "Logo alt text",
+                    "description": "For accessibility"
+                  },
+                  "name": {
+                    "type": "string",
+                    "options": {
+                      "enum_titles": [
+                        "Fair Trade",
+                        "Organic",
+                        "Only for Vertuo Next",
+                        "Rainforest",
+                        "Sustainable",
+                        "Certified Arabica"
+                      ]
+                    },
+                    "enum": [
+                      "fair_trade",
+                      "is_organic",
+                      "only_vertuo_next",
+                      "is_rainforest",
+                      "is_sustainable",
+                      "is_q_certified_arabica"
+                    ],
+                    "title": "Logo name"
+                  }
+                },
+                "required": [
+                  "name",
+                  "alt"
+                ]
+              }
+            },
+            "show_sleeve_price": {
+              "type": "boolean",
+              "title": "Show sleeve price",
+              "description": "Show sleeve price and adds capsule price beneath",
+              "default": false
+            },
+            "capsule_price_label": {
+              "type": "string",
+              "title": "Capsule price label",
+              "description": "when using 'Show sleeve price'",
+              "default": "Capsule price"
+            },
+            "capsule_price_syntax": {
+              "type": "string",
+              "title": "Capsule price syntax",
+              "description": "when using 'Show sleeve price' you can customize the syntax",
+              "default": "{capsule_price_label}: {price_per_capsule}"
+            }
+          },
+          "default": {
+            "is_capsule": true,
+            "number_of_sleeves": "1",
+            "number_of_capsules": "10",
+            "fair_trade": false,
+            "is_organic": false,
+            "only_vertuo_next": false,
+            "labels": [
+              {
+                "bgColor": "#876C43",
+                "color": "#fff",
+                "name": "NEW"
+              }
+            ],
+            "bundle_details": {
+              "popin_link_text": "Discover the pack",
+              "popin_label_close": "Close",
+              "description": "Override Bundle Desc",
+              "other_skus": "C-XXX, C-XXX, C-XXX",
+              "other_skus_quantity": "20,10,20"
+            },
+            "logos": []
+          }
+        },
+        {
+          "title": "Gift Card",
+          "additionalProperties": false,
+          "properties": {
+            "is_giftcard": {
+              "type": "boolean",
+              "default": true,
+              "options": {
+                "hidden": true
+              }
+            },
+            "giftcard_price": {
+              "type": "string",
+              "title": "Gift card price",
+              "default": ""
+            },
+            "default_image": {
+              "type": "string",
+              "title": "Default image",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/gift-card/gift-card_L.png"
+            },
+            "a11y_price": {
+              "type": "string",
+              "title": "Alternative text for Price",
+              "description": "Display the price (local devise per sleeve)",
+              "default": "euros per sleeve"
+            }
+          },
+          "default": {
+            "is_giftcard": true,
+            "giftcard_price": 20,
+            "default_image": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/gift-card/gift-card_L.png"
+          }
+        },
+        {
+          "title": "Machine",
+          "additionalProperties": false,
+          "properties": {
+            "is_machine": {
+              "type": "boolean",
+              "default": true,
+              "options": {
+                "hidden": true
+              }
+            },
+            "show_slider": {
+              "type": "boolean",
+              "title": "Show slider?",
+              "default": false
+            },
+            "colors": {
+              "type": "array",
+              "title": "Product Colors",
+              "items": {
+                "type": "object",
+                "headerTemplate": "{{ i1 }} - {{ self.sku }}",
+                "properties": {
+                  "sku": {
+                    "type": "string",
+                    "title": "Product Color SKU",
+                    "description": "SKU of the next product color"
+                  }
+                },
+                "required": [
+                  "sku"
+                ],
+                "default": [
+                  {
+                    "sku": ""
+                  }
+                ]
+              }
+            },
+            "energy_level": {
+              "type": "string",
+              "options": {
+                "enum_titles": [
+                  "None",
+                  "A+++",
+                  "A++",
+                  "A+",
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G"
+                ]
+              },
+              "enum": [
+                "",
+                "a1",
+                "a2",
+                "a3",
+                "a4",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g"
+              ],
+              "title": "EU Energy Label"
+            },
+            "a11y_price": {
+              "type": "string",
+              "title": "Alternative text for Price",
+              "description": "Display the price (local devise per sleeve)",
+              "default": "euros per sleeve"
+            },
+            "key_3d": {
+              "type": "string",
+              "title": "Key for 3D rendering of the machine",
+              "description": "Find all keys: https://wiki.nespresso.com/x/-tV-Bw",
+              "default": ""
+            }
+          },
+          "default": {
+            "is_machine": true,
+            "show_slider": true,
+            "key_3d": "",
+            "colors": [
+              {
+                "sku": ""
+              }
+            ]
+          }
+        }
+      ],
+      "default": {
+        "is_capsule": true,
+        "number_of_sleeves": "",
+        "number_of_capsules": "",
+        "logos": {
+          "fair_trade": false,
+          "is_organic": false,
+          "only_vertuo_next": false
+        },
+        "bundle_details": {
+          "popin_link_text": "",
+          "popin_label_close": "",
+          "description": "",
+          "other_skus": "",
+          "other_skus_quantity": ""
+        },
+        "a11y_price": "euros per sleeve"
+      }
+    },
+    "images": {
+      "type": "array",
+      "title": "Product images",
+      "options": {
+        "collapsed": true
+      },
+      "items": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Image URL (Slider used for machines)",
+            "default": ""
+          }
+        }
+      },
+      "description": "Overrides api data",
+      "default": []
+    },
+    "image_alt_text": {
+      "type": "string",
+      "title": "Cover image alternative text",
+      "default": ""
+    },
+    "api_override": {
+      "type": "object",
+      "required": [
+        "image",
+        "name",
+        "headline",
+        "description"
+      ],
+      "options": {
+        "collapsed": true
+      },
+      "properties": {
+        "image": {
+          "type": "string",
+          "title": "Product URL",
+          "default": "",
+          "description": "Overrides api data"
+        },
+        "name": {
+          "type": "string",
+          "title": "Product name",
+          "default": "",
+          "description": "Overrides api data"
+        },
+        "headline": {
+          "type": "string",
+          "title": "Product headline",
+          "default": "",
+          "description": "Overrides api data"
+        },
+        "description": {
+          "type": "string",
+          "title": "Product description",
+          "default": "",
+          "description": "Overrides api data"
+        }
+      }
+    },
+    "default": {
+      "is_capsule": true,
+      "number_of_sleeves": "1",
+      "number_of_capsules": "10",
+      "fair_trade": false,
+      "is_organic": false,
+      "only_vertuo_next": false,
+      "images": [],
+      "labels": [
+        {
+          "bgColor": "#876C43",
+          "color": "#fff",
+          "name": "NEW"
+        }
+      ],
+      "highlighted": false,
+      "variant": {
+        "is_capsule": true,
+        "number_of_sleeves": "1",
+        "number_of_capsules": "10",
+        "bundle_details": {
+          "popin_link_text": "Discover the pack",
+          "popin_label_close": "Close",
+          "description": "Override Bundle Desc",
+          "other_skus": "C-XXX, C-XXX, C-XXX",
+          "other_skus_quantity": "20,10,20"
+        }
+      },
+      "api_override": {
+        "image": "",
+        "name": "",
+        "headline": "",
+        "description": ""
+      }
+    }
+  },
+  "options": {
+    "collapsed": true
+  }
+}

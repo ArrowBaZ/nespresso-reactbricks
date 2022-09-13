@@ -1,0 +1,23 @@
+{
+    "name": "detailed-description",
+    "version": "1.1.1",
+    "description": "detailed-description element",
+    "folder": "/shared_res/agility/next-components/detailed-description/",
+    "tag": "nb-detailed-description",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/detailed-description/v1.1/css/detailed-description.css",
+        "module": "/shared_res/agility/next-components/detailed-description/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/detailed-description/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/detailed-description/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/list/",
+        "/shared_res/agility/next-components/level/",
+        "/shared_res/agility/next-components/collapse/",
+        "/shared_res/agility/next-components/tooltip/",
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Coffee Selection",
+  "description": "Display coffee selection inside mini cards. https://dsu-confluence.nestle.biz/x/9AvGCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "default": "The coffee selection"
+        },
+        "options": {
+          "type": "object",
+          "title": "Options & Common labels",
+          "properties": {
+            "intensity_label": {
+              "type": "string",
+              "title": "Label for Intensity",
+              "default": "Intensity"
+            },
+            "max_intensity": {
+              "type": "string",
+              "title": "Max intensity for the range",
+              "description": "(OL: 14; VL: 12) allow to show more or less cursor in the intensity bar",
+              "default": 14
+            },
+            "a11y_intensity_max": {
+              "type": "string",
+              "title": "Alternative text for Intensity max in intensity component",
+              "default": "max of {max_intensity}",
+              "description": "Intensity max for OL is 14, Intensity max for VL is 12"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "intensity_label",
+            "max_intensity",
+            "a11y_intensity_max"
+          ]
+        },
+        "products": {
+          "type": "array",
+          "title": "Coffee Selection List",
+          "description": "Enter skus to display (maximum 12)",
+          "minItems": 1,
+          "maxItems": 12,
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "string",
+            "title": "Sku",
+            "description": "(ex: 7579.50)",
+            "default": "C-XXX-XXX"
+          },
+          "default": [
+            "C-XXX-XXX",
+            "C-XXX-XXX",
+            "C-XXX-XXX"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "options",
+        "products"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "white_1000",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "background_color",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_coffee_selection"
+          ],
+          "title": "Creative on site",
+          "default": "before_coffee_selection",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_coffee_selection",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "options",
+    "products"
+  ]
+}

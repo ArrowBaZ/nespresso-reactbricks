@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "CTA",
+  "properties": {
+    "key_3d": {
+      "type": "string",
+      "title": "AR: 3D Model key",
+      "description": "E.g. vertuo-pop-blue. Find all keys https://dsu-confluence.nestle.biz/x/U4TEBw#AR3DModelsMachines-Models",
+      "default": ""
+    },
+    "tracking_label": {
+      "type": "string",
+      "title": "CTA Tracking Label",
+      "default": "Page Builder - CTA 3D - Click CTA - Check in 3D"
+    }
+  }
+}

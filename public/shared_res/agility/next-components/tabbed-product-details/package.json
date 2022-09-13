@@ -1,0 +1,40 @@
+{
+    "name": "tabbed-product-details",
+    "version": "1.1.1",
+    "description": "Display Tabbed Product Details",
+    "folder": "/shared_res/agility/next-components/tabbed-product-details/",
+    "tag": "nb-tabbed-product-details",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/tabbed-product-details/v1.1/css/tabbed-product-details.css",
+        "module": "/shared_res/agility/next-components/tabbed-product-details/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/tabbed-product-details/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/tabbed-product-details/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/plp-product-card/",
+        "/shared_res/agility/next-components/colors/",
+        "/shared_res/agility/next-components/rating/",
+        "/shared_res/agility/next-components/item/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/add-to-cart/",
+        "/shared_res/agility/next-components/add-gift-card/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/bundle-details/",
+        "/shared_res/agility/next-components/machine-details/",
+        "/shared_res/agility/next-components/qs/",
+        "/shared_res/agility/next-components/intensity/",
+        "/shared_res/agility/next-components/cta-3d/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "1160",
+            "desktop": "480"
+        }
+    }
+}

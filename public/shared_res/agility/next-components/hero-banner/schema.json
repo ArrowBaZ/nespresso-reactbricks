@@ -1,0 +1,643 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Hero Banner",
+  "description": "https://wiki.nespresso.com/x/c1OgCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "overline": {
+          "type": "string",
+          "description": "Title for homepage only",
+          "default": "ORIGINAL NESPRESSO CAPSULES, COFFEE SUBSCRIPTION, COFFEE MACHINES"
+        },
+        "heading": {
+          "type": "string",
+          "description": "Title",
+          "default": "With original, live your authentic espresso experience"
+        },
+        "heading_countdown": {
+          "type": "object",
+          "required": [
+            "date",
+            "time",
+            "locale",
+            "heading",
+            "cta_link"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "title": "Display countdown on heading",
+          "properties": {
+            "date": {
+              "type": "string",
+              "title": "Date",
+              "description": "The format should be MM/DD/YYYY (eg: 08/19/2022)",
+              "pattern": "^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$",
+              "default": ""
+            },
+            "time": {
+              "type": "string",
+              "title": "Time",
+              "description": "The format should be HH:MM:SS (eg: 15:50:00). 24 hour format.",
+              "default": ""
+            },
+            "locale": {
+              "type": "object",
+              "title": "Days and time texts",
+              "required": [
+                "days",
+                "hours",
+                "minutes",
+                "seconds"
+              ],
+              "properties": {
+                "days": {
+                  "type": "string",
+                  "title": "Days",
+                  "description": "To display days text",
+                  "default": "d"
+                },
+                "hours": {
+                  "type": "string",
+                  "title": "Hours",
+                  "description": "To display hours text",
+                  "default": "h"
+                },
+                "minutes": {
+                  "type": "string",
+                  "title": "Minutes",
+                  "description": "To display minutes text",
+                  "default": "m"
+                },
+                "seconds": {
+                  "type": "string",
+                  "title": "Seconds",
+                  "description": "To display seconds text",
+                  "default": "s"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "heading": {
+              "type": "string",
+              "title": "Heading text after countdown ends"
+            },
+            "cta_link": {
+              "type": "string",
+              "title": "CTA link after countdown ends"
+            }
+          }
+        },
+        "text": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "description": "",
+          "default": "Get inspired by the unique atmosphere of Nespresso"
+        },
+        "text_countdown": {
+          "type": "object",
+          "required": [
+            "date",
+            "time",
+            "locale",
+            "text",
+            "cta_link"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "title": "Display countdown on description",
+          "properties": {
+            "date": {
+              "type": "string",
+              "title": "Date",
+              "description": "The format should be MM/DD/YYYY (eg: 08/19/2022)",
+              "pattern": "^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$",
+              "default": ""
+            },
+            "time": {
+              "type": "string",
+              "title": "Time",
+              "description": "The format should be HH:MM:SS (eg: 15:50:00). 24 hour format.",
+              "default": ""
+            },
+            "locale": {
+              "type": "object",
+              "title": "Days and time texts",
+              "required": [
+                "days",
+                "hours",
+                "minutes",
+                "seconds"
+              ],
+              "properties": {
+                "days": {
+                  "type": "string",
+                  "title": "Days",
+                  "description": "To display days text",
+                  "default": "d"
+                },
+                "hours": {
+                  "type": "string",
+                  "title": "Hours",
+                  "description": "To display hours text",
+                  "default": "h"
+                },
+                "minutes": {
+                  "type": "string",
+                  "title": "Minutes",
+                  "description": "To display minutes text",
+                  "default": "m"
+                },
+                "seconds": {
+                  "type": "string",
+                  "title": "Seconds",
+                  "description": "To display seconds text",
+                  "default": "s"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "text": {
+              "type": "string",
+              "title": "Description text after countdown ends"
+            },
+            "cta_link": {
+              "type": "string",
+              "title": "CTA link after countdown ends"
+            }
+          }
+        },
+        "cta": {
+          "title": "Cta",
+          "type": "object",
+          "required": [
+            "contrast",
+            "variation",
+            "link",
+            "label",
+            "seo_label"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "contrast": {
+              "type": "string",
+              "title": "Contrast",
+              "options": {
+                "enum_titles": [
+                  "Dark background",
+                  "Light background"
+                ]
+              },
+              "enum": [
+                "dark",
+                "light"
+              ],
+              "default": "dark",
+              "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+            },
+            "variation": {
+              "type": "string",
+              "title": "CTA Look",
+              "description": "",
+              "enum": [
+                "primary",
+                "secondary",
+                "tertiary",
+                "linkType"
+              ],
+              "default": "primary"
+            },
+            "link": {
+              "type": "string",
+              "title": "URL of the link",
+              "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+              "default": ""
+            },
+            "label": {
+              "type": "string",
+              "title": "Label of the link",
+              "description": "",
+              "default": "Discover more"
+            },
+            "seo_label": {
+              "type": "string",
+              "title": "SEO of the link",
+              "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+              "default": "Discover Limited Edition Collection with Nespresso."
+            }
+          },
+          "default": {
+            "contrast": "dark",
+            "seo_label": "Discover our new accessory offer",
+            "label": "Primary button",
+            "link": "#cta",
+            "variation": "primary"
+          }
+        },
+        "video": {
+          "type": "object",
+          "title": "Video",
+          "required": [
+            "a11y_play_video",
+            "video_id",
+            "video_mobile",
+            "display_ui_controls",
+            "cc_policy_language",
+            "video_service"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "a11y_play_video": {
+              "type": "string",
+              "title": "a11y Play Video",
+              "default": "Play video"
+            },
+            "video_id": {
+              "type": "string",
+              "title": "Video provider ID",
+              "description": "Video id of the choose video service",
+              "default": ""
+            },
+            "video_mobile": {
+              "type": "string",
+              "title": "Video provider ID (Mobile)",
+              "description": "Video id of the choose video service for mobile devices (if different)",
+              "default": ""
+            },
+            "display_ui_controls": {
+              "type": "string",
+              "title": "Video UI Controls",
+              "description": "Video service (Youtube)",
+              "options": {
+                "enum_titles": [
+                  "Yes",
+                  "No"
+                ]
+              },
+              "enum": [
+                "1",
+                "0"
+              ],
+              "default": "1"
+            },
+            "cc_policy_language": {
+              "type": "string",
+              "title": "Language of Closed caption",
+              "description": "Language of closed caption of Youtube video, Ex- es-Es, en",
+              "default": ""
+            },
+            "video_service": {
+              "type": "string",
+              "title": "Video services",
+              "description": "Video service (Youtube, Youku)",
+              "options": {
+                "enum_titles": [
+                  "Youtube",
+                  "Youku"
+                ]
+              },
+              "enum": [
+                "youtube",
+                "youku"
+              ],
+              "default": "youtube"
+            }
+          },
+          "default": ""
+        },
+        "popin": {
+          "type": "object",
+          "title": "Popin",
+          "required": [
+            "id",
+            "text",
+            "image",
+            "image_alt",
+            "heading",
+            "description",
+            "close"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Unique name for the popin",
+              "description": "Unique identifier for the popin (without space). Please keep as is.",
+              "default": "promo-dynamicBanner"
+            },
+            "text": {
+              "type": "string",
+              "title": "Link text",
+              "description": "Link text of the popin",
+              "default": "*See Terms and Conditions"
+            },
+            "image": {
+              "type": "string",
+              "title": "Popin image",
+              "description": "Image URL of the image inside popin 300 x 225 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/gift.png"
+            },
+            "image_alt": {
+              "type": "string",
+              "title": "Alternate text for Popin image",
+              "default": "gift"
+            },
+            "heading": {
+              "type": "string",
+              "title": "Popin heading",
+              "default": "Our Terms and Conditions"
+            },
+            "description": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "title": "Popin description",
+              "default": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including advertising or promotional materials. Entry instructions are deemed to form part of these Terms and Conditions and by participating all participants will be deemed to have accepted and be bound by them. Please retain a copy for your information.</p><p><b>1. This promotion is open to all residents of the UK,</b> Channel Islands, Isle of Man and Republic of Ireland, aged 18 or over and excludes employees and their immediate families of Nestle S.A. and Nespresso, its agents or anyone professionally connected to the promotion. Participants must register or be registered with Nespresso to qualify for the offer.</p><p><b>2. Applicants must have purchased any Nespresso Essenza Mini or Essenza Mini Bundle and registered with Nespresso during the stated promotion period</b> (10.06.2020 and 18.08.2020) to qualify for the offer. The offer consists of 100 complimentary pre-selected Original Line capsules as a first gift, and one month’s free Nespresso Coffee Subscription worth £25/€30 as a second gift when they go on to register and activate a Coffee Subscription by 23:59 on 31.12.2020. The 100 complimentary capsules will be made up of a pre-selected Original Line range chosen by Nespresso which cannot be changed/substituted for any other variants.</p><p><b>3. The stated Nespresso machine must be purchased between the stated dates from one of the associated Nespresso retail partners,</b> or directly from Nespresso or by calling Nespresso on Freephone 0800 442 442 (UK), or 1800 812 660 (ROI), or at www.nespresso.com, or via the Nespresso App, or visiting a Nespresso Boutique where available. Maximum of one offer per machine purchased per Nespresso Member. Any additional machines purchased during the stated promotional period will not qualify for the offer. The qualifying Nespresso Coffee machine must be purchased in the UK, Channel Island, Isle of Man or Republic of Ireland. Due to the continuing COVID-19 situation, participants should check their local Nespresso Boutique opening days and times as these may vary. This can be done using www.nespresso.com/uk/en/store-locator. This page is updated regularly with the latest information and news relating to Nespresso Boutiques.</p>"
+            },
+            "close": {
+              "type": "string",
+              "title": "Label Close (accessibility)",
+              "default": "Close"
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        },
+        "image": {
+          "type": "string",
+          "title": "Main Hero Visual URL Image Set for mobile.",
+          "description": "URL to image. Dynamic image size. It will always be displayed at 100% width (with a proportional height). Minimum image Width:1024 x Maximum Image Height : 2052 pixels",
+          "default": ""
+        },
+        "image_alt": {
+          "type": "string",
+          "title": "Main Hero Visual alternate text.",
+          "description": "Set a descriptive text for the image or leave it empty if image is decorative",
+          "default": ""
+        },
+        "image_logo": {
+          "type": "string",
+          "title": "Main Hero Logotype URL Image.",
+          "description": "URL to image. Dynamic image size. It will always be displayed at the specified maximum-width (keeping a proportional height). Minimum image Width : 368 px x Maximum Image Height : 1024 px",
+          "default": ""
+        },
+        "image_logo_max_width": {
+          "type": "string",
+          "title": "Main Hero Logotype Maximum Width",
+          "description": "by default 100% of the viewport width can be restricted using px or %",
+          "default": ""
+        },
+        "image_logo_alt": {
+          "type": "string",
+          "title": "Main Hero Logotype URL Alternate text",
+          "description": "Set a descriptive text for the image or leave it empty if image is decorative",
+          "default": ""
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "overline",
+        "heading",
+        "heading_countdown",
+        "text",
+        "text_countdown",
+        "cta",
+        "video",
+        "popin",
+        "image",
+        "image_alt",
+        "image_logo",
+        "image_logo_max_width",
+        "image_logo_alt"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": {},
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "contrast_mobile": {
+          "type": "string",
+          "title": "Contrast Mobile",
+          "options": {
+            "enum_titles": [
+              "",
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "",
+            "dark",
+            "light"
+          ],
+          "default": {},
+          "description": "Handles text color for mobile devices only. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/c1OgCQ",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "URL to image 750 x 840 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/hero/background/ol-03_S.jpg"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 1920 x 495 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/hero/background/ol-03_L.jpg"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 3840 x 990 pixels (width x height)",
+              "default": "/shared_res/agility/next-components/assets/hero/background/ol-03_XL.jpg"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "contrast_mobile",
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_hero_banner"
+          ],
+          "title": "Creative on site",
+          "default": "before_hero_banner",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_hero_banner",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

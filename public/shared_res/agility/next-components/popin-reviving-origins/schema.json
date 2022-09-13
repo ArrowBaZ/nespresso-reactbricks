@@ -1,0 +1,1427 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Popin Reviving Origins",
+  "description": "Dedicated popin for Reviving Origins coffee range",
+  "required": [
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "title": "Project country",
+          "options": {
+            "enum_titles": [
+              "Reviving Origins (Congo)",
+              "Reviving Origins (Colombia)"
+            ]
+          },
+          "enum": [
+            "reviving-origins",
+            "reviving-origins-colombia"
+          ],
+          "default": "reviving-origins"
+        },
+        "popin_id": {
+          "type": "string",
+          "title": "Popin ID",
+          "default": "popin-reviving-origins"
+        },
+        "dynamic": {
+          "type": "array",
+          "title": "Dynamic filter (farmers)",
+          "items": {
+            "type": "object",
+            "title": "Filter",
+            "required": [
+              "slug",
+              "title",
+              "description",
+              "icon"
+            ],
+            "properties": {
+              "slug": {
+                "type": "string",
+                "title": "Filter slug"
+              },
+              "title": {
+                "type": "string",
+                "title": "Filter Title"
+              },
+              "description": {
+                "type": "string",
+                "title": "Filter description"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Filter icon",
+                "options": {
+                  "enum_titles": [
+                    "Farmer",
+                    "Social"
+                  ]
+                },
+                "enum": [
+                  "farmer",
+                  "social"
+                ]
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "headerTemplate": "{{ self.title }}",
+            "default": {
+              "slug": "farmers",
+              "title": "AAA Farmers",
+              "description": "Members of our AAA Program, who team up with us to insure the best coffee quality in the most fair and sustainable way.",
+              "icon": "farmer"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "default": [
+            {
+              "slug": "farmers",
+              "title": "AAA Farmers",
+              "description": "Members of our AAA Program, who team up with us to insure the best coffee quality in the most fair and sustainable way.",
+              "icon": "farmer"
+            }
+          ]
+        },
+        "projects": {
+          "type": "array",
+          "title": "Static filter (projects)",
+          "items": {
+            "type": "object",
+            "title": "Filter",
+            "required": [
+              "slug",
+              "title",
+              "description",
+              "icon",
+              "list"
+            ],
+            "properties": {
+              "slug": {
+                "type": "string",
+                "title": "Filter slug"
+              },
+              "title": {
+                "type": "string",
+                "title": "Filter Title"
+              },
+              "description": {
+                "type": "string",
+                "title": "Filter description"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Filter icon",
+                "options": {
+                  "enum_titles": [
+                    "Farmer",
+                    "Social"
+                  ]
+                },
+                "enum": [
+                  "farmer",
+                  "social"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "title": "Projects list",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "coords",
+                    "slug",
+                    "name",
+                    "headline",
+                    "description",
+                    "metas",
+                    "image",
+                    "images"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "title": "Project ID"
+                    },
+                    "coords": {
+                      "type": "object",
+                      "title": "Project coordinates",
+                      "required": [
+                        "longitude",
+                        "latitude"
+                      ],
+                      "properties": {
+                        "longitude": {
+                          "type": "string",
+                          "title": "Longitude"
+                        },
+                        "latitude": {
+                          "type": "string",
+                          "title": "Latitude"
+                        }
+                      },
+                      "options": {
+                        "collapsed": true
+                      }
+                    },
+                    "slug": {
+                      "type": "string",
+                      "title": "Project slug"
+                    },
+                    "name": {
+                      "type": "string",
+                      "title": "Project name"
+                    },
+                    "category": {
+                      "type": "string",
+                      "title": "Project category"
+                    },
+                    "headline": {
+                      "type": "string",
+                      "title": "Project headline"
+                    },
+                    "description": {
+                      "type": "string",
+                      "title": "Project description"
+                    },
+                    "metas": {
+                      "type": "object",
+                      "title": "Project meta information",
+                      "required": [
+                        "construction",
+                        "region"
+                      ],
+                      "properties": {
+                        "construction": {
+                          "type": "string",
+                          "title": "Construction date"
+                        },
+                        "region": {
+                          "type": "string",
+                          "title": "Region"
+                        }
+                      },
+                      "options": {
+                        "collapsed": true
+                      }
+                    },
+                    "image": {
+                      "type": "string",
+                      "title": "Project cover"
+                    },
+                    "images": {
+                      "type": "array",
+                      "title": "Projects images",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "year",
+                          "src",
+                          "alt"
+                        ],
+                        "properties": {
+                          "year": {
+                            "type": "string",
+                            "title": "Year"
+                          },
+                          "src": {
+                            "type": "string",
+                            "title": "Image path"
+                          },
+                          "alt": {
+                            "type": "string",
+                            "title": "Image alternative text"
+                          }
+                        },
+                        "options": {
+                          "collapsed": true
+                        },
+                        "headerTemplate": "Project Image - {{ i1 }}"
+                      },
+                      "options": {
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "options": {
+                    "collapsed": true
+                  },
+                  "headerTemplate": "Project - {{ self.name }}"
+                },
+                "options": {
+                  "collapsed": true
+                }
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "headerTemplate": "{{ self.title }}",
+            "default": {
+              "slug": "social-improvements",
+              "title": "Social Partnerships",
+              "description": "We partner with Asili, powered by Eastern Congo Initiative (ECI), to improve access to healthcare and clean water.",
+              "icon": "social",
+              "list": [
+                {
+                  "id": "1",
+                  "coords": {
+                    "longitude": "29.028028",
+                    "latitude": "-1.701861"
+                  },
+                  "slug": "health-clinic",
+                  "name": "Health clinic",
+                  "category": "Health clinic",
+                  "headline": "Asili offers high-quality healthcare designed to last.",
+                  "description": "<p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Traditional humanitarian aid and emergency response has created a rotating door of healthcare access in eastern Congo. Pop-up clinics are routinely driven by specific outcomes, and disappear when the grant runs out. Asili healthcare is different–clinics are permanent, welcoming structures staffed by Congolese doctors and nurses who are deeply invested in the community. Constantly striving to be better, Nespresso and Asili are currently working with community members in Minova to develop a mobile health unit that can better serve our rural farmers</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "2021",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic1.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic1.jpg",
+                      "alt": "The health clinic under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic2.jpg",
+                      "alt": "The health clinic under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic3.jpg",
+                      "alt": "The health clinic under construction"
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "coords": {
+                    "longitude": "29.018519",
+                    "latitude": "-1.707678"
+                  },
+                  "slug": "water-kiosk1",
+                  "name": "Water Kiosk 1",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "coords": {
+                    "longitude": "29.024567",
+                    "latitude": "-1.705561"
+                  },
+                  "slug": "water-kiosk2",
+                  "name": "Water Kiosk 2",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "4",
+                  "coords": {
+                    "longitude": "29.020119",
+                    "latitude": "-1.711578"
+                  },
+                  "slug": "water-kiosk3",
+                  "name": "Water Kiosk 3",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "5",
+                  "coords": {
+                    "longitude": "29.023503",
+                    "latitude": "-1.711039"
+                  },
+                  "slug": "water-kiosk4",
+                  "name": "Water Kiosk 4",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "6",
+                  "coords": {
+                    "longitude": "29.015336",
+                    "latitude": "-1.716103"
+                  },
+                  "slug": "bf1",
+                  "name": "Fountain 1",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "7",
+                  "coords": {
+                    "longitude": "29.018319",
+                    "latitude": "-1.715158"
+                  },
+                  "slug": "bf2",
+                  "name": "Fountain 2",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "8",
+                  "coords": {
+                    "longitude": "29.020692",
+                    "latitude": "-1.714831"
+                  },
+                  "slug": "bf3",
+                  "name": "Fountain 3",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "8",
+                  "coords": {
+                    "longitude": "29.016589",
+                    "latitude": "-1.711456"
+                  },
+                  "slug": "bf4",
+                  "name": "Fountain 4",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "10",
+                  "coords": {
+                    "longitude": "29.021047",
+                    "latitude": "-1.707261"
+                  },
+                  "slug": "bf5",
+                  "name": "Fountain 5",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "11",
+                  "coords": {
+                    "longitude": "28.980222",
+                    "latitude": "-1.799333"
+                  },
+                  "slug": "water-source",
+                  "name": "Water Spring",
+                  "headline": "Natural mountain spring",
+                  "description": "<p>Natural mountain spring. At the source, we have installed filters and settling tanks to remove any sediment. From the spring, the water flows downhill to the reservoir.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/source.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/source.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "12",
+                  "coords": {
+                    "longitude": "29.016000",
+                    "latitude": "-1.733944"
+                  },
+                  "slug": "reservoir",
+                  "name": "Reservoir",
+                  "headline": "Asili’s clean water is a building block for everything else",
+                  "description": "<p>The reservoir gets filled throughout the day and night (since the system is gravity fed, there is no ‘off-switch’). The reservoir holds several hundred thousand liters of water and it allows us to stabilize the pressure for the remainder of the system. From the reservoir several pipes supply all of the water points.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank1.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank1.jpg",
+                      "alt": "The water reservoir under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank2.jpg",
+                      "alt": "The water reservoir under construction"
+                    }
+                  ]
+                },
+                {
+                  "id": "13",
+                  "coords": {
+                    "longitude": "28.975594",
+                    "latitude": "-1.777506"
+                  },
+                  "slug": "brise-charge1",
+                  "name": "Load Breaker Point 1",
+                  "headline": "Technical Water Point",
+                  "description": "<p>Load Breaker is an access point for testing and repairing the water system, and an area that helps regulate the pressure within the system. Correctly managing the pressure load on the system is important, since this is the largest point of failure. By creating known weak-points, we control the breakage zone if there is a spike in pressure. We can easily access and repair the damaged area, rather than having to find a leak underground.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "14",
+                  "coords": {
+                    "longitude": "29.011486",
+                    "latitude": "-1.739203"
+                  },
+                  "slug": "brise-charge2",
+                  "name": "Load Breaker Point 2",
+                  "headline": "Technical Water Point",
+                  "description": "<p>Load Breaker is an access point for testing and repairing the water system, and an area that helps regulate the pressure within the system. Correctly managing the pressure load on the system is important, since this is the largest point of failure. By creating known weak-points, we control the breakage zone if there is a spike in pressure. We can easily access and repair the damaged area, rather than having to find a leak underground.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Makelele"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "default": [
+            {
+              "slug": "social-improvements",
+              "title": "Social Partnerships",
+              "description": "We partner with Asili, powered by Eastern Congo Initiative (ECI), to improve access to healthcare and clean water.",
+              "icon": "social",
+              "list": [
+                {
+                  "id": "1",
+                  "coords": {
+                    "longitude": "29.028028",
+                    "latitude": "-1.701861"
+                  },
+                  "slug": "health-clinic",
+                  "name": "Health clinic",
+                  "category": "Health clinic",
+                  "headline": "Asili offers high-quality healthcare designed to last.",
+                  "description": "<p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Traditional humanitarian aid and emergency response has created a rotating door of healthcare access in eastern Congo. Pop-up clinics are routinely driven by specific outcomes, and disappear when the grant runs out. Asili healthcare is different–clinics are permanent, welcoming structures staffed by Congolese doctors and nurses who are deeply invested in the community. Constantly striving to be better, Nespresso and Asili are currently working with community members in Minova to develop a mobile health unit that can better serve our rural farmers</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "2021",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic1.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic1.jpg",
+                      "alt": "The health clinic under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic2.jpg",
+                      "alt": "The health clinic under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/clinic3.jpg",
+                      "alt": "The health clinic under construction"
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "coords": {
+                    "longitude": "29.018519",
+                    "latitude": "-1.707678"
+                  },
+                  "slug": "water-kiosk1",
+                  "name": "Water Kiosk 1",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "coords": {
+                    "longitude": "29.024567",
+                    "latitude": "-1.705561"
+                  },
+                  "slug": "water-kiosk2",
+                  "name": "Water Kiosk 2",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "4",
+                  "coords": {
+                    "longitude": "29.020119",
+                    "latitude": "-1.711578"
+                  },
+                  "slug": "water-kiosk3",
+                  "name": "Water Kiosk 3",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "5",
+                  "coords": {
+                    "longitude": "29.023503",
+                    "latitude": "-1.711039"
+                  },
+                  "slug": "water-kiosk4",
+                  "name": "Water Kiosk 4",
+                  "headline": "Water access point",
+                  "description": "<p>The kiosk is a type of access point that has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/kiosk.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "6",
+                  "coords": {
+                    "longitude": "29.015336",
+                    "latitude": "-1.716103"
+                  },
+                  "slug": "bf1",
+                  "name": "Fountain 1",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "7",
+                  "coords": {
+                    "longitude": "29.018319",
+                    "latitude": "-1.715158"
+                  },
+                  "slug": "bf2",
+                  "name": "Fountain 2",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "8",
+                  "coords": {
+                    "longitude": "29.020692",
+                    "latitude": "-1.714831"
+                  },
+                  "slug": "bf3",
+                  "name": "Fountain 3",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "8",
+                  "coords": {
+                    "longitude": "29.016589",
+                    "latitude": "-1.711456"
+                  },
+                  "slug": "bf4",
+                  "name": "Fountain 4",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "10",
+                  "coords": {
+                    "longitude": "29.021047",
+                    "latitude": "-1.707261"
+                  },
+                  "slug": "bf5",
+                  "name": "Fountain 5",
+                  "headline": "Small water access point",
+                  "description": "<p>Borne fountaine is a type of access point, which is smaller than the kiosk. The borne fontaine has 2-4 taps, when water kiosk has 8 taps.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily.</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/fountain.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "11",
+                  "coords": {
+                    "longitude": "28.980222",
+                    "latitude": "-1.799333"
+                  },
+                  "slug": "water-source",
+                  "name": "Water Spring",
+                  "headline": "Natural mountain spring",
+                  "description": "<p>Natural mountain spring. At the source, we have installed filters and settling tanks to remove any sediment. From the spring, the water flows downhill to the reservoir.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/source.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/source.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "12",
+                  "coords": {
+                    "longitude": "29.016000",
+                    "latitude": "-1.733944"
+                  },
+                  "slug": "reservoir",
+                  "name": "Reservoir",
+                  "headline": "Asili’s clean water is a building block for everything else",
+                  "description": "<p>The reservoir gets filled throughout the day and night (since the system is gravity fed, there is no ‘off-switch’). The reservoir holds several hundred thousand liters of water and it allows us to stabilize the pressure for the remainder of the system. From the reservoir several pipes supply all of the water points.</p><p>Together with Asili, Nespresso is supporting the development of 2 Asili zones, community areas provided with water infrastructure and health clinics ready to serve over 80,000 Congolese people.</p><p>Asili is based on the results of a thorough human-centered design process that asked mothers in South Kivu to identify their greatest needs and preferences for meeting them. At the forefront was close access to clean water. Asili’s monitored water kiosks prevent deadly illnesses like cholera and allow women and girls to spend days in school or at work instead of gathering water from contaminated sources. Last year, Asili provided 41M liters of water through its six zones. Nespresso’s partnership will add two zones by 2022, and by 2023, Asili is on track to serve 500,000 people daily</p><p>Photo credit : Eastern Congo Initiative</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank1.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank1.jpg",
+                      "alt": "The water reservoir under construction"
+                    },
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/tank2.jpg",
+                      "alt": "The water reservoir under construction"
+                    }
+                  ]
+                },
+                {
+                  "id": "13",
+                  "coords": {
+                    "longitude": "28.975594",
+                    "latitude": "-1.777506"
+                  },
+                  "slug": "brise-charge1",
+                  "name": "Load Breaker Point 1",
+                  "headline": "Technical Water Point",
+                  "description": "<p>Load Breaker is an access point for testing and repairing the water system, and an area that helps regulate the pressure within the system. Correctly managing the pressure load on the system is important, since this is the largest point of failure. By creating known weak-points, we control the breakage zone if there is a spike in pressure. We can easily access and repair the damaged area, rather than having to find a leak underground.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Minova"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                },
+                {
+                  "id": "14",
+                  "coords": {
+                    "longitude": "29.011486",
+                    "latitude": "-1.739203"
+                  },
+                  "slug": "brise-charge2",
+                  "name": "Load Breaker Point 2",
+                  "headline": "Technical Water Point",
+                  "description": "<p>Load Breaker is an access point for testing and repairing the water system, and an area that helps regulate the pressure within the system. Correctly managing the pressure load on the system is important, since this is the largest point of failure. By creating known weak-points, we control the breakage zone if there is a spike in pressure. We can easily access and repair the damaged area, rather than having to find a leak underground.</p>",
+                  "metas": {
+                    "construction": "",
+                    "region": "Makelele"
+                  },
+                  "image": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                  "images": [
+                    {
+                      "year": "2021",
+                      "src": "shared_res/agility/reviving-origins-traceability/images/partnerships/loadbreaker.jpg",
+                      "alt": "Water kiosk"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": {
+          "type": "object",
+          "title": "Generic labels",
+          "required": [
+            "heading",
+            "empty",
+            "other",
+            "closest",
+            "explore",
+            "transactions_made",
+            "farmers",
+            "units",
+            "certification",
+            "variety",
+            "state",
+            "production",
+            "projects",
+            "quality",
+            "blockchain"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "title": "Main heading",
+              "default": "Discover farmers and realizations in Congo."
+            },
+            "empty": {
+              "type": "string",
+              "title": "Empty results",
+              "default": "No results"
+            },
+            "other": {
+              "type": "string",
+              "title": "Other",
+              "default": "Other"
+            },
+            "closest": {
+              "type": "string",
+              "title": "Closest<br>AAA Farmers",
+              "default": "Closest"
+            },
+            "explore": {
+              "type": "string",
+              "title": "Explore the map"
+            },
+            "transactions_made": {
+              "type": "string",
+              "title": "Transactions made in",
+              "default": "Transactions made in"
+            },
+            "farmers": {
+              "type": "object",
+              "title": "Farmers",
+              "required": [
+                "base",
+                "enrolment",
+                "area",
+                "altitude",
+                "certification",
+                "lastVisit",
+                "production",
+                "farm_name",
+                "details"
+              ],
+              "properties": {
+                "base": {
+                  "type": "string",
+                  "title": "AAA Farmers",
+                  "default": "AAA Farmers"
+                },
+                "enrolment": {
+                  "type": "string",
+                  "title": "Enrolment",
+                  "default": "AAA member since {value}"
+                },
+                "area": {
+                  "type": "string",
+                  "title": "Area",
+                  "default": "Cultivated area surface: {value}"
+                },
+                "altitude": {
+                  "type": "string",
+                  "title": "Altitude",
+                  "default": "Altitude: {value}"
+                },
+                "certification": {
+                  "type": "string",
+                  "title": "Certifications",
+                  "default": "Certifications"
+                },
+                "lastVisit": {
+                  "type": "string",
+                  "title": "Last agronomist visit",
+                  "default": "Last agronomist's visit: {value}"
+                },
+                "production": {
+                  "type": "string",
+                  "title": "Production",
+                  "default": "AAA coffee production"
+                },
+                "farm_name": {
+                  "type": "string",
+                  "title": "Farm name:",
+                  "default": "Farm name:"
+                },
+                "details": {
+                  "type": "object",
+                  "title": "Details",
+                  "required": [
+                    "production",
+                    "information"
+                  ],
+                  "properties": {
+                    "production": {
+                      "type": "string",
+                      "title": "Farmer’s production",
+                      "default": "AAA Quality coffee production’s data"
+                    },
+                    "information": {
+                      "type": "string",
+                      "title": "Farmer’s information",
+                      "default": "Farmer’s information"
+                    }
+                  },
+                  "options": {
+                    "collapsed": true
+                  }
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "units": {
+              "type": "object",
+              "title": "Units",
+              "required": [
+                "area",
+                "altitude",
+                "production"
+              ],
+              "properties": {
+                "area": {
+                  "type": "string",
+                  "title": "HA",
+                  "default": "HA"
+                },
+                "altitude": {
+                  "type": "string",
+                  "title": "m",
+                  "default": "m"
+                },
+                "production": {
+                  "type": "string",
+                  "title": "kg",
+                  "default": "kg"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "certification": {
+              "type": "object",
+              "title": "Certification",
+              "required": [
+                "organic"
+              ],
+              "properties": {
+                "organic": {
+                  "type": "string",
+                  "title": "Organic",
+                  "default": "Organic"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "variety": {
+              "type": "object",
+              "title": "Variety",
+              "required": [
+                "ARABICA",
+                "ROBUSTA"
+              ],
+              "properties": {
+                "ARABICA": {
+                  "type": "string",
+                  "title": "Arabica",
+                  "default": "Arabica"
+                },
+                "ROBUSTA": {
+                  "type": "string",
+                  "title": "Robusta",
+                  "default": "Robusta"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "state": {
+              "type": "object",
+              "title": "State",
+              "required": [
+                "fresh",
+                "parched"
+              ],
+              "properties": {
+                "fresh": {
+                  "type": "string",
+                  "title": "Fresh",
+                  "default": "Fresh Cherries"
+                },
+                "parched": {
+                  "type": "string",
+                  "title": "Parched",
+                  "default": "Parched"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "production": {
+              "type": "object",
+              "title": "Production",
+              "required": [
+                "certification",
+                "state",
+                "volume",
+                "variety"
+              ],
+              "properties": {
+                "certification": {
+                  "type": "string",
+                  "title": "Certified",
+                  "default": "Certified"
+                },
+                "state": {
+                  "type": "string",
+                  "title": "State",
+                  "default": "State"
+                },
+                "volume": {
+                  "type": "string",
+                  "title": "Volume",
+                  "default": "Volume"
+                },
+                "variety": {
+                  "type": "string",
+                  "title": "Variety",
+                  "default": "Variety"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "projects": {
+              "type": "object",
+              "title": "Projects",
+              "required": [
+                "base",
+                "construction_date",
+                "region"
+              ],
+              "properties": {
+                "base": {
+                  "type": "string",
+                  "title": "Projects",
+                  "default": "realizations"
+                },
+                "construction_date": {
+                  "type": "string",
+                  "title": "Construction date",
+                  "default": "Construction date"
+                },
+                "region": {
+                  "type": "string",
+                  "title": "Regions",
+                  "default": "Region"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "quality": {
+              "type": "object",
+              "title": "Quality",
+              "required": [
+                "standard"
+              ],
+              "properties": {
+                "standard": {
+                  "type": "string",
+                  "title": "Nespresso Standards",
+                  "default": "Nespresso Standards"
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            },
+            "blockchain": {
+              "type": "object",
+              "title": "Blockchain information",
+              "required": [
+                "teaser",
+                "popin"
+              ],
+              "properties": {
+                "teaser": {
+                  "type": "string",
+                  "title": "Teaser",
+                  "default": "Nespresso values transparency. Read for more. "
+                },
+                "popin": {
+                  "type": "object",
+                  "title": "Popin",
+                  "required": [
+                    "heading",
+                    "details",
+                    "documents"
+                  ],
+                  "properties": {
+                    "heading": {
+                      "type": "string",
+                      "title": "Popin heading",
+                      "default": "Nespresso values transparency. Our data are certified."
+                    },
+                    "details": {
+                      "type": "array",
+                      "title": "Details",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "heading",
+                          "text"
+                        ],
+                        "properties": {
+                          "heading": {
+                            "type": "string",
+                            "title": "Detail heading"
+                          },
+                          "text": {
+                            "type": "string",
+                            "title": "Detail text"
+                          }
+                        },
+                        "options": {
+                          "collapsed": true
+                        },
+                        "headerTemplate": "Details - {{ i1 }}",
+                        "default": {
+                          "heading": "Data from the fields",
+                          "text": "Explore the map to meet the farmers that produced your “Kahawa Ya Congo” coffee, and discover the projects realized in partnership with Asili to improve Congo’s community's welfare. The data of the farmers and coffee transactions are gathered on the field by Nespresso and Technoserve agronomists, and brought to you via our working tool, the Nespresso's AAA database."
+                        }
+                      },
+                      "options": {
+                        "collapsed": true
+                      },
+                      "default": [
+                        {
+                          "heading": "Data from the fields",
+                          "text": "Explore the map to meet the farmers that produced your “Kahawa Ya Congo” coffee, and discover the projects realized in partnership with Asili to improve Congo’s community's welfare. The data of the farmers and coffee transactions are gathered on the field by Nespresso and Technoserve agronomists, and brought to you via our working tool, the Nespresso's AAA database."
+                        },
+                        {
+                          "heading": "Partners in authenticity",
+                          "text": "{logo:veritas}<p>Bureau Veritas UK Ltd. has independently reviewed the data collection methodology and database alignment and verified a sample of individual transactions to source documentation.</p><p><a href=\"{pdf:veritas}\" target=\"_blank\">Click here for the full Independent Limited Assurance Opinion Statement, including information on the scope of work, methodology, limitations, and conclusion.</a></p>"
+                        }
+                      ]
+                    },
+                    "documents": {
+                      "type": "object",
+                      "title": "Documents",
+                      "required": [
+                        "veritas"
+                      ],
+                      "properties": {
+                        "veritas": {
+                          "type": "string",
+                          "title": "Veritas document path",
+                          "default": "/shared_res/agility/reviving-origins-traceability/documents/nespresso_traceability_statement-congoAAA-bureauveritas-fev22.pdf"
+                        }
+                      },
+                      "options": {
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "options": {
+                    "collapsed": true
+                  }
+                }
+              },
+              "options": {
+                "collapsed": true
+              }
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        },
+        "a11y": {
+          "type": "object",
+          "title": "Accessibility labels",
+          "required": [
+            "avatar",
+            "avatar_farmer",
+            "avatar_project",
+            "close"
+          ],
+          "properties": {
+            "avatar": {
+              "type": "string",
+              "title": "Global avatar",
+              "default": "Portrait image"
+            },
+            "avatar_farmer": {
+              "type": "string",
+              "title": "Farmer avatar",
+              "default": "Farmer portrait image"
+            },
+            "avatar_project": {
+              "type": "string",
+              "title": "Project avatar",
+              "default": "Project portrait image"
+            },
+            "close": {
+              "type": "string",
+              "title": "Close",
+              "default": "Close"
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "slug",
+        "popin_id",
+        "dynamic",
+        "projects",
+        "labels",
+        "a11y"
+      ]
+    }
+  }
+}

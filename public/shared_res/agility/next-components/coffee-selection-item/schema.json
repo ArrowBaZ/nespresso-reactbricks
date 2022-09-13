@@ -1,0 +1,749 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Card Mini",
+  "description": "Card mini",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "",
+          "default": "Accessories"
+        },
+        "text": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "description": "",
+          "default": "We make countless uncompromising choices that go into every cup."
+        },
+        "visual": {
+          "type": "object",
+          "required": [
+            "src",
+            "alt"
+          ],
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "URL image",
+              "description": "URL to image 720 x 400 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/highlighted_card/highlighted_card.png"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt Visual image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": "Mug Origin"
+            }
+          },
+          "default": {
+            "src": "https://www.nespresso.com/shared_res/agility/next-components/assets/card/article/visual.jpg",
+            "alt": "Mug Origin"
+          }
+        },
+        "cta": {
+          "title": "Cta",
+          "type": "object",
+          "required": [
+            "contrast",
+            "variation",
+            "link",
+            "label",
+            "seo_label",
+            "tracking_label"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "contrast": {
+              "type": "string",
+              "title": "Contrast",
+              "options": {
+                "enum_titles": [
+                  "Dark background",
+                  "Light background"
+                ]
+              },
+              "enum": [
+                "dark",
+                "light"
+              ],
+              "default": "dark",
+              "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+            },
+            "variation": {
+              "type": "string",
+              "title": "CTA Look",
+              "description": "",
+              "enum": [
+                "primary",
+                "secondary",
+                "tertiary",
+                "linkType"
+              ],
+              "default": "primary"
+            },
+            "link": {
+              "type": "string",
+              "title": "URL of the link",
+              "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+              "default": ""
+            },
+            "label": {
+              "type": "string",
+              "title": "Label of the link",
+              "description": "",
+              "default": "Discover more"
+            },
+            "seo_label": {
+              "type": "string",
+              "title": "SEO of the link",
+              "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+              "default": "Discover Limited Edition Collection with Nespresso."
+            },
+            "tracking_label": {
+              "type": "string",
+              "title": "Tracking Label",
+              "description": "Trigger on click in GA",
+              "default": ""
+            }
+          },
+          "default": {
+            "contrast": "dark",
+            "seo_label": "Discover our new accessory offer",
+            "tracking_label": "Image & Text - Accessory offer - Click",
+            "label": "Discover more",
+            "link": "#cta",
+            "variation": "tertiary"
+          }
+        },
+        "popin": {
+          "type": "object",
+          "title": "Popin",
+          "required": [
+            "id",
+            "text",
+            "image",
+            "image_alt",
+            "heading",
+            "description",
+            "close"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Unique name for the popin",
+              "description": "Unique identifier for the popin (without space). Please keep as is.",
+              "default": "promo-dynamicBanner"
+            },
+            "text": {
+              "type": "string",
+              "title": "Link text",
+              "description": "Link text of the popin",
+              "default": "*See Terms and Conditions"
+            },
+            "image": {
+              "type": "string",
+              "title": "Popin image",
+              "description": "Image URL of the image inside popin 300 x 225 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/gift.png"
+            },
+            "image_alt": {
+              "type": "string",
+              "title": "Alternate text for Popin image",
+              "default": "gift"
+            },
+            "heading": {
+              "type": "string",
+              "title": "Popin heading",
+              "default": "Our Terms and Conditions"
+            },
+            "description": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "title": "Popin description",
+              "default": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including advertising or promotional materials. Entry instructions are deemed to form part of these Terms and Conditions and by participating all participants will be deemed to have accepted and be bound by them. Please retain a copy for your information.</p><p><b>1. This promotion is open to all residents of the UK,</b> Channel Islands, Isle of Man and Republic of Ireland, aged 18 or over and excludes employees and their immediate families of Nestle S.A. and Nespresso, its agents or anyone professionally connected to the promotion. Participants must register or be registered with Nespresso to qualify for the offer.</p><p><b>2. Applicants must have purchased any Nespresso Essenza Mini or Essenza Mini Bundle and registered with Nespresso during the stated promotion period</b> (10.06.2020 and 18.08.2020) to qualify for the offer. The offer consists of 100 complimentary pre-selected Original Line capsules as a first gift, and one month’s free Nespresso Coffee Subscription worth £25/€30 as a second gift when they go on to register and activate a Coffee Subscription by 23:59 on 31.12.2020. The 100 complimentary capsules will be made up of a pre-selected Original Line range chosen by Nespresso which cannot be changed/substituted for any other variants.</p><p><b>3. The stated Nespresso machine must be purchased between the stated dates from one of the associated Nespresso retail partners,</b> or directly from Nespresso or by calling Nespresso on Freephone 0800 442 442 (UK), or 1800 812 660 (ROI), or at www.nespresso.com, or via the Nespresso App, or visiting a Nespresso Boutique where available. Maximum of one offer per machine purchased per Nespresso Member. Any additional machines purchased during the stated promotional period will not qualify for the offer. The qualifying Nespresso Coffee machine must be purchased in the UK, Channel Island, Isle of Man or Republic of Ireland. Due to the continuing COVID-19 situation, participants should check their local Nespresso Boutique opening days and times as these may vary. This can be done using www.nespresso.com/uk/en/store-locator. This page is updated regularly with the latest information and news relating to Nespresso Boutiques.</p>"
+            },
+            "close": {
+              "type": "string",
+              "title": "Label Close (accessibility)",
+              "default": "Close"
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        },
+        "intensity": {
+          "type": "string",
+          "title": "Coffee intensity",
+          "description": "OL intensity is from 4 to 14, VL intensity is from 4 to 12",
+          "default": "9"
+        },
+        "min_intensity": {
+          "type": "string",
+          "title": "Min intensity",
+          "default": "4"
+        },
+        "max_intensity": {
+          "type": "string",
+          "title": "Max intensity",
+          "default": "14"
+        },
+        "intensity_label": {
+          "type": "string",
+          "title": "Intensity Label",
+          "default": "intensity"
+        },
+        "a11y_intensity_max": {
+          "type": "string",
+          "title": "Alternative text for Intensity max in intensity component",
+          "description": "Intensity max for OL is 14, Intensity max for VL is 12",
+          "default": "max of {max_intensity}"
+        },
+        "icon_text_row": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "title": "Coffee Aromatic and Size properties",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "title": "Icon",
+                "enum": [
+                  "",
+                  "upvote",
+                  "19-bar",
+                  "24-7-service",
+                  "360-view",
+                  "accessories-and-sweets",
+                  "address-2",
+                  "address",
+                  "amex-card",
+                  "android",
+                  "apple-pay-card",
+                  "apple-pay",
+                  "apple",
+                  "arrow-bottom",
+                  "arrow-filled-down",
+                  "arrow-left",
+                  "arrow-right",
+                  "arrow-top",
+                  "assistance-alt",
+                  "assistance-videos",
+                  "assistance",
+                  "boutique",
+                  "brand_coffee_capsule-vl-carafe",
+                  "brand_coffee_capsule-vl-double-espresso-gran-lungo",
+                  "brand_coffee_capsule-vl-espresso",
+                  "brand_coffee_capsule-vl-mug",
+                  "brand_coffee_capsule_ol",
+                  "brand_coffee_capsule_pro",
+                  "brand_coffee_capsule_vl",
+                  "brand_coffee_cereals",
+                  "brand_coffee_citrus",
+                  "brand_coffee_cocoa",
+                  "brand_coffee_coffee-assortment",
+                  "brand_coffee_coffee-discovery-set",
+                  "brand_coffee_machines",
+                  "brand_coffee_malted",
+                  "brand_coffee_notes-herbal",
+                  "brand_delivery_boutique-location",
+                  "brand_delivery_delivery",
+                  "brand_delivery_free_delivery",
+                  "brand_delivery_package",
+                  "brand_delivery_schedule_delivery",
+                  "brand_general_coffee",
+                  "brand_machines_auto_clean_system",
+                  "brand_machines_automatic_off",
+                  "brand_machines_digital_display",
+                  "brand_machines_energy_class",
+                  "brand_machines_fast_heat_up",
+                  "brand_machines_low_water_alert",
+                  "brand_machines_milk_frothing",
+                  "brand_machines_pump_pressure_bar",
+                  "brand_payment_credit_card",
+                  "brand_payment_gift_card",
+                  "brand_payment_invoice",
+                  "brand_payment_secure",
+                  "brand_services_assistance",
+                  "brand_services_boutique",
+                  "brand_services_easy_order",
+                  "brand_services_help",
+                  "brand_services_promotions",
+                  "brand_services_recycling",
+                  "brand_services_recycling_ol",
+                  "brand_services_recycling_vl",
+                  "brand_services_subscription",
+                  "brand_services_sustainability",
+                  "calendar",
+                  "capsule-cupSize-Cappuccino-And-Latte-Macchiato",
+                  "capsule-cupSize-Cortado-Cappuccino",
+                  "capsule-cupSize-icedRecipe-vertuo",
+                  "capsule-cupSize-icedRecipe",
+                  "capsule-cupSize-alto",
+                  "capsule-cupSize-carafe-vertuo",
+                  "capsule-cupSize-coffee",
+                  "capsule-cupSize-double-espresso-vertuo",
+                  "capsule-cupSize-espresso-vertuo",
+                  "capsule-cupSize-espresso",
+                  "capsule-cupSize-gran-lungo",
+                  "capsule-cupSize-lungo",
+                  "capsule-cupSize-mug",
+                  "capsule-cupSize-ristretto",
+                  "capsule-cupSize-americano",
+                  "capsule-cupSize-large-americano",
+                  "check",
+                  "chevron-down",
+                  "chevron-left",
+                  "chevron-right",
+                  "chevron-up",
+                  "check-mark",
+                  "clock",
+                  "close-2",
+                  "close",
+                  "coffee",
+                  "coffee_capsule-ol_24",
+                  "credit-card-flag",
+                  "credit-card",
+                  "delivery-fast",
+                  "delivery-scheduled",
+                  "delivery-standard",
+                  "eco-mode",
+                  "edit",
+                  "error",
+                  "espresso-vertuo-capsule",
+                  "eye-closed",
+                  "eye-opened",
+                  "facebook",
+                  "filter",
+                  "find-us-alt",
+                  "find-us",
+                  "free-return",
+                  "gift-card",
+                  "globe",
+                  "gran-lungo-vertuo-capsule",
+                  "help",
+                  "hero-chat",
+                  "huawei",
+                  "information-24",
+                  "information",
+                  "instagram",
+                  "invoice",
+                  "language",
+                  "linkedin",
+                  "link",
+                  "live-chat",
+                  "loading-nitro",
+                  "loading",
+                  "loan",
+                  "logout",
+                  "machine_machines_ol_24",
+                  "machines-2",
+                  "machines",
+                  "mail",
+                  "mastercard-card",
+                  "mastercard",
+                  "menu",
+                  "minus-16",
+                  "minus-24",
+                  "minus-o",
+                  "modal-alert",
+                  "modal-check",
+                  "more-info",
+                  "nespresso-logo",
+                  "nespresso-monogram",
+                  "nespresso-professional-2",
+                  "nespresso-professional",
+                  "nespresso",
+                  "notification",
+                  "orders",
+                  "original",
+                  "package-box",
+                  "payment-bcorp",
+                  "payment-bvr",
+                  "payment-google-pay",
+                  "payment-ideal",
+                  "payment-klarna",
+                  "payment-lsv",
+                  "payment-postfinance",
+                  "payment-twint",
+                  "paypal-card",
+                  "paypal",
+                  "phone",
+                  "pin",
+                  "pinterest",
+                  "play-button",
+                  "play-mini",
+                  "play",
+                  "plus-16",
+                  "plus-24",
+                  "plus-o",
+                  "promotions",
+                  "recycling-point",
+                  "recycling",
+                  "remove",
+                  "search",
+                  "secure",
+                  "set-up",
+                  "shopping-bag",
+                  "signal-high",
+                  "signal-low",
+                  "signal-med",
+                  "speed",
+                  "star",
+                  "rating",
+                  "subscription-2",
+                  "subscription",
+                  "sustainability",
+                  "tag",
+                  "twitter",
+                  "ui_payment_cash",
+                  "ui_coffee_bergamot",
+                  "ui_coffee_capsule-ol",
+                  "ui_coffee_capsule-vl-carafe",
+                  "ui_coffee_capsule-vl-double-espresso_gran-lungo",
+                  "ui_coffee_capsule-vl-espresso",
+                  "ui_coffee_capsule-vl-mug",
+                  "ui_coffee_capsule-vl",
+                  "ui_coffee_capsule_professional",
+                  "ui_coffee_cardamom",
+                  "ui_coffee_cocoa",
+                  "ui_coffee_hazelnut",
+                  "ui_coffee_honey",
+                  "ui_coffee_notes-cereal",
+                  "ui_coffee_notes-malted",
+                  "ui_coffee_winey",
+                  "ui_delivery_calendar",
+                  "ui_delivery_clock",
+                  "ui_general_alerts",
+                  "ui_general_arrow-right",
+                  "ui_general_check",
+                  "ui_general_chevron-bottom",
+                  "ui_general_chevron-left",
+                  "ui_general_chevron-right",
+                  "ui_general_chevron-top",
+                  "ui_general_credit-card",
+                  "ui_general_edit",
+                  "ui_general_error",
+                  "ui_general_eye-close",
+                  "ui_general_eye-open",
+                  "ui_general_faq",
+                  "ui_general_filter",
+                  "ui_general_gift-card",
+                  "ui_general_globe",
+                  "ui_general_information",
+                  "ui_general_language",
+                  "ui_general_link",
+                  "ui_general_loading",
+                  "ui_general_log-out",
+                  "ui_general_map_view",
+                  "ui_general_menu",
+                  "ui_general_minus",
+                  "ui_general_notification",
+                  "ui_general_order",
+                  "ui_general_play",
+                  "ui_general_plus",
+                  "ui_general_promotions",
+                  "ui_general_remove",
+                  "ui_general_search",
+                  "ui_general_secure",
+                  "ui_general_shopping-bag",
+                  "ui_general_tag",
+                  "ui_general_user-account",
+                  "ui_general_warranty",
+                  "ui_general_wifi",
+                  "ui_general_x",
+                  "ui_map_directions",
+                  "ui_payment_invoice",
+                  "ui_services_assistance",
+                  "ui_services_delivery",
+                  "ui_services_easy_order",
+                  "ui_services_find-us",
+                  "ui_services_free-return",
+                  "ui_services_mail",
+                  "ui_services_phone",
+                  "ui_services_subscription",
+                  "ui_sustainability_climate",
+                  "ui_sustainability_recycling",
+                  "ui_sustainability_recycling_ol",
+                  "ui_sustainability_recycling_vl",
+                  "ui_sustainability_social_sustainability",
+                  "ui_user_member_status",
+                  "ui_user_my-address",
+                  "ui_user_my_information",
+                  "ultra-compact",
+                  "user-account",
+                  "versatil-coffee-system",
+                  "video-play",
+                  "vertuo",
+                  "visa-card",
+                  "visa",
+                  "warranty",
+                  "youtube",
+                  "services-anticipation-of-maintenance",
+                  "services-assistance",
+                  "services-avant-premiere",
+                  "services-avant-premiere-ol",
+                  "services-avant-premiere-vl",
+                  "services-coffee-assortment",
+                  "services-coffee-coffee-sample",
+                  "services-coffee-discovery-set",
+                  "services-coffee-experiences",
+                  "services-contact-chat",
+                  "services-contact-community-forum",
+                  "services-contact-mobile",
+                  "services-contact-sms",
+                  "services-contact-video-assistance",
+                  "services-contact-virtual",
+                  "services-data-insight",
+                  "services-delivery-boutique-location",
+                  "services-delivery-boutique-pick-up",
+                  "services-delivery-delivery",
+                  "services-delivery-delivery-bike",
+                  "services-delivery-delivery-fast",
+                  "services-delivery-free-delivery",
+                  "services-delivery-next-day-delivery",
+                  "services-delivery-package",
+                  "services-delivery-pick-up-points",
+                  "services-delivery-schedule-delivery",
+                  "services-easy-maintenance",
+                  "services-easy-order",
+                  "services-easy-stock-management",
+                  "services-generic",
+                  "services-gifting-card",
+                  "services-help",
+                  "services-orders",
+                  "services-payments-credit-card",
+                  "services-payments-gift-card",
+                  "services-payments-invoice",
+                  "services-phone",
+                  "services-reorder",
+                  "services-satisfied-or-reimbursed",
+                  "services-services-boutique",
+                  "services-subscription",
+                  "services-vip-masterclass",
+                  "services-voice-enabled",
+                  "payments-cash",
+                  "delivery-same-day-delivery",
+                  "contact-voice-assistant-chatbot",
+                  "contact-video-chat",
+                  "contact-mobile-push-notification",
+                  "contact-chat-bot",
+                  "coffee-coffee-tasting",
+                  "contact-video-assistance",
+                  "filter-style_step-01",
+                  "filter-style_step-02",
+                  "filter-style_step-03",
+                  "filter-style_step-04",
+                  "notes-almonds",
+                  "notes-balanced",
+                  "notes-bergamot",
+                  "notes-berry",
+                  "notes-biscuity",
+                  "notes-blueberry",
+                  "notes-cardamom",
+                  "notes-cereal",
+                  "notes-citrus",
+                  "notes-cocoa",
+                  "notes-default",
+                  "notes-flowery",
+                  "notes-fruity",
+                  "notes-hazelnut",
+                  "notes-herbal",
+                  "notes-honey",
+                  "notes-leather",
+                  "notes-malted",
+                  "notes-roasted",
+                  "notes-spicy",
+                  "notes-sugar",
+                  "notes-winey",
+                  "notes-wood",
+                  "notes-brand-coffee-roasted",
+                  "notes-brand-coffee-caramel",
+                  "notes-brand-coffee-intense-roasted",
+                  "machine_technology_machine-ol",
+                  "machine_technology_machine-vl",
+                  "machine_details_deluxe-version",
+                  "machine_details_machine-tutorial-ol",
+                  "machine_details_machine-tutorial-vl",
+                  "machine_warranty_warranty-ol",
+                  "machine_warranty_warranty-vl",
+                  "machine_features_generic",
+                  "machine_features_auto-clean-system",
+                  "machine_features_automatic-off",
+                  "machine_features_blend-specific-brewing",
+                  "machine_features_bluetooth",
+                  "machine_features_capsule-ejection-ol",
+                  "machine_features_capsule-ejection-vl",
+                  "machine_features_centrifusion",
+                  "machine_features_cold-foam-ol",
+                  "machine_features_cold-foam-vl",
+                  "machine_features_descale-alert",
+                  "machine_features_descale",
+                  "machine_features_digital-display",
+                  "machine_features_dimensions",
+                  "machine_features_eco-mode",
+                  "machine_features_energy-class",
+                  "machine_features_fast-heat-up",
+                  "machine_features_hot-foam-ol",
+                  "machine_features_hot-foam-vl",
+                  "machine_features_hot-milk",
+                  "machine_features_hot-foam",
+                  "machine_features_hot-water",
+                  "machine_features_low-water-alert",
+                  "machine_features_manual-lever",
+                  "machine_features_milk-frothing",
+                  "machine_features_mobile-push-notification",
+                  "machine_features_one-touch",
+                  "machine_features_power-off",
+                  "machine_features_pump-pressure-bar",
+                  "machine_features_rinse",
+                  "machine_features_settings",
+                  "machine_features_steam",
+                  "machine_features_temperature-settings-invert",
+                  "machine_features_temperature-settings",
+                  "machine_features_temperature",
+                  "machine_features_ultra-compact",
+                  "machine_features_water-tank",
+                  "machine_features_weight"
+                ],
+                "description": "Add icon",
+                "default": ""
+              },
+              "label": {
+                "type": "string",
+                "title": "Label",
+                "default": "Aromatic Note"
+              }
+            },
+            "required": [
+              "icon",
+              "label"
+            ]
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "intensity",
+        "min_intensity",
+        "max_intensity",
+        "intensity_label",
+        "a11y_intensity_max"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "description": "Choose a background color",
+          "options": {
+            "enum_titles": [
+              "White",
+              "Highlight 40",
+              "Highlight 250"
+            ]
+          },
+          "enum": [
+            "white",
+            "highlight-040",
+            "highlight-250"
+          ],
+          "default": "white"
+        },
+        "image_position": {
+          "type": "string",
+          "title": "Image position",
+          "description": "Choose the position of the image",
+          "options": {
+            "enum_titles": [
+              "Default",
+              "Reverse"
+            ]
+          },
+          "enum": [
+            "default",
+            "reverse"
+          ],
+          "default": "reverse"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "background_color",
+        "image_position"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_card"
+          ],
+          "title": "Creative on site",
+          "default": "before_card",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_card",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

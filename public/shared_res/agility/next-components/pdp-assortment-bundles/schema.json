@@ -1,0 +1,334 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "PDP Assortment Bundles",
+  "definitions": {
+    "skus": {
+      "type": "object",
+      "options": {
+        "collapsed": true
+      },
+      "headerTemplate": "Sku #{{i}} - {{ self.sku }}",
+      "properties": {
+        "sku": {
+          "type": "string",
+          "title": "SKU",
+          "description": "SKU inside the bundle.",
+          "default": ""
+        },
+        "quantity": {
+          "type": "string",
+          "title": "Quantity",
+          "description": "Quantity of each SKU",
+          "default": ""
+        }
+      },
+      "required": [
+        "sku",
+        "quantity"
+      ]
+    }
+  },
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "main_sku": {
+          "type": "string",
+          "title": "SKU of the BUNDLE product",
+          "description": "Please enter the SKU of bundle product",
+          "default": "7713.20"
+        },
+        "headline_desc": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Title",
+          "description": "Top title for assortment bundles"
+        },
+        "skus": {
+          "type": "array",
+          "options": {
+            "collapsed": true
+          },
+          "title": "SKUs inside the bundle",
+          "items": {
+            "$ref": "#/definitions/skus"
+          },
+          "default": [
+            {
+              "sku": "7713.20",
+              "quantity": "10"
+            },
+            {
+              "sku": "7715.20",
+              "quantity": "10"
+            },
+            {
+              "sku": "7714.20",
+              "quantity": "10"
+            }
+          ]
+        },
+        "intensity": {
+          "type": "object",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "intensity_label",
+            "max_intensity",
+            "a11y_intensity_max"
+          ],
+          "properties": {
+            "intensity_label": {
+              "type": "string",
+              "title": "Intensity Label",
+              "default": "Intensity"
+            },
+            "max_intensity": {
+              "type": "string",
+              "title": "Max intensity",
+              "description": "Intensity max for OL is 14, Intensity max for VL is 12",
+              "default": "14"
+            },
+            "a11y_intensity_max": {
+              "type": "string",
+              "title": "Alternative text for Intensity max in intensity component",
+              "description": "Intensity max for OL is 14, Intensity max for VL is 12",
+              "default": "max of {max_intensity}"
+            }
+          }
+        },
+        "more_info": {
+          "type": "string",
+          "title": "More info link",
+          "description": "Link to open sku-quick-view popin",
+          "default": "More information"
+        },
+        "sku_quick_view": {
+          "type": "object",
+          "title": "Sku Quick View",
+          "required": [
+            "popin",
+            "cup_sizes",
+            "aromatic_profile",
+            "link"
+          ],
+          "properties": {
+            "popin": {
+              "type": "object",
+              "title": "Popin",
+              "required": [
+                "close"
+              ],
+              "properties": {
+                "close": {
+                  "type": "string",
+                  "title": "Close label",
+                  "description": "Label for accessibility",
+                  "default": "Close"
+                }
+              }
+            },
+            "cup_sizes": {
+              "type": "object",
+              "title": "Cup sizes",
+              "required": [
+                "heading",
+                "unit_is_oz"
+              ],
+              "properties": {
+                "heading": {
+                  "type": "string",
+                  "title": "Heading",
+                  "default": "Best served as"
+                },
+                "unit_is_oz": {
+                  "type": "boolean",
+                  "title": "Unit is Oz",
+                  "descrition": "Set to true is you want cup size volumes to be in Oz",
+                  "default": false
+                }
+              }
+            },
+            "aromatic_profile": {
+              "type": "object",
+              "title": "Aromatic profile",
+              "required": [
+                "heading"
+              ],
+              "properties": {
+                "heading": {
+                  "type": "string",
+                  "title": "Heading",
+                  "default": "Aromatic profile"
+                }
+              }
+            },
+            "link": {
+              "type": "object",
+              "title": "Link to the PDP",
+              "required": [
+                "label"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Link label",
+                  "default": "Full product details"
+                }
+              }
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        },
+        "go_to_top": {
+          "type": "string",
+          "title": "Go to top",
+          "description": "Only visible in mobile",
+          "default": "Back to top"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "main_sku",
+        "headline_desc",
+        "skus",
+        "intensity",
+        "more_info",
+        "sku_quick_view",
+        "go_to_top"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_pdp_assortment_bundles"
+          ],
+          "title": "Creative on site",
+          "default": "before_pdp_assortment_bundles",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_pdp_assortment_bundles",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

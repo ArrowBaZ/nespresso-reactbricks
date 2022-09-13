@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "hero",
+  "properties": {
+    "contrast": {
+      "type": "string",
+      "title": "Contrast",
+      "options": {
+        "enum_titles": [
+          "Dark background",
+          "Light background"
+        ]
+      },
+      "enum": [
+        "dark",
+        "light"
+      ],
+      "default": "light",
+      "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+    },
+    "padding_top": {
+      "type": "string",
+      "title": "Padding top",
+      "enum": [
+        "pt0",
+        "pt7",
+        "pt8",
+        "pt9",
+        "pt10"
+      ],
+      "options": {
+        "enum_titles": [
+          "None (0px desktop / 0px mobile)",
+          "Small (40px desktop / 32px mobile)",
+          "Medium (64px desktop / 40px mobile)",
+          "Large (80px desktop / 64px mobile)",
+          "Extra large (120px desktop / 80px mobile)"
+        ]
+      },
+      "description": "Recommended padding is Large",
+      "default": "pt9"
+    },
+    "padding_bottom": {
+      "type": "string",
+      "title": "Padding bottom",
+      "enum": [
+        "pb0",
+        "pb7",
+        "pb8",
+        "pb9",
+        "pb10"
+      ],
+      "options": {
+        "enum_titles": [
+          "None (0px desktop / 0px mobile)",
+          "Small (40px desktop / 32px mobile)",
+          "Medium (64px desktop / 40px mobile)",
+          "Large (80px desktop / 64px mobile)",
+          "Extra large (120px desktop / 80px mobile)"
+        ]
+      },
+      "description": "Recommended padding is Large",
+      "default": "pb9"
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_hero_component"
+          ],
+          "title": "Creative on site",
+          "default": "before_hero_component",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_hero_component",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    },
+    "background_retina": {
+      "type": "string",
+      "description": "URL to image 3840 x 720 pixels (width x height)",
+      "default": "/shared_res/agility/next-components/assets/hero/background/Light_d@2x.jpg"
+    },
+    "background_desktop": {
+      "type": "string",
+      "description": "URL to image 1920 x 360 pixels (width x height)",
+      "default": "/shared_res/agility/next-components/assets/hero/background/Light_d.jpg"
+    },
+    "background_mobile": {
+      "type": "string",
+      "description": "URL to image 750 x 850 pixels (width x height)",
+      "default": "/shared_res/agility/next-components/assets/hero/background/Light_m.jpg"
+    },
+    "heading": {
+      "type": "string",
+      "title": "Title",
+      "description": "",
+      "default": "VERTUO COFFEE"
+    },
+    "a11y_heading": {
+      "type": "string",
+      "title": "a11y Title",
+      "description": "Hidden text for Accessibility. Add more description to describe the picture and purpose of the component. Both title and a11y title will be read by screen reader.",
+      "default": ""
+    },
+    "sub_heading": {
+      "type": "string",
+      "title": "Sub heading",
+      "description": "Sub heading displays above title (optional)",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "description": "",
+      "default": "With original, live your authentic espresso experience from a milder fruity espresso to the Napolitan style short Ristretto, with or without milk."
+    }
+  }
+}

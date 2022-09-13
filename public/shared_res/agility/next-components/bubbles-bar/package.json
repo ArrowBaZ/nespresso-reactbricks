@@ -1,0 +1,29 @@
+{
+    "name": "bubbles-bar",
+    "version": "1.1.1",
+    "description": "bubbles-bar element",
+    "folder": "/shared_res/agility/next-components/bubbles-bar/",
+    "tag": "nb-bubbles-bar",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/bubbles-bar/v1.1/css/bubbles-bar.css",
+        "module": "/shared_res/agility/next-components/bubbles-bar/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/bubbles-bar/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/bubbles-bar/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/navigation-bubbles/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/chip/",
+        "/shared_res/agility/next-components/bubble/",
+        "/shared_res/agility/next-components/slider-menu/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "205",
+            "desktop": "237"
+        }
+    }
+}

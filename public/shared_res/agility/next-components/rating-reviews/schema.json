@@ -1,0 +1,629 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Ratings & Reviews",
+  "required": [
+    "layout",
+    "campaign",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "default": "Vertuo POP reviews"
+        },
+        "sku": {
+          "type": "string",
+          "title": "SKU of the product",
+          "description": "",
+          "default": "M-R-1223"
+        },
+        "rating_summary": {
+          "type": "object",
+          "options": {
+            "collapsed": true
+          },
+          "title": "Rating Summary",
+          "description": "View rating distribution",
+          "required": [
+            "heading",
+            "rating_review_label",
+            "recommend_label",
+            "msg_no_rating",
+            "msg_be_first_to_rate",
+            "a11y_label_average",
+            "a11y_label_star"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "default": "average customer rating"
+            },
+            "rating_review_label": {
+              "type": "string",
+              "title": "Reviews Label",
+              "default": "reviews"
+            },
+            "recommend_label": {
+              "type": "string",
+              "title": "Customer will recommend",
+              "description": "XX% would recommend this product",
+              "default": "{recommended_percentage}% would recommend this product"
+            },
+            "msg_no_rating": {
+              "type": "string",
+              "title": "No ratings",
+              "default": "This product has no reviews yet."
+            },
+            "msg_be_first_to_rate": {
+              "type": "string",
+              "title": "Call to rate product",
+              "default": "Be the first to review it!"
+            },
+            "a11y_label_average": {
+              "type": "string",
+              "title": "a11y Label average",
+              "default": "average on 5 stars"
+            },
+            "a11y_label_star": {
+              "type": "string",
+              "title": "a11y Label stars",
+              "default": "stars"
+            }
+          }
+        },
+        "reviews_panel": {
+          "type": "object",
+          "options": {
+            "collapsed": true
+          },
+          "title": "Review List",
+          "description": "List of reviews",
+          "required": [
+            "heading",
+            "msg_to_review",
+            "cta",
+            "label_all_reviews",
+            "dropdown_highlightedFirst_option_label",
+            "dropdown_newest_option_label",
+            "dropdown_oldest_option_label",
+            "dropdown_mostHelpful_option_label",
+            "dropdown_highestRated_option_label",
+            "dropdown_lowestRated_option_label",
+            "sort_dropdown",
+            "a11y_label_author_by",
+            "msg_review_helpful",
+            "label_see_more"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "default": "share your experience with us"
+            },
+            "msg_to_review": {
+              "type": "string",
+              "title": "Message introduction",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "default": "If you have any questions regarding your Nespresso machine, please contact the Nespresso Club for immediate technical assistance at <a href=\"tel:+348005621465\">800-562-1465</a>."
+            },
+            "cta": {
+              "type": "object",
+              "title": "Cta",
+              "required": [
+                "variation",
+                "label"
+              ],
+              "properties": {
+                "variation": {
+                  "type": "string",
+                  "default": "tertiary"
+                },
+                "label": {
+                  "type": "string",
+                  "default": "write a review"
+                }
+              }
+            },
+            "label_all_reviews": {
+              "type": "string",
+              "title": "Label All reviews",
+              "default": "All reviews"
+            },
+            "dropdown_highlightedFirst_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Highlight First",
+              "default": "Highlight"
+            },
+            "dropdown_newest_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Newest",
+              "default": "Newest"
+            },
+            "dropdown_oldest_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Oldest",
+              "default": "Oldest"
+            },
+            "dropdown_mostHelpful_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Most Helpful",
+              "default": "Most Helpful"
+            },
+            "dropdown_highestRated_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Highest Rated",
+              "default": "Highest Rated"
+            },
+            "dropdown_lowestRated_option_label": {
+              "type": "string",
+              "title": "Dropdown Label: criteria Lowest Rated",
+              "default": "Lowest Rated"
+            },
+            "sort_dropdown": {
+              "type": "object",
+              "options": {
+                "collapsed": true
+              },
+              "title": "Dropdown sort reviews",
+              "required": [
+                "label",
+                "aa_description",
+                "aa_listbox_description",
+                "aa_select_description",
+                "icon_option"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "default": "Sort by"
+                },
+                "aa_description": {
+                  "type": "string",
+                  "title": "a11y Description",
+                  "default": "You can select different sorting values from this listbox. To interact with this listbox press SPACE or ENTER key."
+                },
+                "aa_listbox_description": {
+                  "type": "string",
+                  "title": "a11y Listbox Description",
+                  "default": "You can navigate through the options using UP or DOWN arrows keys. To exit this listbox press ESCAPE key."
+                },
+                "aa_select_description": {
+                  "type": "string",
+                  "title": "a11y Select Description",
+                  "default": "To select this option press SPACE or ENTER key."
+                },
+                "icon_option": {
+                  "options": {
+                    "hidden": true
+                  },
+                  "type": "string",
+                  "title": "Icon",
+                  "default": "check"
+                }
+              }
+            },
+            "a11y_label_author_by": {
+              "type": "string",
+              "title": "a11y Author",
+              "default": "By"
+            },
+            "msg_review_helpful": {
+              "type": "string",
+              "title": "Like call to action",
+              "default": "Was this review helpful?"
+            },
+            "label_see_more": {
+              "type": "string",
+              "title": "Label load more reviews",
+              "default": "See more reviews"
+            }
+          }
+        },
+        "rating_submit": {
+          "type": "object",
+          "options": {
+            "collapsed": true
+          },
+          "title": "Rating submit",
+          "description": "Form to fill and send rating",
+          "required": [
+            "a11y_label_popin_close",
+            "element_id",
+            "element_name",
+            "heading",
+            "elements",
+            "terms_of_use",
+            "cancel_cta",
+            "submit_cta",
+            "error",
+            "success"
+          ],
+          "properties": {
+            "a11y_label_popin_close": {
+              "type": "string",
+              "title": "a11y Label Close",
+              "default": "Close"
+            },
+            "element_id": {
+              "type": "string",
+              "title": "Property ID of form Element",
+              "description": "Should be unique in the page",
+              "default": "rating-and-review-form-id"
+            },
+            "element_name": {
+              "type": "string",
+              "title": "Property Name of form Element",
+              "default": "Rating & review form"
+            },
+            "heading": {
+              "type": "string",
+              "default": "Share your experience with us"
+            },
+            "elements": {
+              "type": "array",
+              "options": {
+                "collapsed": true
+              },
+              "title": "Submit Rating Form Elements",
+              "items": {
+                "type": "object",
+                "headerTemplate": "{{ i1 }} - {{ self.element_name }}",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "title": "Form Type",
+                    "enum": [
+                      "input-text",
+                      "textarea",
+                      "checkbox",
+                      "star-rating"
+                    ]
+                  },
+                  "element_id": {
+                    "type": "string",
+                    "title": "Element id",
+                    "description": "Set a unique id for your form element"
+                  },
+                  "element_name": {
+                    "type": "string",
+                    "title": "Element name",
+                    "description": "Allow to get data on server side"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "Label",
+                    "description": "Label of your checkbox (displayed after your checkbox)"
+                  },
+                  "required_message": {
+                    "type": "string",
+                    "title": "Required message",
+                    "description": "Required message displayed if checkbox not checked (leave empty if optional)"
+                  },
+                  "a11y_star_singular": {
+                    "type": "string",
+                    "title": "Singular star translation",
+                    "description": "Label for accessibility"
+                  },
+                  "a11y_star_plural": {
+                    "type": "string",
+                    "title": "Plural star translation",
+                    "description": "Label for accessibility"
+                  }
+                },
+                "default": {
+                  "element_id": "rating-id",
+                  "element_name": "rating",
+                  "type": "star-rating",
+                  "label": "Your general rating",
+                  "a11y_star_singular": "star",
+                  "a11y_star_plural": "stars",
+                  "required_message": "Field is required"
+                }
+              },
+              "default": [
+                {
+                  "element_id": "rating-id",
+                  "element_name": "rating",
+                  "type": "star-rating",
+                  "label": "Your general rating",
+                  "a11y_star_singular": "star",
+                  "a11y_star_plural": "stars",
+                  "required_message": "Field is required"
+                },
+                {
+                  "element_id": "checkbox-recommend-id",
+                  "element_name": "recommend",
+                  "type": "checkbox",
+                  "label": "I would recommend this product (optional)"
+                },
+                {
+                  "element_id": "input-text-title-id",
+                  "element_name": "title",
+                  "type": "input-text",
+                  "label": "Review title",
+                  "required_message": "\"Review Title\" is mandatory"
+                },
+                {
+                  "element_id": "textarea-review-id",
+                  "element_name": "review",
+                  "type": "textarea",
+                  "label": "Review",
+                  "max": "1000",
+                  "max_message": "You have reach the maximum characters allowed",
+                  "helper_message": "",
+                  "required_message": "\"Review\" is mandatory"
+                },
+                {
+                  "element_id": "input-text-name-id",
+                  "element_name": "name",
+                  "type": "input-text",
+                  "label": "Your name (or Alias)"
+                },
+                {
+                  "element_id": "checkbox-anonymous-id",
+                  "element_name": "anonymous",
+                  "type": "checkbox",
+                  "label": "Review anonymously (optional)"
+                }
+              ]
+            },
+            "terms_of_use": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "default": "By submitting a review, you agree to our <a href=\"#\">Terms of use & Privacy Policy</a>."
+            },
+            "cancel_cta": {
+              "type": "string",
+              "default": "Cancel"
+            },
+            "submit_cta": {
+              "type": "string",
+              "default": "Submit your review"
+            },
+            "error": {
+              "type": "object",
+              "options": {
+                "collapsed": true
+              },
+              "title": "Error Screen",
+              "required": [
+                "icon",
+                "heading",
+                "description",
+                "cta"
+              ],
+              "properties": {
+                "icon": {
+                  "type": "string",
+                  "options": {
+                    "hidden": true
+                  },
+                  "default": "modal-alert"
+                },
+                "heading": {
+                  "type": "string",
+                  "default": "Unable to publish your review"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Message introduction",
+                  "format": "html",
+                  "options": {
+                    "wysiwyg": false
+                  },
+                  "default": "We are unable to publish your review since it contains inappropriate words."
+                },
+                "cta": {
+                  "type": "string",
+                  "default": "Edit my review"
+                }
+              }
+            },
+            "success": {
+              "type": "object",
+              "options": {
+                "collapsed": true
+              },
+              "title": "Success Screen",
+              "required": [
+                "icon",
+                "heading",
+                "description",
+                "cta"
+              ],
+              "properties": {
+                "icon": {
+                  "type": "string",
+                  "options": {
+                    "hidden": true
+                  },
+                  "default": "modal-check"
+                },
+                "heading": {
+                  "type": "string",
+                  "default": "thank you for submitting your review"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Message introduction",
+                  "format": "html",
+                  "options": {
+                    "wysiwyg": false
+                  },
+                  "default": "Your review has been submitted successfully. Our Coffee specialists will process it. You’ll be able to see your review online shortly."
+                },
+                "cta": {
+                  "type": "string",
+                  "default": "Back to reviews"
+                }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "sku",
+        "rating_summary",
+        "reviews_panel",
+        "rating_submit"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_rating_reviews"
+          ],
+          "title": "Creative on site",
+          "default": "before_rating_reviews",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_rating_reviews",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "title": "Star Rating",
+  "required": [
+    "element_id",
+    "element_name",
+    "label",
+    {
+      "type": "string",
+      "title": "Singular star translation",
+      "description": "Label for accessibility"
+    },
+    {
+      "type": "string",
+      "title": "Plural star translation",
+      "description": "Label for accessibility"
+    },
+    "helper_message",
+    "required_message"
+  ],
+  "properties": {
+    "element_id": {
+      "type": "string",
+      "title": "Element id",
+      "description": "Set a unique id for your form element"
+    },
+    "element_name": {
+      "type": "string",
+      "title": "Element name",
+      "description": "Allow to get data on server side"
+    },
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Label of your checkbox (displayed after your checkbox)"
+    },
+    "a11y_star_singular": {
+      "type": "string",
+      "title": "Singular star translation",
+      "description": "Label for accessibility"
+    },
+    "a11y_star_plural": {
+      "type": "string",
+      "title": "Plural star translation",
+      "description": "Label for accessibility"
+    },
+    "helper_message": {
+      "type": "string",
+      "title": "Helper message",
+      "description": "Helper message displayed below your field"
+    },
+    "required_message": {
+      "type": "string",
+      "title": "Required message",
+      "description": "Required message displayed if checkbox not checked (leave empty if optional)"
+    }
+  },
+  "options": {
+    "collapsed": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "dropdown",
+    "version": "1.0.0",
+    "description": "dropdown element",
+    "folder": "/shared_res/agility/next-components/dropdown/",
+    "tag": "nb-dropdown",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/dropdown/v1.1/css/dropdown.css",
+        "module": "/shared_res/agility/next-components/dropdown/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/dropdown/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/dropdown/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

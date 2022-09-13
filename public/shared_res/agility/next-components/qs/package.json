@@ -1,0 +1,17 @@
+{
+    "name": "qs",
+    "version": "1.1.1",
+    "description": "Quantity selector",
+    "folder": "/shared_res/agility/next-components/qs/",
+    "tag": "nb-qs",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/qs/v1.1/css/qs.css",
+        "module": "/shared_res/agility/next-components/qs/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/qs/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/cta/"
+    ]
+}

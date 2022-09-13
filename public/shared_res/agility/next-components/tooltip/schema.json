@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "tooltip",
+  "properties": {
+    "alignment": {
+      "type": "string",
+      "title": "Alignment",
+      "enum_titles": [
+        "Center",
+        "Left",
+        "Right"
+      ],
+      "enum": [
+        "center",
+        "left",
+        "right"
+      ],
+      "default": "center"
+    },
+    "position": {
+      "type": "string",
+      "title": "Position",
+      "enum_titles": [
+        "Top",
+        "Right",
+        "Bottom",
+        "Left"
+      ],
+      "enum": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
+      "default": "top"
+    },
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "default": "Tooltip example"
+    },
+    "content": {
+      "type": "string",
+      "title": "Content",
+      "default": ""
+    }
+  }
+}

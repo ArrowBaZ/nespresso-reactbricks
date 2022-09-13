@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Navigation Bar",
+  "definitions": {
+    "navigation": {
+      "type": "object",
+      "headerTemplate": "{{ i1 }} - {{ self.label }}",
+      "options": {
+        "collapsed": true
+      },
+      "properties": {
+        "link": {
+          "type": "string",
+          "title": "URL of the link",
+          "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+          "default": ""
+        },
+        "label": {
+          "type": "string",
+          "title": "Label of the link",
+          "description": "",
+          "default": "Discover more"
+        },
+        "seo_label": {
+          "type": "string",
+          "title": "SEO of the link",
+          "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+          "default": "Discover Limited Edition Collection with Nespresso."
+        },
+        "icon_left": {
+          "type": "string",
+          "title": "Link Left icon",
+          "default": ""
+        },
+        "selected": {
+          "type": "boolean",
+          "title": "Is menu selected?",
+          "description": "Will select the menu by default. On Original PLP, set it to true for Original link and false for other.",
+          "default": false
+        }
+      },
+      "required": [
+        "link",
+        "label",
+        "seo_label",
+        "selected"
+      ]
+    }
+  },
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "a11y_slider_previous_button": {
+          "type": "string",
+          "title": "a11y Button to slide left",
+          "description": "Hidden text for Accessibility.",
+          "default": "Slide menu left"
+        },
+        "a11y_slider_next_button": {
+          "type": "string",
+          "title": "a11y Button to slide right",
+          "description": "Hidden text for Accessibility.",
+          "default": "Slide menu right"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "a11y_slider_previous_button",
+        "a11y_slider_next_button"
+      ]
+    },
+    "navigation": {
+      "type": "array",
+      "maxItems": 5,
+      "minItems": 2,
+      "options": {
+        "collapsed": false
+      },
+      "title": "Navigation links",
+      "description": "Links inside the Nav Bar",
+      "items": {
+        "$ref": "#/definitions/navigation"
+      },
+      "default": [
+        {
+          "link": "#commitment",
+          "label": "COMMITMENT",
+          "seo_label": "Buy Original coffee on our dedicated premium page.",
+          "selected": true
+        },
+        {
+          "link": "#b-corp",
+          "label": "B CORP",
+          "seo_label": "Discover Limited Edition Collection with Nespresso.",
+          "selected": false
+        },
+        {
+          "link": "#circularity",
+          "label": "CIRCULARITY",
+          "seo_label": "Discover Limited Edition Collection with Nespresso.",
+          "selected": false
+        },
+        {
+          "link": "#climate",
+          "label": "CLIMATE",
+          "seo_label": "Discover Limited Edition Collection with Nespresso.",
+          "selected": false
+        },
+        {
+          "link": "#friendlyurl",
+          "label": "COMMUNITY",
+          "seo_label": "Discover Limited Edition Collection with Nespresso.",
+          "selected": false
+        }
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_navigation_bar"
+          ],
+          "title": "Creative on site",
+          "default": "before_navigation_bar",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_navigation_bar",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "copywriting",
+    "navigation",
+    "campaign"
+  ],
+  "default": {
+    "copywriting": {
+      "a11y_slider_previous_button": "Slide right",
+      "a11y_slider_next_button": "Slide left"
+    },
+    "navigation": [
+      {
+        "link": "#commitment",
+        "label": "COMMITMENT",
+        "seo_label": "Buy Original coffee on our dedicated premium page.",
+        "selected": true
+      },
+      {
+        "link": "#b-corp",
+        "label": "B CORP",
+        "seo_label": "Discover Limited Edition Collection with Nespresso.",
+        "selected": false
+      },
+      {
+        "link": "#circularity",
+        "label": "CIRCULARITY",
+        "seo_label": "Discover Limited Edition Collection with Nespresso.",
+        "selected": false
+      },
+      {
+        "link": "#climate",
+        "label": "CLIMATE",
+        "seo_label": "Discover Limited Edition Collection with Nespresso.",
+        "selected": false
+      },
+      {
+        "link": "#friendlyurl",
+        "label": "COMMUNITY",
+        "seo_label": "Discover Limited Edition Collection with Nespresso.",
+        "selected": false
+      }
+    ],
+    "campaign": {
+      "id": "id",
+      "creative": "before_navigation_bar",
+      "name": "name",
+      "position": "position"
+    }
+  }
+}

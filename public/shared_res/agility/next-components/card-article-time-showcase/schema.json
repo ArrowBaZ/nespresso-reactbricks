@@ -1,0 +1,501 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Cards Article with Time Showcase",
+  "description": "Display cards to reach articles. https://wiki.nespresso.com/x/gFOgCQ",
+  "required": [
+    "campaign",
+    "layout",
+    "cards",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Section title",
+          "description": "",
+          "default": "Explore all articles"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading"
+      ]
+    },
+    "cards": {
+      "type": "array",
+      "title": "Cards List",
+      "minItems": 3,
+      "options": {
+        "collapsed": true
+      },
+      "items": {
+        "type": "object",
+        "headerTemplate": "{{ i1 }} - {{ self.copywriting.heading }}",
+        "properties": {
+          "copywriting": {
+            "type": "object",
+            "title": "Copy writing",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "Card location",
+                "default": "Ethiopia"
+              },
+              "time": {
+                "type": "string",
+                "description": "",
+                "default": "3 min reading"
+              },
+              "heading": {
+                "type": "string",
+                "description": "Card title",
+                "default": "Surviving the test of time"
+              },
+              "description": {
+                "type": "string",
+                "format": "html",
+                "options": {
+                  "wysiwyg": false
+                },
+                "description": "Card text",
+                "default": "We make countless uncompromising choices that go into every cup."
+              },
+              "category": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "description": "Category label",
+                    "default": "ORIGINS & BLENDS"
+                  },
+                  "target": {
+                    "type": "string",
+                    "description": "Category target"
+                  }
+                },
+                "required": [
+                  "label",
+                  "target"
+                ],
+                "default": {
+                  "label": "ORIGINS & BLENDS",
+                  "target": "#category"
+                }
+              },
+              "visual": {
+                "type": "object",
+                "required": [
+                  "src",
+                  "alt"
+                ],
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "description": "Visual source",
+                    "default": "/shared_res/agility/next-components/assets/card/article/visual.jpg"
+                  },
+                  "alt": {
+                    "type": "string",
+                    "description": "Visual alternative text",
+                    "default": "Loyalty program"
+                  }
+                },
+                "default": {
+                  "src": "/shared_res/agility/next-components/assets/card/article/visual.jpg",
+                  "alt": "Loyalty program"
+                }
+              },
+              "link": {
+                "title": "Link",
+                "type": "object",
+                "required": [
+                  "color",
+                  "size",
+                  "link",
+                  "label",
+                  "seo_label",
+                  "tracking_label"
+                ],
+                "options": {
+                  "collapsed": true
+                },
+                "properties": {
+                  "color": {
+                    "type": "string",
+                    "title": "Link text color",
+                    "description": "",
+                    "enum": [
+                      "gold",
+                      "black",
+                      "white"
+                    ],
+                    "default": "gold"
+                  },
+                  "size": {
+                    "type": "string",
+                    "title": "Link text size",
+                    "description": "",
+                    "enum": [
+                      "large",
+                      "medium",
+                      "small",
+                      "xsmall"
+                    ],
+                    "default": "large"
+                  },
+                  "link": {
+                    "type": "string",
+                    "title": "URL of the link",
+                    "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+                    "default": ""
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "Label of the link",
+                    "description": "",
+                    "default": "Discover more"
+                  },
+                  "seo_label": {
+                    "type": "string",
+                    "title": "SEO of the link",
+                    "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+                    "default": "Discover Limited Edition Collection with Nespresso."
+                  },
+                  "tracking_label": {
+                    "type": "string",
+                    "title": "Tracking Label",
+                    "description": "Trigger on click in GA",
+                    "default": ""
+                  }
+                },
+                "default": {
+                  "color": "gold",
+                  "size": "large",
+                  "seo_label": "Discover more the Loyalty program article",
+                  "tracking_label": "Card Article Container - Article 1 - Click",
+                  "label": "Discover more",
+                  "link": "./accessories"
+                }
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "required": [
+              "heading",
+              "description",
+              "category",
+              "visual",
+              "link",
+              "location",
+              "time"
+            ]
+          },
+          "layout": {
+            "type": "object",
+            "title": "Layout & Background",
+            "properties": {
+              "contrast": {
+                "type": "string",
+                "title": "Contrast",
+                "options": {
+                  "enum_titles": [
+                    "Dark background",
+                    "Light background"
+                  ]
+                },
+                "enum": [
+                  "dark",
+                  "light"
+                ],
+                "default": "light",
+                "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+              },
+              "background": {
+                "type": "object",
+                "title": "Background images",
+                "description": "Find all information about this component on https://wiki.nespresso.com/x/AZqFC",
+                "properties": {
+                  "background_image_alt": {
+                    "type": "string",
+                    "title": "Alt Background image & SEO",
+                    "description": "Describe the image used to drive customers and seo bot",
+                    "default": ""
+                  },
+                  "mobile": {
+                    "type": "string",
+                    "title": "URL image Mobile",
+                    "description": "",
+                    "default": ""
+                  },
+                  "desktop": {
+                    "type": "string",
+                    "title": "URL image Desktop",
+                    "description": "",
+                    "default": ""
+                  },
+                  "retina": {
+                    "type": "string",
+                    "title": "URL image Retina",
+                    "description": "",
+                    "default": ""
+                  }
+                },
+                "options": {
+                  "collapsed": true
+                },
+                "required": [
+                  "mobile",
+                  "desktop",
+                  "retina",
+                  "background_image_alt"
+                ]
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "required": [
+              "contrast",
+              "background"
+            ]
+          },
+          "campaign": {
+            "type": "object",
+            "title": "Campaign tracking",
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Identifier",
+                "description": "ID of the campaign",
+                "default": "Default campaign ID (tracking missing in Page Builder export)"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Name of your campaign",
+                "default": "Default campaign name (tracking missing in Page Builder export)"
+              },
+              "creative": {
+                "type": "string",
+                "enum": [
+                  "before_card_article"
+                ],
+                "title": "Creative on site",
+                "default": "before_card_article",
+                "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+              },
+              "position": {
+                "type": "string",
+                "title": "Position on site",
+                "description": "e.g. `home-main`",
+                "default": "Default campaign Position (tracking missing in Page Builder export)"
+              }
+            },
+            "options": {
+              "collapsed": true
+            },
+            "required": [
+              "id",
+              "name",
+              "creative",
+              "position"
+            ],
+            "default": {
+              "id": "Default campaign ID (tracking missing in Page Builder export)",
+              "name": "Default campaign name (tracking missing in Page Builder export)",
+              "creative": "before_card_article",
+              "position": "Default campaign Position (tracking missing in Page Builder export)"
+            }
+          }
+        },
+        "required": [
+          "copywriting",
+          "layout",
+          "campaign"
+        ],
+        "default": {
+          "copywriting": {
+            "heading": "Surviving the test of time",
+            "description": "We make countless uncompromising choices that go into every cup.",
+            "category": {
+              "label": "ORIGINS & BLENDS",
+              "target": "#"
+            },
+            "link": {
+              "color": "gold",
+              "size": "large",
+              "seo_label": "Discover more the Loyalty program article",
+              "tracking_label": "Card Article Container - Article 3 - Click",
+              "label": "Discover more",
+              "link": "./accessories"
+            },
+            "visual": {
+              "src": "/shared_res/agility/next-components/assets/card/article/visual.jpg",
+              "alt": "Loyalty program"
+            }
+          },
+          "layout": {
+            "contrast": "light"
+          },
+          "campaign": {
+            "id": "Default campaign ID (tracking missing in Page Builder export)",
+            "name": "Default campaign name (tracking missing in Page Builder export)",
+            "creative": "before_card_article",
+            "position": "Default campaign Position (tracking missing in Page Builder export)"
+          }
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_card_article_time_showcase"
+          ],
+          "title": "Creative on site",
+          "default": "before_card_article_time_showcase",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_card_article_time_showcase",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

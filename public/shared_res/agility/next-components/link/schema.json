@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Link",
+  "properties": {
+    "color": {
+      "type": "string",
+      "title": "Link text color",
+      "description": "",
+      "enum": [
+        "gold",
+        "black",
+        "white"
+      ],
+      "default": "gold"
+    },
+    "size": {
+      "type": "string",
+      "title": "Link text size",
+      "description": "",
+      "enum": [
+        "large",
+        "medium",
+        "small",
+        "xsmall"
+      ],
+      "default": "large"
+    },
+    "link": {
+      "type": "string",
+      "title": "URL of the link",
+      "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+      "default": ""
+    },
+    "label": {
+      "type": "string",
+      "title": "Label of the link",
+      "description": "",
+      "default": "Discover more"
+    },
+    "seo_label": {
+      "type": "string",
+      "title": "SEO of the link",
+      "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+      "default": "Discover Limited Edition Collection with Nespresso."
+    },
+    "tracking_label": {
+      "type": "string",
+      "title": "Tracking Label",
+      "description": "Trigger on click in GA",
+      "default": ""
+    },
+    "link_new_tab": {
+      "type": "boolean",
+      "title": "URL of the link in new tab",
+      "description": "Open URL of the link in new tab",
+      "default": false
+    },
+    "a11y_label_new_tab": {
+      "type": "string",
+      "title": "Label for Accessibility when link opens in a new tab",
+      "description": "If you choose to open this link in a new tab, please do not forget to translate this text for Accessibility",
+      "default": "Opens in a new tab"
+    }
+  }
+}

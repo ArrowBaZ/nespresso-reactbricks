@@ -1,0 +1,688 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Coffees List",
+  "definitions": {
+    "category": {
+      "type": "object",
+      "options": {
+        "collapsed": true
+      },
+      "headerTemplate": "Cat #{{i}} - {{ self.category_id }}",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "dark",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "category_id": {
+          "type": "string",
+          "title": "Category ID",
+          "default": "nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]"
+        },
+        "background_retina": {
+          "type": "string",
+          "title": "Background Retina",
+          "default": ""
+        },
+        "background_desktop": {
+          "type": "string",
+          "title": "Background Desktop",
+          "default": ""
+        },
+        "background_mobile": {
+          "type": "string",
+          "title": "Background Mobile",
+          "default": ""
+        }
+      },
+      "required": [
+        "contrast",
+        "category_id",
+        "background_retina",
+        "background_desktop",
+        "background_mobile"
+      ]
+    },
+    "nav_links": {
+      "type": "object",
+      "options": {
+        "collapsed": true
+      },
+      "headerTemplate": "Link #{{i}} - {{ self.label }}",
+      "properties": {
+        "link": {
+          "type": "string",
+          "title": "URL of the link",
+          "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+          "default": ""
+        },
+        "label": {
+          "type": "string",
+          "title": "Label of the link",
+          "description": "",
+          "default": "Discover more"
+        },
+        "seo_label": {
+          "type": "string",
+          "title": "SEO of the link",
+          "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+          "default": "Discover Limited Edition Collection with Nespresso."
+        },
+        "tracking_label": {
+          "type": "string",
+          "title": "Tracking Label",
+          "description": "Trigger on click in GA",
+          "default": ""
+        },
+        "icon_left": {
+          "type": "string",
+          "title": "Button icon",
+          "default": ""
+        },
+        "selected": {
+          "type": "boolean",
+          "title": "Is menu selected?",
+          "description": "Will select the menu by default. On Original PLP, set it to true for Original link and false for other.",
+          "default": "false"
+        }
+      },
+      "required": [
+        "link",
+        "label",
+        "seo_label",
+        "tracking_label"
+      ]
+    },
+    "bubble": {
+      "type": "object",
+      "options": {
+        "collapsed": true
+      },
+      "title": "Bubble",
+      "properties": {
+        "link": {
+          "type": "string",
+          "title": "Section ID (or PLP HMC Category ID)",
+          "description": "Section ID, it will scroll to this category. Please use #- it will be replaced with space.",
+          "default": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]"
+        },
+        "label": {
+          "type": "string",
+          "description": "Bubble Label",
+          "default": "Ispirazione Italiana"
+        },
+        "visual": {
+          "type": "object",
+          "required": [
+            "src",
+            "src_retina",
+            "alt"
+          ],
+          "properties": {
+            "src": {
+              "type": "string",
+              "description": "Visual file",
+              "default": "/shared_res/agility/next-components/assets/bubble/ol/round/Ispirazione Italiana Range_Ispirazione Ristretto Italiano_L.png"
+            },
+            "src_retina": {
+              "type": "string",
+              "description": "Visual file for big screen",
+              "default": "/shared_res/agility/n-components/festive-bf-2021/navigation-bubbles/best-sellers_XL.png"
+            },
+            "alt": {
+              "type": "string",
+              "description": "Visual alternative text",
+              "default": "Vertuo capsule"
+            }
+          }
+        },
+        "theme": {
+          "type": "string",
+          "description": "Category color",
+          "options": {
+            "enum_titles": [
+              "mostRecommended",
+              "offersBundle",
+              "offersMachine",
+              "offersAccessory",
+              "offersCoffee"
+            ]
+          },
+          "enum": [
+            "#527082",
+            "#528268",
+            "#6D5282",
+            "#825252",
+            "#828052"
+          ],
+          "default": "#527082"
+        }
+      },
+      "required": [
+        "link",
+        "label",
+        "theme",
+        "visual"
+      ]
+    }
+  },
+  "required": [
+    "campaign_id",
+    "campaign_name",
+    "campaign_creative",
+    "campaign_position",
+    "categories",
+    "nav_links",
+    "navigation_bubbles",
+    "products",
+    "view_details_label",
+    "header_result_label",
+    "a11y_header_result_label_button",
+    "header_result_label_reset",
+    "a11y_header_result_label_reset",
+    "header_result_label_results",
+    "header_result_label_results_zero",
+    "header_result_label_results_one",
+    "a11y_header_result_label_results",
+    "cta_filter_label",
+    "label_sort_by",
+    "label_close_sort_by",
+    "a11y_label_close_sort_by",
+    "filter_group_intensity_light",
+    "filter_group_intensity_medium",
+    "filter_group_intensity_intense",
+    "label_sleeve",
+    "label_sleeves",
+    "show_sleeve",
+    "label_capsules",
+    "is_headline_hidden",
+    "a11y_price",
+    "alt_fair_trade",
+    "a11y_intensity_max",
+    "see_result_number_label_zero",
+    "see_result_number_label",
+    "see_result_number_label_one",
+    "a11y_see_result_number_label",
+    "dropdown_recommended_option_label",
+    "dropdown_price_ascending_option_label",
+    "dropdown_price_descending_option_label",
+    "dropdown_intensity_ascending_option_label",
+    "dropdown_intensity_descending_option_label"
+  ],
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "title": "Campaign Identifier",
+      "description": "ID of the campaign",
+      "default": ""
+    },
+    "campaign_name": {
+      "type": "string",
+      "title": "Campaign Name",
+      "description": "Name of your campaign",
+      "default": ""
+    },
+    "campaign_creative": {
+      "type": "string",
+      "enum": [
+        "before_coffees_list"
+      ],
+      "title": "Campaign Creative on site",
+      "default": "before_coffees_list",
+      "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+    },
+    "campaign_position": {
+      "type": "string",
+      "title": "Campaign Position on site",
+      "description": "e.g. `home-main`",
+      "default": "plp-list"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/category"
+      }
+    },
+    "nav_links": {
+      "type": "array",
+      "options": {
+        "collapsed": true
+      },
+      "title": "Navigation links",
+      "items": {
+        "$ref": "#/definitions/nav_links"
+      },
+      "default": [
+        {
+          "label": "ORIGINAL COFFEE",
+          "seo_label": "Buy Original coffee on our dedicated premium page.",
+          "tracking_label": "PLP Original",
+          "link": "/at/en/order/machines/original",
+          "icon_left": "coffee",
+          "selected": true
+        },
+        {
+          "label": "The Difference",
+          "tracking_label": "The Difference",
+          "link": "/how-to-choose"
+        },
+        {
+          "label": "DISCOVER MORE",
+          "tracking_label": "Discover More",
+          "link": "../../friendlyurl"
+        }
+      ]
+    },
+    "navigation_bubbles": {
+      "type": "object",
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "bubbles"
+      ],
+      "properties": {
+        "bubbles": {
+          "type": "array",
+          "title": "Bubble",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "$ref": "#/definitions/bubble"
+          },
+          "default": [
+            {
+              "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+              "label": "Ispirazione Italiana",
+              "visual": {
+                "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Ispirazione Italiana Range_Ispirazione Ristretto Italiano_L.png",
+                "alt": "Ispirazione Italiana anchor to go to coffee range"
+              }
+            },
+            {
+              "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+              "label": "Espresso & Lungo",
+              "visual": {
+                "src": "/shared_res/agility/next-components/assets/bubble/ol/round/World Explorations_Stockholm_L.png",
+                "alt": "Espresso & Lungo anchor to go to coffee range"
+              }
+            },
+            {
+              "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+              "label": "Barista Creations",
+              "visual": {
+                "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Barista Creations Range_Chiaro_L.png",
+                "alt": "Barista Creations anchor to go to coffee range"
+              }
+            },
+            {
+              "link": "#nesclub2.[MARKET].b2c/cat/capsule-range-[RANGE]",
+              "label": "Master Origins",
+              "state": "default",
+              "visual": {
+                "src": "/shared_res/agility/next-components/assets/bubble/ol/round/Origins_Colombia_L.png",
+                "alt": "Master Origins anchor to go to coffee range"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "title": "Product Extra Info",
+      "options": {
+        "collapsed": true
+      },
+      "items": {
+        "type": "object",
+        "options": {
+          "collapsed": true
+        },
+        "headerTemplate": "{{ i1 }} - {{ self.sku }}",
+        "properties": {
+          "sku": {
+            "type": "string",
+            "title": "Product SKU"
+          },
+          "strikethrough_price": {
+            "type": "string",
+            "title": "Strikethrough Price",
+            "description": "Strikethrough price to display",
+            "default": ""
+          },
+          "bundle_details": {
+            "type": "object",
+            "title": "Bundle Details",
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "popin_link_text": {
+                "type": "string",
+                "title": "Popin Link Text",
+                "description": "Text to open the bundle popin"
+              },
+              "popin_label_close": {
+                "type": "string",
+                "title": "Bundle label Close",
+                "description": "Bundle label Close"
+              },
+              "description": {
+                "type": "string",
+                "format": "html",
+                "options": {
+                  "wysiwyg": false
+                },
+                "title": "Description",
+                "description": "Description text for the bundle. Leave this blank to apply the description through API"
+              },
+              "other_skus": {
+                "type": "string",
+                "title": "SKUs inside the Bundle",
+                "description": "List down the SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50,7553.50,7583.50)",
+                "default": "7713.20,7715.20,7714.20,7711.20,7712.20"
+              },
+              "other_skus_quantity": {
+                "type": "string",
+                "title": "Quantity of each SKUs inside the Bundle",
+                "description": "List down the quantity of each SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 20,10,20,20)",
+                "default": "10,10,10,10,10"
+              }
+            },
+            "required": [
+              "popin_link_text",
+              "popin_label_close",
+              "description",
+              "other_skus",
+              "other_skus_quantity"
+            ]
+          },
+          "additional_message": {
+            "type": "string",
+            "title": "Additional Message",
+            "description": "Display a message at the bottom of the product card",
+            "default": ""
+          },
+          "additional_message_icon": {
+            "options": {
+              "hidden": true
+            },
+            "type": "string",
+            "title": "Additional Icon",
+            "description": "Add icon side of the message",
+            "default": "notification"
+          },
+          "show_slider": {
+            "type": "boolean",
+            "title": "Show slider?",
+            "default": false
+          }
+        },
+        "required": [
+          "sku",
+          "strikethrough_price",
+          "bundle_details",
+          "additional_message",
+          "additional_message_icon",
+          "show_slider"
+        ]
+      }
+    },
+    "view_details_label": {
+      "type": "string",
+      "title": "View details button text",
+      "description": "View details button linked to the PDP will be visible when the price of product is hidden",
+      "default": "View details"
+    },
+    "a11y_product_card": {
+      "type": "string",
+      "title": "a11y For link to go to PDP (Click on image or product name)",
+      "description": "Display to guide the customer that they will be landing at PDP",
+      "default": "View more details about {productName}"
+    },
+    "header_result_label": {
+      "type": "string",
+      "title": "Filter result label",
+      "description": "Display after customers apply a filter",
+      "default": "Currently shopping by"
+    },
+    "a11y_header_result_label_button": {
+      "type": "string",
+      "title": "a11y Filter result label button",
+      "description": "Display after customers apply a filter",
+      "default": "Reset filter"
+    },
+    "header_result_label_reset": {
+      "type": "string",
+      "title": "Button label to reset all filters",
+      "description": "Display after customers apply a filter",
+      "default": "Reset all"
+    },
+    "see_result_number_label": {
+      "type": "string",
+      "title": "CTA Validate filters",
+      "description": "Display the number of result - more than one",
+      "default": "See {resultsLength} Results"
+    },
+    "see_result_number_label_zero": {
+      "type": "string",
+      "title": "CTA Validate filters",
+      "description": "Display the number of result - zero",
+      "default": "No Result"
+    },
+    "see_result_number_label_one": {
+      "type": "string",
+      "title": "CTA Validate filters",
+      "description": "Display the number of result - one",
+      "default": "See One Result"
+    },
+    "a11y_see_result_number_label": {
+      "type": "string",
+      "title": "a11y CTA Validate filters",
+      "default": "Close and validate filters"
+    },
+    "a11y_header_result_label_reset": {
+      "type": "string",
+      "title": "a11y Filter result label",
+      "description": "Display after customers apply a filter",
+      "default": "Filters"
+    },
+    "header_result_label_results": {
+      "type": "string",
+      "title": "Filter result label",
+      "description": "Display after customers apply a filter",
+      "default": "Results"
+    },
+    "header_result_label_results_zero": {
+      "type": "string",
+      "title": "Filter result label",
+      "description": "Display after customers apply a filter",
+      "default": "Result"
+    },
+    "header_result_label_results_one": {
+      "type": "string",
+      "title": "Filter result label",
+      "description": "Display after customers apply a filter",
+      "default": "Result"
+    },
+    "a11y_header_result_label_results": {
+      "type": "string",
+      "title": "a11y Filters label activated",
+      "description": "Display after customers apply a filter",
+      "default": "With your filters activated, you have currently"
+    },
+    "cta_filter_label": {
+      "type": "string",
+      "title": "CTA Filter: open popin",
+      "description": "First button on filter bar to open the filters popin.",
+      "default": "Filter"
+    },
+    "label_sort_by": {
+      "type": "string",
+      "title": "Label to sort the page",
+      "description": "Last dropdown on filter bar to change the sorting on products.",
+      "default": "SORT BY"
+    },
+    "label_close_sort_by": {
+      "type": "string",
+      "title": "Label to sort the page",
+      "description": "Last dropdown on filter bar to change the sorting on products.",
+      "default": "Close"
+    },
+    "a11y_label_close_sort_by": {
+      "type": "string",
+      "title": "a11y Label to close the filters popin",
+      "default": "Close filter popin"
+    },
+    "filter_group_intensity_light": {
+      "type": "string",
+      "title": "Label to filter by light range of intensity",
+      "description": "{range} will be automatically replace with intensity range e.g. 4-6",
+      "default": "Light {range}"
+    },
+    "filter_group_intensity_medium": {
+      "type": "string",
+      "title": "Label to filter by medium range of intensity",
+      "description": "{range} will be automatically replace with intensity range e.g. 7-9",
+      "default": "Mild {range}"
+    },
+    "filter_group_intensity_intense": {
+      "type": "string",
+      "title": "Label to filter by intense range of intensity",
+      "description": "{range} will be automatically replace with intensity range e.g. 10-14",
+      "default": "Intense {range}"
+    },
+    "dropdown_recommended_option_label": {
+      "type": "string",
+      "title": "Sort dropdown: Recommended",
+      "default": "Recommended"
+    },
+    "dropdown_price_ascending_option_label": {
+      "type": "string",
+      "title": "Sort dropdown: Lower price",
+      "default": "Lower price"
+    },
+    "dropdown_price_descending_option_label": {
+      "type": "string",
+      "title": "Sort dropdown: Higher price",
+      "default": "Higher price"
+    },
+    "dropdown_intensity_ascending_option_label": {
+      "type": "string",
+      "title": "Sort dropdown: Lower intensity",
+      "default": "Lower intensity"
+    },
+    "dropdown_intensity_descending_option_label": {
+      "type": "string",
+      "title": "Sort dropdown: Higher intensity",
+      "default": "Higher intensity"
+    },
+    "show_sleeve": {
+      "type": "boolean",
+      "title": "Show Sleeve",
+      "description": "Display \"x sleeve (y capsules)\" below the price",
+      "default": false
+    },
+    "number_of_sleeves": {
+      "type": "string",
+      "title": "Number Of Sleeves",
+      "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+    },
+    "number_of_capsules": {
+      "type": "string",
+      "title": "Number Of Capsules",
+      "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+    },
+    "label_sleeve": {
+      "type": "string",
+      "title": "Label for Sleeve",
+      "description": "In \"x sleeve (y capsules)\" will translate the word sleeve",
+      "default": "sleeve"
+    },
+    "label_sleeves": {
+      "type": "string",
+      "title": "Label for Sleeves (Plural)",
+      "description": "In \"(y sleeves n capsules)\" will translate the word sleeve",
+      "default": "sleeves"
+    },
+    "label_capsules": {
+      "type": "string",
+      "title": "Label for Capsules",
+      "description": "In \"x sleeve (y capsules)\" will translate the word capsules",
+      "default": "capsules"
+    },
+    "is_headline_hidden": {
+      "type": "boolean",
+      "title": "Hide description on mobile",
+      "description": "Hides all product descriptions only on mobile",
+      "default": "false"
+    },
+    "a11y_price": {
+      "type": "string",
+      "title": "a11y Price text",
+      "description": "a11y text to display the price (local devise per sleeve)",
+      "default": "euros per sleeve"
+    },
+    "alt_fair_trade": {
+      "type": "string",
+      "title": "Alternative text for Fair Trade logo",
+      "default": "FAIRTRADE Mark"
+    },
+    "a11y_intensity_max": {
+      "type": "string",
+      "title": "Alternative text for Intensity max in intensity component",
+      "default": "max of {max_intensity}",
+      "description": "Intensity max for OL is 14, Intensity max for VL is 12"
+    },
+    "a11y_slider_previous_button": {
+      "type": "string",
+      "title": "a11y Button to slide left",
+      "description": "Hidden text for Accessibility.",
+      "default": "Slide menu to previous item"
+    },
+    "a11y_slider_next_button": {
+      "type": "string",
+      "title": "a11y Button to slide right",
+      "description": "Hidden text for Accessibility.",
+      "default": "Slide menu to next item"
+    },
+    "show_sleeve_price": {
+      "type": "boolean",
+      "title": "Show sleeve price",
+      "description": "Show sleeve price and adds capsule price beneath",
+      "default": false
+    },
+    "capsule_price_label": {
+      "type": "string",
+      "title": "Capsule price label",
+      "description": "when using 'Show sleeve price'",
+      "default": "Capsule price"
+    },
+    "capsule_price_syntax": {
+      "type": "string",
+      "title": "Capsule price syntax",
+      "description": "when using 'Show sleeve price' you can customize the syntax",
+      "default": "{capsule_price_label}: {price_per_capsule}"
+    },
+    "label_decaffeinato": {
+      "type": "string",
+      "title": "Decaffeinato",
+      "description": "This value will color in the product title in decaffeinato color. Match your translation of Decaffeinato you are using in you product name. E.g. 低因咖啡; デカフェ",
+      "default": "decaffeinato"
+    }
+  }
+}

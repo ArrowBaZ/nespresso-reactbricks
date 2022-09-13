@@ -1,0 +1,21 @@
+{
+    "name": "Sku Quick View",
+    "version": "1.1.0",
+    "description": "Product popin quick view",
+    "folder": "/shared_res/agility/next-components/sku-quick-view/",
+    "tag": "nb-sku-quick-view",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/sku-quick-view/v1.1/css/sku-quick-view.css",
+        "module": "/shared_res/agility/next-components/sku-quick-view/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/sku-quick-view/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/sku-quick-view/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/add-to-cart/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/card-logos/",
+        "/shared_res/agility/next-components/card-labels/"
+    ]
+}

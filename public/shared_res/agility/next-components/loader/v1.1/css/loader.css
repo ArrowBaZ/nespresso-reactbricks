@@ -1,0 +1,1 @@
+nb-loader{display:block;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}nb-loader .is-loading{animation:rotate .69s linear infinite;transform-origin:50% 50%}@keyframes rotate{to{transform:rotate(1turn)}}

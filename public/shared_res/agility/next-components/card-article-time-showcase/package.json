@@ -1,0 +1,29 @@
+{
+    "name": "card-article-time-showcase",
+    "version": "1.1.1",
+    "description": "Card Article with Time Showcase",
+    "folder": "/shared_res/agility/next-components/card-article-time-showcase/",
+    "tag": "nb-card-article-time-showcase",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/card-article-time-showcase/v1.1/css/card-article-time-showcase.css",
+        "module": "/shared_res/agility/next-components/card-article-time-showcase/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/card-article-time-showcase/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/card-article-time-showcase/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/card-article-time/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/slider/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "701",
+            "desktop": "737"
+        }
+    }
+}

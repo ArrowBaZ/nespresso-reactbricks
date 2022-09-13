@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Bundle Details",
+    "required": ["main_sku", "description", "other_skus", "other_skus_quantity", "feature_heading"],
+    "properties": {
+        "main_sku": {
+            "type": "string",
+            "title": "SKU of the BUNDLE product",
+            "description": "Please enter the SKU of bundle product",
+            "default": "117121"
+        },
+        "headline_desc": {
+            "type": "string",
+            "format": "html",
+            "options": {
+                "wysiwyg": false
+            },
+            "title": "Headline description",
+            "description": "Headline Description text for the bundle. Leave this blank to apply the description through API"
+        },
+        "other_skus": {
+            "type": "string",
+            "title": "SKUs inside the Bundle",
+            "description": "List down the SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50,7553.50,7583.50)",
+            "default": "7713.20,7715.20,7714.20,7711.20,7712.20"
+        },
+        "other_skus_quantity": {
+            "type": "string",
+            "title": "Quantity of each SKUs inside the Bundle",
+            "description": "List down the quantity of each SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 20,10,20,20)",
+            "default": "10,10,10,10,10"
+        },
+        "feature_heading": {
+            "type": "string",
+            "title": "Key features heading",
+            "description": "This is a heading text for machine. We display key features of machines in case the machine is part of bundle. ",
+            "default": "Key features"
+        }
+    }
+}

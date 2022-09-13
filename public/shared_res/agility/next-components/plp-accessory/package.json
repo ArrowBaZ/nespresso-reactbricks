@@ -1,0 +1,23 @@
+{
+    "name": "plp-accessories",
+    "version": "1.2.1",
+    "description": "plp element",
+    "folder": "/shared_res/agility/next-components/plp-accessory/",
+    "tag": "nb-plp-accessory",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-accessory/v1.1/css/plp-accessory.css",
+        "module": "/shared_res/agility/next-components/plp-accessory/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-accessory/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-accessory/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "800",
+            "desktop": "800"
+        }
+    }
+}

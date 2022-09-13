@@ -1,0 +1,374 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "PDP Header",
+  "description": "The biggest expression of a Stock Keeping Unit. It's the first component inside a Product Detail Page https://wiki.nespresso.com/x/-mR1CQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "type": {
+          "type": "string",
+          "options": {
+            "enum_titles": [
+              "Capsule",
+              "Machine",
+              "Accessory",
+              "Gift card"
+            ]
+          },
+          "enum": [
+            "capsule",
+            "machine",
+            "accessory",
+            "giftcard"
+          ],
+          "title": "Product type",
+          "default": "capsule"
+        },
+        "strikethrough_price": {
+          "type": "string",
+          "title": "Strikethrough Price",
+          "description": "Strikethrough price to display",
+          "default": ""
+        },
+        "hide_header": {
+          "type": "boolean",
+          "title": "Hide Product Header",
+          "description": "Hide the product card's header",
+          "default": true
+        },
+        "link": {
+          "title": "Link",
+          "type": "object",
+          "required": [
+            "link",
+            "label",
+            "seo_label"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "link": {
+              "type": "string",
+              "title": "URL of the link",
+              "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+              "default": "../"
+            },
+            "label": {
+              "type": "string",
+              "title": "Label of the link",
+              "description": "",
+              "default": "SEE ALL COFFEES"
+            },
+            "seo_label": {
+              "type": "string",
+              "title": "SEO of the link",
+              "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+              "default": "See all coffees capsules"
+            }
+          },
+          "default": {
+            "seo_label": "See all coffees capsules",
+            "label": "SEE ALL COFFEES",
+            "link": "../"
+          }
+        },
+        "disclaimer_text": {
+          "type": "string",
+          "title": "Disclaimer Text",
+          "description": "Disclaimer text",
+          "default": ""
+        },
+        "image": {
+          "type": "object",
+          "title": "PRODUCT IMAGES",
+          "description": "https://wiki.nespresso.com/x/-mR1CQ",
+          "option": {
+            "collapsed": true
+          },
+          "required": [
+            "retina",
+            "desktop",
+            "mobile",
+            "alt_text"
+          ],
+          "properties": {
+            "alt_text": {
+              "type": "string",
+              "title": "Image set alternative text",
+              "default": "coffee sleeve and view collection cup",
+              "description": "Arpeggio coffee sleeve and view collection lungo cup"
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL Image Set Mobile",
+              "description": "URL to image 750 x 421 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/pdp-header/coffees/ol/ispirazione-firenze-arpeggio-decaffeinato_S.png"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL Image Set Desktop",
+              "description": "URL to image 600 x 337 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/pdp-header/coffees/ol/ispirazione-firenze-arpeggio-decaffeinato_L.png"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL Image Set Desktop Retina",
+              "description": "URL to image 1200 x 674 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/pdp-header/coffees/ol/ispirazione-firenze-arpeggio-decaffeinato_XL.png"
+            }
+          }
+        },
+        "max_intensity": {
+          "type": "string",
+          "title": "Max intensity for the range",
+          "description": "(OL: 14; VL: 12) allow to show more or less cursor in the intensity bar",
+          "default": 14
+        },
+        "a11y_intensity_max": {
+          "type": "string",
+          "title": "Alt Intensity Max",
+          "description": "Indicate for screen reader what is the max intensity with a sentence",
+          "default": "max of {max_intensity}"
+        },
+        "intensity_label": {
+          "type": "string",
+          "title": "Label for Intensity",
+          "default": "Intensity"
+        },
+        "label_decaffeinato": {
+          "type": "string",
+          "title": "Decaffeinato",
+          "description": "Will display DECAFFEINATO in decaffeinato color below the product name",
+          "default": ""
+        },
+        "sleeve_variation_pdp": {
+          "options": {
+            "hidden": true
+          },
+          "type": "boolean",
+          "default": true
+        },
+        "show_sleeve": {
+          "type": "boolean",
+          "title": "Show Sleeve",
+          "description": "Display \"(sleeve n capsules)\" below the price",
+          "default": false
+        },
+        "number_of_sleeves": {
+          "type": "string",
+          "title": "Number Of Sleeves",
+          "description": "(${number_of_sleeves} ${label_sleeve} ${number_of_capsules} ${label_capsules})"
+        },
+        "number_of_capsules": {
+          "type": "string",
+          "title": "Number Of Capsules",
+          "description": "(${number_of_sleeves} ${label_sleeve} ${number_of_capsules} ${label_capsules})"
+        },
+        "label_sleeve": {
+          "type": "string",
+          "title": "Label for Sleeve",
+          "description": "In \"(sleeve n capsules)\" will translate the word sleeve",
+          "default": "sleeve"
+        },
+        "label_sleeves": {
+          "type": "string",
+          "title": "Label for Sleeves (Plural)",
+          "description": "In \"(y sleeves n capsules)\" will translate the word sleeve",
+          "default": "sleeves"
+        },
+        "label_capsules": {
+          "type": "string",
+          "title": "Label for Capsules",
+          "description": "In \"(sleeve n capsules)\" will translate the word capsules",
+          "default": "capsules"
+        },
+        "show_sleeve_price": {
+          "type": "boolean",
+          "title": "Show sleeve price",
+          "description": "Show sleeve price and adds capsule price beneath",
+          "default": false
+        },
+        "capsule_price_label": {
+          "type": "string",
+          "title": "Capsule price label",
+          "description": "when using 'Show sleeve price'",
+          "default": "Capsule price"
+        },
+        "capsule_price_syntax": {
+          "type": "string",
+          "title": "Capsule price syntax",
+          "description": "when using 'Show sleeve price' you can customize the syntax",
+          "default": "{capsule_price_label}: {price_per_capsule}"
+        },
+        "additional_message": {
+          "type": "string",
+          "title": "Additional Message",
+          "description": "Display a message at the bottom of the product card",
+          "default": ""
+        },
+        "additional_message_icon": {
+          "options": {
+            "hidden": true
+          },
+          "type": "string",
+          "title": "Additional Icon",
+          "description": "Add icon side of the message",
+          "default": "notification"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "type",
+        "strikethrough_price",
+        "hide_header",
+        "link",
+        "disclaimer_text",
+        "image",
+        "max_intensity",
+        "a11y_intensity_max",
+        "intensity_label",
+        "label_decaffeinato",
+        "sleeve_variation_pdp",
+        "show_sleeve",
+        "number_of_sleeves",
+        "number_of_capsules",
+        "label_sleeve",
+        "label_sleeves",
+        "label_capsules",
+        "show_sleeve_price",
+        "capsule_price_label",
+        "capsule_price_syntax",
+        "additional_message",
+        "additional_message_icon"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": {},
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/display/EUXUI/PDP#PDP-ComponentandAssets",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "URL to image 750 x 940 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/pdp/sku-main-info/background/background_S.jpg"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 1920 x 793 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/pdp/sku-main-info/background/background_L.jpg"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 3840 x 1586 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/pdp/sku-main-info/background/background_XL.jpg"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_pdp_header"
+          ],
+          "title": "Creative on site",
+          "default": "before_pdp_header",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_pdp_header",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

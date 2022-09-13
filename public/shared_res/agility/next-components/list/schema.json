@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "list",
+  "required": [
+    "heading",
+    "items"
+  ],
+  "options": {
+    "collapsed": true
+  },
+  "properties": {
+    "heading": {
+      "type": "string",
+      "description": "List title",
+      "default": "Best served as"
+    },
+    "items": {
+      "type": "array",
+      "description": "List items",
+      "items": {
+        "type": "object",
+        "required": [
+          "icon",
+          "label",
+          "size"
+        ],
+        "properties": {
+          "icon": {
+            "type": "string",
+            "description": "Item icon",
+            "default": "capsule-cupSize-ristretto"
+          },
+          "label": {
+            "type": "string",
+            "description": "Item label",
+            "default": "Ristretto"
+          },
+          "size": {
+            "type": "string",
+            "description": "Item size",
+            "default": "25ml"
+          }
+        }
+      },
+      "default": [
+        {
+          "icon": "capsule-cupSize-ristretto",
+          "label": "Ristretto",
+          "size": "25ml"
+        },
+        {
+          "icon": "capsule-cupSize-espresso",
+          "label": "Espresso",
+          "size": "40ml"
+        },
+        {
+          "icon": "capsule-cupSize-gran-lungo",
+          "label": "Lungo",
+          "size": "110ml"
+        }
+      ]
+    }
+  }
+}

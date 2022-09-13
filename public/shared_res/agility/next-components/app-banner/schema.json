@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Download App Banner",
+  "required": [
+    "campaign",
+    "copywriting"
+  ],
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "banner_a11y": {
+          "type": "string",
+          "title": "Banner label",
+          "description": "Banner label for Accessibility",
+          "default": "Download App Banner"
+        },
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "",
+          "default": "Nespresso APP"
+        },
+        "first_line": {
+          "type": "string",
+          "title": "First line",
+          "description": "",
+          "default": "Nespresso SA"
+        },
+        "second_line_apple": {
+          "type": "string",
+          "title": "Second line for Apple Store",
+          "description": "",
+          "default": "<strong>Free</strong> on the App Store"
+        },
+        "second_line_android": {
+          "type": "string",
+          "title": "Second line for Google Play Store",
+          "description": "",
+          "default": "<strong>Free</strong> on the Google Play Store"
+        },
+        "second_line_huawei": {
+          "type": "string",
+          "title": "Second line for Huawei AppGallery",
+          "description": "",
+          "default": "<strong>Free</strong> on the Huawei AppGallery"
+        },
+        "label_close": {
+          "type": "string",
+          "title": "Close label",
+          "description": "Close label for Accessibility",
+          "default": "Close"
+        },
+        "label_link": {
+          "type": "string",
+          "title": "Link label",
+          "description": "Link label for Accessibility",
+          "default": "Download Nespresso App"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "banner_a11y",
+        "heading",
+        "first_line",
+        "second_line_apple",
+        "second_line_android",
+        "second_line_huawei",
+        "label_close",
+        "label_link"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_app_banner"
+          ],
+          "title": "Creative on site",
+          "default": "before_app_banner",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_app_banner",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  }
+}

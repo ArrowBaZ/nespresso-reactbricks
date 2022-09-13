@@ -1,0 +1,32 @@
+{
+    "name": "recipes",
+    "version": "1.1.1",
+    "description": "recipes element",
+    "folder": "/shared_res/agility/next-components/recipes/",
+    "tag": "nb-recipes",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/recipes/v1.1/css/recipes.css",
+        "module": "/shared_res/agility/next-components/recipes/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/recipes/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/recipes/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/card-recipe/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/modal-recipe/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/slider/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/video/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "645",
+            "mobile": "741"
+        }
+    }
+}

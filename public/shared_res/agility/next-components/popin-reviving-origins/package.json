@@ -1,0 +1,26 @@
+{
+    "name": "popin-reviving-origins",
+    "version": "1.1.1",
+    "description": "Wrapper for dedicated app",
+    "folder": "/shared_res/agility/next-components/popin-reviving-origins/",
+    "tag": "nb-popin-reviving-origins",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/popin-reviving-origins/v1.1/css/popin-reviving-origins.css",
+        "module": "/shared_res/agility/next-components/popin-reviving-origins/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/popin-reviving-origins/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/popin-reviving-origins/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "0",
+            "desktop": "0"
+        }
+    }
+}

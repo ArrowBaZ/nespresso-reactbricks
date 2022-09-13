@@ -1,0 +1,14 @@
+{
+    "name": "Form Item",
+    "version": "1.1.1",
+    "description": "Form Item",
+    "folder": "/shared_res/agility/next-components/form-item/",
+    "tag": "nb-form-item",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/form-item/v1.1/css/form-item.css",
+        "module": "/shared_res/agility/next-components/form-item/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/form-item/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/form-item/preview.png"
+}

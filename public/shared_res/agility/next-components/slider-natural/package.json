@@ -1,0 +1,17 @@
+{
+    "name": "Slider natural",
+    "version": "1.1.4",
+    "description": "Slider based on natural scroll behaviour using CSS scrollsnap features, better reacting in mobile",
+    "folder": "/shared_res/agility/next-components/slider-natural/",
+    "tag": "nb-slider-natural",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/slider-natural/v1.1/css/slider-natural.css",
+        "module": "/shared_res/agility/next-components/slider-natural/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/slider-natural/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/cta/"
+    ]
+}

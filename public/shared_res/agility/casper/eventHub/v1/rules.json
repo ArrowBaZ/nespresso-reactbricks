@@ -1,0 +1,113 @@
+{
+  "rules": [
+    {
+      "name": "",
+      "condition": {
+        "default": ""
+      }
+    },
+    {
+      "name": "basketContains",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "basketTotalIs",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "isInDateRange",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\tstart:\"YYYYMMDD\",\n\tend:\"YYYYMMDD\"\n}"
+      }
+    },
+    {
+      "name": "mismatches",
+      "condition": {
+        "single": true,
+        "type": "string"
+      }
+    },
+    {
+      "name": "since",
+      "condition": {
+        "single": true,
+        "type": "number",
+        "default": "60*N"
+      }
+    },
+    {
+      "name": "standingOrdersContains",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "salesForceAudienceIs",
+      "condition": {
+        "single": false,
+        "type": "string",
+        "default": "\"\""
+      }
+    },
+    {
+      "name": "urlParameterIs",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "visitorIs",
+      "condition": {
+        "single": true,
+        "type": "object",
+        "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "visits",
+      "condition": {
+        "single": false,
+        "type": "string",
+        "default": "\"\""
+      }
+    },
+    {
+      "name": "subscriptionsContains",
+      "condition": {
+          "single": true,
+          "type": "string",
+          "default": "{\n\t\n}"
+      }
+    },
+    {
+      "name": "once",
+      "condition": {
+          "single": true,
+          "type": "string",
+          "default": ""
+      }
+    },
+    {
+      "name": "isOptimizeVariant",
+      "condition": {
+          "single": true,
+          "type": "string",
+          "default": "{\n\texperiment:''\n\tvariant:''\n}"
+      }
+    }
+  ]
+}

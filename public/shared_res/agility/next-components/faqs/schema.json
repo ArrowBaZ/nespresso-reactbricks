@@ -1,0 +1,751 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "FAQ",
+  "description": "BY DEFAULT: 5 FAQS are displayed. Clicking on \"Show More” all the FAQS will be displayed. Clicking on \"Show Less” the first 5 FAQs will be displayed. https://wiki.nespresso.com/x/f0KgCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "FAQ section title",
+          "default": "FAQs"
+        },
+        "accordion": {
+          "type": "object",
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "auto_collapse": {
+              "type": "boolean",
+              "title": "Multiple expand / Auto Collapse",
+              "description": "If not set, you can expand multiple items at the same time. If set to true, you can expand only one item",
+              "default": false
+            },
+            "limit": {
+              "type": "number",
+              "title": "Max visible items",
+              "options": {
+                "hidden": true
+              },
+              "description": "will limit the number of items displayed, 0 for no limit. Cta's More & Less label must be filled if not 0",
+              "default": 5
+            },
+            "cta": {
+              "type": "object",
+              "description": "Show more CTA",
+              "required": [
+                "more",
+                "less"
+              ],
+              "options": {
+                "collapsed": true
+              },
+              "properties": {
+                "more": {
+                  "type": "string",
+                  "description": "More label",
+                  "default": "Show more"
+                },
+                "less": {
+                  "type": "string",
+                  "description": "Less label",
+                  "default": "Show less"
+                }
+              }
+            },
+            "a11y_label": {
+              "type": "object",
+              "description": "a11y Labels",
+              "required": [
+                "accordion",
+                "accordion_description",
+                "show_more",
+                "show_less"
+              ],
+              "options": {
+                "collapsed": true
+              },
+              "properties": {
+                "accordion": {
+                  "type": "string",
+                  "default": "Accordion"
+                },
+                "accordion_description": {
+                  "type": "string",
+                  "format": "html",
+                  "options": {
+                    "wysiwyg": false
+                  },
+                  "default": "{limitItems} of {totalItems} items are displayed in this accordion. You can display all items with the button below the accordion"
+                },
+                "show_more": {
+                  "type": "string",
+                  "title": "Show More",
+                  "default": "Display all {totalItems} items in the above accordion"
+                },
+                "show_less": {
+                  "type": "string",
+                  "title": "Show Less",
+                  "default": "Display only {limitItems} items in the above accordion"
+                }
+              }
+            },
+            "collapses": {
+              "type": "array",
+              "title": "Collapsable List",
+              "options": {
+                "collapsed": true
+              },
+              "items": {
+                "type": "object",
+                "options": {
+                  "collapsed": true
+                },
+                "headerTemplate": "{{ i1 }} - Collapsable Item",
+                "properties": {
+                  "expanded": {
+                    "type": "boolean",
+                    "options": {
+                      "hidden": true
+                    },
+                    "default": false
+                  },
+                  "fancy": {
+                    "options": {
+                      "hidden": true
+                    },
+                    "type": "boolean",
+                    "description": "Add expand / collapse slide animation",
+                    "default": true
+                  },
+                  "heading": {
+                    "type": "string",
+                    "description": "Collapse title",
+                    "default": "Why Nespresso?"
+                  },
+                  "text": {
+                    "type": "string",
+                    "format": "html",
+                    "options": {
+                      "wysiwyg": false
+                    },
+                    "description": "Panel text",
+                    "default": "From the cherries we pick to the coffee you drink, we are committed to convey our expertise, savoir-faire and passion every step of the way."
+                  },
+                  "icon": {
+                    "type": "string",
+                    "title": "Icon",
+                    "enum": [
+                      "",
+                      "upvote",
+                      "19-bar",
+                      "24-7-service",
+                      "360-view",
+                      "accessories-and-sweets",
+                      "address-2",
+                      "address",
+                      "amex-card",
+                      "android",
+                      "apple-pay-card",
+                      "apple-pay",
+                      "apple",
+                      "arrow-bottom",
+                      "arrow-filled-down",
+                      "arrow-left",
+                      "arrow-right",
+                      "arrow-top",
+                      "assistance-alt",
+                      "assistance-videos",
+                      "assistance",
+                      "boutique",
+                      "brand_coffee_capsule-vl-carafe",
+                      "brand_coffee_capsule-vl-double-espresso-gran-lungo",
+                      "brand_coffee_capsule-vl-espresso",
+                      "brand_coffee_capsule-vl-mug",
+                      "brand_coffee_capsule_ol",
+                      "brand_coffee_capsule_pro",
+                      "brand_coffee_capsule_vl",
+                      "brand_coffee_cereals",
+                      "brand_coffee_citrus",
+                      "brand_coffee_cocoa",
+                      "brand_coffee_coffee-assortment",
+                      "brand_coffee_coffee-discovery-set",
+                      "brand_coffee_machines",
+                      "brand_coffee_malted",
+                      "brand_coffee_notes-herbal",
+                      "brand_delivery_boutique-location",
+                      "brand_delivery_delivery",
+                      "brand_delivery_free_delivery",
+                      "brand_delivery_package",
+                      "brand_delivery_schedule_delivery",
+                      "brand_general_coffee",
+                      "brand_machines_auto_clean_system",
+                      "brand_machines_automatic_off",
+                      "brand_machines_digital_display",
+                      "brand_machines_energy_class",
+                      "brand_machines_fast_heat_up",
+                      "brand_machines_low_water_alert",
+                      "brand_machines_milk_frothing",
+                      "brand_machines_pump_pressure_bar",
+                      "brand_payment_credit_card",
+                      "brand_payment_gift_card",
+                      "brand_payment_invoice",
+                      "brand_payment_secure",
+                      "brand_services_assistance",
+                      "brand_services_boutique",
+                      "brand_services_easy_order",
+                      "brand_services_help",
+                      "brand_services_promotions",
+                      "brand_services_recycling",
+                      "brand_services_recycling_ol",
+                      "brand_services_recycling_vl",
+                      "brand_services_subscription",
+                      "brand_services_sustainability",
+                      "calendar",
+                      "capsule-cupSize-Cappuccino-And-Latte-Macchiato",
+                      "capsule-cupSize-Cortado-Cappuccino",
+                      "capsule-cupSize-icedRecipe-vertuo",
+                      "capsule-cupSize-icedRecipe",
+                      "capsule-cupSize-alto",
+                      "capsule-cupSize-carafe-vertuo",
+                      "capsule-cupSize-coffee",
+                      "capsule-cupSize-double-espresso-vertuo",
+                      "capsule-cupSize-espresso-vertuo",
+                      "capsule-cupSize-espresso",
+                      "capsule-cupSize-gran-lungo",
+                      "capsule-cupSize-lungo",
+                      "capsule-cupSize-mug",
+                      "capsule-cupSize-ristretto",
+                      "capsule-cupSize-americano",
+                      "capsule-cupSize-large-americano",
+                      "check",
+                      "chevron-down",
+                      "chevron-left",
+                      "chevron-right",
+                      "chevron-up",
+                      "check-mark",
+                      "clock",
+                      "close-2",
+                      "close",
+                      "coffee",
+                      "coffee_capsule-ol_24",
+                      "credit-card-flag",
+                      "credit-card",
+                      "delivery-fast",
+                      "delivery-scheduled",
+                      "delivery-standard",
+                      "eco-mode",
+                      "edit",
+                      "error",
+                      "espresso-vertuo-capsule",
+                      "eye-closed",
+                      "eye-opened",
+                      "facebook",
+                      "filter",
+                      "find-us-alt",
+                      "find-us",
+                      "free-return",
+                      "gift-card",
+                      "globe",
+                      "gran-lungo-vertuo-capsule",
+                      "help",
+                      "hero-chat",
+                      "huawei",
+                      "information-24",
+                      "information",
+                      "instagram",
+                      "invoice",
+                      "language",
+                      "linkedin",
+                      "link",
+                      "live-chat",
+                      "loading-nitro",
+                      "loading",
+                      "loan",
+                      "logout",
+                      "machine_machines_ol_24",
+                      "machines-2",
+                      "machines",
+                      "mail",
+                      "mastercard-card",
+                      "mastercard",
+                      "menu",
+                      "minus-16",
+                      "minus-24",
+                      "minus-o",
+                      "modal-alert",
+                      "modal-check",
+                      "more-info",
+                      "nespresso-logo",
+                      "nespresso-monogram",
+                      "nespresso-professional-2",
+                      "nespresso-professional",
+                      "nespresso",
+                      "notification",
+                      "orders",
+                      "original",
+                      "package-box",
+                      "payment-bcorp",
+                      "payment-bvr",
+                      "payment-google-pay",
+                      "payment-ideal",
+                      "payment-klarna",
+                      "payment-lsv",
+                      "payment-postfinance",
+                      "payment-twint",
+                      "paypal-card",
+                      "paypal",
+                      "phone",
+                      "pin",
+                      "pinterest",
+                      "play-button",
+                      "play-mini",
+                      "play",
+                      "plus-16",
+                      "plus-24",
+                      "plus-o",
+                      "promotions",
+                      "recycling-point",
+                      "recycling",
+                      "remove",
+                      "search",
+                      "secure",
+                      "set-up",
+                      "shopping-bag",
+                      "signal-high",
+                      "signal-low",
+                      "signal-med",
+                      "speed",
+                      "star",
+                      "rating",
+                      "subscription-2",
+                      "subscription",
+                      "sustainability",
+                      "tag",
+                      "twitter",
+                      "ui_payment_cash",
+                      "ui_coffee_bergamot",
+                      "ui_coffee_capsule-ol",
+                      "ui_coffee_capsule-vl-carafe",
+                      "ui_coffee_capsule-vl-double-espresso_gran-lungo",
+                      "ui_coffee_capsule-vl-espresso",
+                      "ui_coffee_capsule-vl-mug",
+                      "ui_coffee_capsule-vl",
+                      "ui_coffee_capsule_professional",
+                      "ui_coffee_cardamom",
+                      "ui_coffee_cocoa",
+                      "ui_coffee_hazelnut",
+                      "ui_coffee_honey",
+                      "ui_coffee_notes-cereal",
+                      "ui_coffee_notes-malted",
+                      "ui_coffee_winey",
+                      "ui_delivery_calendar",
+                      "ui_delivery_clock",
+                      "ui_general_alerts",
+                      "ui_general_arrow-right",
+                      "ui_general_check",
+                      "ui_general_chevron-bottom",
+                      "ui_general_chevron-left",
+                      "ui_general_chevron-right",
+                      "ui_general_chevron-top",
+                      "ui_general_credit-card",
+                      "ui_general_edit",
+                      "ui_general_error",
+                      "ui_general_eye-close",
+                      "ui_general_eye-open",
+                      "ui_general_faq",
+                      "ui_general_filter",
+                      "ui_general_gift-card",
+                      "ui_general_globe",
+                      "ui_general_information",
+                      "ui_general_language",
+                      "ui_general_link",
+                      "ui_general_loading",
+                      "ui_general_log-out",
+                      "ui_general_map_view",
+                      "ui_general_menu",
+                      "ui_general_minus",
+                      "ui_general_notification",
+                      "ui_general_order",
+                      "ui_general_play",
+                      "ui_general_plus",
+                      "ui_general_promotions",
+                      "ui_general_remove",
+                      "ui_general_search",
+                      "ui_general_secure",
+                      "ui_general_shopping-bag",
+                      "ui_general_tag",
+                      "ui_general_user-account",
+                      "ui_general_warranty",
+                      "ui_general_wifi",
+                      "ui_general_x",
+                      "ui_map_directions",
+                      "ui_payment_invoice",
+                      "ui_services_assistance",
+                      "ui_services_delivery",
+                      "ui_services_easy_order",
+                      "ui_services_find-us",
+                      "ui_services_free-return",
+                      "ui_services_mail",
+                      "ui_services_phone",
+                      "ui_services_subscription",
+                      "ui_sustainability_climate",
+                      "ui_sustainability_recycling",
+                      "ui_sustainability_recycling_ol",
+                      "ui_sustainability_recycling_vl",
+                      "ui_sustainability_social_sustainability",
+                      "ui_user_member_status",
+                      "ui_user_my-address",
+                      "ui_user_my_information",
+                      "ultra-compact",
+                      "user-account",
+                      "versatil-coffee-system",
+                      "video-play",
+                      "vertuo",
+                      "visa-card",
+                      "visa",
+                      "warranty",
+                      "youtube",
+                      "services-anticipation-of-maintenance",
+                      "services-assistance",
+                      "services-avant-premiere",
+                      "services-avant-premiere-ol",
+                      "services-avant-premiere-vl",
+                      "services-coffee-assortment",
+                      "services-coffee-coffee-sample",
+                      "services-coffee-discovery-set",
+                      "services-coffee-experiences",
+                      "services-contact-chat",
+                      "services-contact-community-forum",
+                      "services-contact-mobile",
+                      "services-contact-sms",
+                      "services-contact-video-assistance",
+                      "services-contact-virtual",
+                      "services-data-insight",
+                      "services-delivery-boutique-location",
+                      "services-delivery-boutique-pick-up",
+                      "services-delivery-delivery",
+                      "services-delivery-delivery-bike",
+                      "services-delivery-delivery-fast",
+                      "services-delivery-free-delivery",
+                      "services-delivery-next-day-delivery",
+                      "services-delivery-package",
+                      "services-delivery-pick-up-points",
+                      "services-delivery-schedule-delivery",
+                      "services-easy-maintenance",
+                      "services-easy-order",
+                      "services-easy-stock-management",
+                      "services-generic",
+                      "services-gifting-card",
+                      "services-help",
+                      "services-orders",
+                      "services-payments-credit-card",
+                      "services-payments-gift-card",
+                      "services-payments-invoice",
+                      "services-phone",
+                      "services-reorder",
+                      "services-satisfied-or-reimbursed",
+                      "services-services-boutique",
+                      "services-subscription",
+                      "services-vip-masterclass",
+                      "services-voice-enabled",
+                      "payments-cash",
+                      "delivery-same-day-delivery",
+                      "contact-voice-assistant-chatbot",
+                      "contact-video-chat",
+                      "contact-mobile-push-notification",
+                      "contact-chat-bot",
+                      "coffee-coffee-tasting",
+                      "contact-video-assistance",
+                      "filter-style_step-01",
+                      "filter-style_step-02",
+                      "filter-style_step-03",
+                      "filter-style_step-04",
+                      "notes-almonds",
+                      "notes-balanced",
+                      "notes-bergamot",
+                      "notes-berry",
+                      "notes-biscuity",
+                      "notes-blueberry",
+                      "notes-cardamom",
+                      "notes-cereal",
+                      "notes-citrus",
+                      "notes-cocoa",
+                      "notes-default",
+                      "notes-flowery",
+                      "notes-fruity",
+                      "notes-hazelnut",
+                      "notes-herbal",
+                      "notes-honey",
+                      "notes-leather",
+                      "notes-malted",
+                      "notes-roasted",
+                      "notes-spicy",
+                      "notes-sugar",
+                      "notes-winey",
+                      "notes-wood",
+                      "notes-brand-coffee-roasted",
+                      "notes-brand-coffee-caramel",
+                      "notes-brand-coffee-intense-roasted",
+                      "machine_technology_machine-ol",
+                      "machine_technology_machine-vl",
+                      "machine_details_deluxe-version",
+                      "machine_details_machine-tutorial-ol",
+                      "machine_details_machine-tutorial-vl",
+                      "machine_warranty_warranty-ol",
+                      "machine_warranty_warranty-vl",
+                      "machine_features_generic",
+                      "machine_features_auto-clean-system",
+                      "machine_features_automatic-off",
+                      "machine_features_blend-specific-brewing",
+                      "machine_features_bluetooth",
+                      "machine_features_capsule-ejection-ol",
+                      "machine_features_capsule-ejection-vl",
+                      "machine_features_centrifusion",
+                      "machine_features_cold-foam-ol",
+                      "machine_features_cold-foam-vl",
+                      "machine_features_descale-alert",
+                      "machine_features_descale",
+                      "machine_features_digital-display",
+                      "machine_features_dimensions",
+                      "machine_features_eco-mode",
+                      "machine_features_energy-class",
+                      "machine_features_fast-heat-up",
+                      "machine_features_hot-foam-ol",
+                      "machine_features_hot-foam-vl",
+                      "machine_features_hot-milk",
+                      "machine_features_hot-foam",
+                      "machine_features_hot-water",
+                      "machine_features_low-water-alert",
+                      "machine_features_manual-lever",
+                      "machine_features_milk-frothing",
+                      "machine_features_mobile-push-notification",
+                      "machine_features_one-touch",
+                      "machine_features_power-off",
+                      "machine_features_pump-pressure-bar",
+                      "machine_features_rinse",
+                      "machine_features_settings",
+                      "machine_features_steam",
+                      "machine_features_temperature-settings-invert",
+                      "machine_features_temperature-settings",
+                      "machine_features_temperature",
+                      "machine_features_ultra-compact",
+                      "machine_features_water-tank",
+                      "machine_features_weight"
+                    ],
+                    "description": "Add icon",
+                    "default": ""
+                  }
+                },
+                "default": {
+                  "fancy": false,
+                  "heading": "Which is the best Nespresso machine for me?",
+                  "text": "Whether you prefer a classic espresso or comforting bigger cup, take a look at our range of Nespresso coffee machines. Time to explore which one suits you.",
+                  "icon": ""
+                }
+              },
+              "default": [
+                {
+                  "fancy": false,
+                  "heading": "Which is the best Nespresso machine for me?",
+                  "text": "Whether you prefer a classic espresso or comforting bigger cup, take a look at our range of Nespresso coffee machines. Time to explore which one suits you.",
+                  "icon": ""
+                },
+                {
+                  "fancy": false,
+                  "heading": "Where can I buy Nespresso capsules or machines?",
+                  "text": "Here are three ways you can buy from Nespresso: get online on the <a href=\"/order/capsules/\">Nespresso website</a> or <a href=\"/services#!/order/on-mobile-app/\">app</a>, give us a call or visit one of our stores.",
+                  "icon": ""
+                },
+                {
+                  "fancy": false,
+                  "heading": "Which is the best coffee machine to make latte or espressos?",
+                  "text": "For espresso or bigger cup coffee fans, there is a Nespresso machine for everyone. <a href=\"/order/machines/\">See which one suits you</a>.",
+                  "icon": ""
+                },
+                {
+                  "fancy": false,
+                  "heading": "What Nespresso capsule flavours are available?",
+                  "text": "Each Nespresso capsule flavour is different. Strong or smooth, crisp or creamy, the world is <a href=/order/capsules/>your oyster</a>.",
+                  "icon": ""
+                },
+                {
+                  "fancy": false,
+                  "heading": "How does a Nespresso machine work?",
+                  "text": "You can take a look at the instructions in the packaging box it came in, find out more on the <a href=/machine-assistance>Machine Assistance</a> page or get in touch with our customer services team.",
+                  "icon": ""
+                }
+              ]
+            }
+          },
+          "required": [
+            "auto_collapse",
+            "cta",
+            "limit",
+            "collapses",
+            "a11y_label"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "accordion"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_faq"
+          ],
+          "title": "Creative on site",
+          "default": "before_faq",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_faq",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

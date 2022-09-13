@@ -1,0 +1,18 @@
+{
+    "name": "slider-menu",
+    "version": "1.1.4",
+    "description": "Display a horizontal text menu that overflows and turns into a slider when resized ",
+    "folder": "/shared_res/agility/next-components/slider-menu/",
+    "tag": "nb-slider-menu",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/slider-menu/v1.1/css/slider-menu.css",
+        "module": "/shared_res/agility/next-components/slider-menu/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/slider-menu/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "preview": "/shared_res/agility/next-components/slider-menu/preview.png"
+}

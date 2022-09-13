@@ -1,0 +1,15 @@
+{
+    "name": "bubble",
+    "version": "1.1.1",
+    "description": "bubble element",
+    "folder": "/shared_res/agility/next-components/bubble/",
+    "tag": "nb-bubble",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/bubble/v1.1/css/bubble.css",
+        "module": "/shared_res/agility/next-components/bubble/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/bubble/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/bubble/preview.svg",
+    "scriptDependencies": []
+}

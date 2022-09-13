@@ -1,0 +1,17 @@
+{
+    "name": "rating",
+    "version": "1.1.1",
+    "description": "Rating",
+    "folder": "/shared_res/agility/next-components/rating/",
+    "tag": "nb-rating",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/rating/v1.1/css/rating.css",
+        "module": "/shared_res/agility/next-components/rating/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/rating/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/rating/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

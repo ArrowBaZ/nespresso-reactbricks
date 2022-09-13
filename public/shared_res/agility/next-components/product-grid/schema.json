@@ -1,0 +1,1852 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Product Grid",
+  "description": "Display products like NEXT V1 PLP page. https://dsu-confluence.nestle.biz/x/z6gaCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "Heading of the Block",
+          "default": "OUR Mix OFFERS"
+        },
+        "description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Description",
+          "description": "Description of the Block",
+          "default": "As Market, I want to show machines SKUs grouping them using the product grid component. The text link below is optional."
+        },
+        "link": {
+          "title": "Link",
+          "type": "object",
+          "required": [
+            "link",
+            "label",
+            "seo_label"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "link": {
+              "type": "string",
+              "title": "URL of the link",
+              "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+              "default": "."
+            },
+            "label": {
+              "type": "string",
+              "title": "Label of the link",
+              "description": "",
+              "default": "Text link"
+            },
+            "seo_label": {
+              "type": "string",
+              "title": "SEO of the link",
+              "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+              "default": "Discover more details on our products"
+            }
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "description",
+        "link"
+      ]
+    },
+    "options": {
+      "type": "object",
+      "title": "Options & Common labels",
+      "properties": {
+        "show_sleeve": {
+          "type": "boolean",
+          "title": "Show Sleeve",
+          "description": "Activate the feature: Display \"x sleeve (y capsules)\" below the price",
+          "default": false
+        },
+        "label_sleeve": {
+          "type": "string",
+          "title": "Show Sleeve: Label for Sleeve",
+          "description": "In \"x sleeve (y capsules)\" will translate the word sleeve",
+          "default": "sleeve"
+        },
+        "label_sleeves": {
+          "type": "string",
+          "title": "Show Sleeve: Label for Sleeves (Plural)",
+          "description": "In \"(y sleeves n capsules)\" will translate the word sleeve",
+          "default": "sleeves"
+        },
+        "label_capsules": {
+          "type": "string",
+          "title": "Show Sleeve: Label for Capsules",
+          "description": "In \"x sleeve (y capsules)\" will translate the word capsules",
+          "default": "capsules"
+        },
+        "sleeve_syntax": {
+          "type": "string",
+          "title": "Show Sleeve: Label for show sleeve syntax",
+          "description": "default - \"1 sleeve (10 capsules)\"",
+          "default": "{numberOfSleeves} {sleeveLabel} ({quantity} {label_capsules})"
+        },
+        "show_capsule_price": {
+          "type": "boolean",
+          "title": "Show Capsule Price",
+          "description": "Show sleeve price and adds capsule price beneath",
+          "default": false
+        },
+        "show_sleeve_price": {
+          "type": "boolean",
+          "title": "Show Sleeve Price",
+          "description": "Show sleeve price and adds capsule price beneath",
+          "default": false
+        },
+        "capsule_price_label": {
+          "type": "string",
+          "title": "Show Sleeve Price: Capsule price label",
+          "description": "when using 'Show sleeve price'",
+          "default": "Capsule price"
+        },
+        "capsule_price_syntax": {
+          "type": "string",
+          "title": "Show Sleeve Price: Capsule price syntax",
+          "description": "when using 'Show sleeve price' you can customize the syntax",
+          "default": "{capsule_price_label}: {price_per_capsule}"
+        },
+        "a11y_intensity_max": {
+          "type": "string",
+          "title": "Intensity: Alternative text for Intensity Max",
+          "description": "Indicate for screen reader what is the max intensity with a sentence",
+          "default": "max of {max_intensity}"
+        },
+        "intensity_label": {
+          "type": "string",
+          "title": "Intensity: Label for Intensity",
+          "default": "Intensity"
+        },
+        "label_decaffeinato": {
+          "type": "string",
+          "title": "Decaffeinato",
+          "description": "Will display DECAFFEINATO in decaffeinato color below the product name",
+          "default": "Decaffeinato"
+        },
+        "is_headline_hidden": {
+          "type": "boolean",
+          "title": "Hide headline on mobile",
+          "default": false
+        },
+        "show_capsule_size": {
+          "type": "boolean",
+          "title": "Show Capsule Size",
+          "description": "-- WORK IN PROGRESS -- Will display the cups size with the icon.",
+          "default": false
+        },
+        "sizes_title": {
+          "type": "string",
+          "title": "Label before cup sizes",
+          "description": "-- WORK IN PROGRESS --",
+          "default": "Best served as"
+        },
+        "notes_title": {
+          "type": "string",
+          "title": "Label before notes",
+          "description": "-- WORK IN PROGRESS --",
+          "default": "Notes"
+        },
+        "packaging": {
+          "type": "object",
+          "title": "Packaging B2B",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "show_packaging",
+            "a11y_packaging_label",
+            "packaging_list"
+          ],
+          "properties": {
+            "show_packaging": {
+              "type": "boolean",
+              "title": "Show packaging Box/Tube",
+              "description": "Show a Box/Tube selector + pack format label under price",
+              "default": false
+            },
+            "a11y_packaging_label": {
+              "type": "string",
+              "title": "Packaging Options Label",
+              "description": "Label for Accessibility",
+              "default": "Packaging options"
+            },
+            "packaging_list": {
+              "type": "array",
+              "title": "List of available packaging",
+              "items": {
+                "type": "object",
+                "headerTemplate": "{{ i1 }} - {{ self.label }}",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Tab Label",
+                    "description": "Label displayed in the tab",
+                    "default": "Box 50 capsules"
+                  },
+                  "pack_format": {
+                    "type": "string",
+                    "title": "Pack Format Label",
+                    "description": "Label displayed after price",
+                    "default": "(Pack format 50 capsules)"
+                  },
+                  "url": {
+                    "type": "string",
+                    "title": "Url to the related product detail page",
+                    "description": "Set a valid relative url to your product",
+                    "default": ""
+                  },
+                  "selected": {
+                    "type": "boolean",
+                    "title": "Set selected tab",
+                    "description": "Set to true if this is the current product page",
+                    "default": true
+                  }
+                },
+                "required": [
+                  "label",
+                  "pack_format",
+                  "url",
+                  "selected"
+                ]
+              },
+              "default": [
+                {
+                  "label": "Box 50 capsules",
+                  "pack_format": "(Pack format 50 capsules)",
+                  "url": "/pro/ch/en/order/capsules/pro/coffee-ristretto-box",
+                  "selected": true
+                },
+                {
+                  "label": "Tube 30 capsules",
+                  "pack_format": "(Pack format 30 capsules)",
+                  "url": "/pro/ch/en/order/capsules/pro/coffee-ristretto-tube",
+                  "selected": false
+                }
+              ]
+            }
+          }
+        },
+        "show_slider": {
+          "type": "boolean",
+          "title": "Show slider",
+          "description": "Show Slider for product block (only for machines and accessories)",
+          "default": false
+        },
+        "a11y_extra_color": {
+          "type": "string",
+          "title": "Machine Colors: Alternative text link",
+          "description": "When there is more colors, will display a link to reach PDP",
+          "default": "Discover all the colours available."
+        },
+        "show_ratings": {
+          "type": "boolean",
+          "title": "Show ratings",
+          "description": "Show Ratings for product block (only for machines and accessories)",
+          "default": false
+        },
+        "minimum_rating": {
+          "type": "string",
+          "title": "Show ratings: Minimum Rating",
+          "description": "Rating below this value won't be display",
+          "default": 3
+        },
+        "review_cta": {
+          "type": "string",
+          "title": "Show ratings: PDP Label Singular",
+          "description": "{nb_review} review",
+          "default": "{nb_review} review"
+        },
+        "reviews_cta": {
+          "type": "string",
+          "title": "Show ratings: PDP Label Plural",
+          "description": "{nb_review} reviews",
+          "default": "{nb_review} reviews"
+        },
+        "a11y_energy_label": {
+          "type": "string",
+          "title": "Energy Label: Alternative text to describe label tag.",
+          "default": "European energy label."
+        },
+        "label_button_3d": {
+          "type": "string",
+          "title": "Augmented Reality: Label of CTA",
+          "default": "Check in 3D"
+        },
+        "quantity_selector": {
+          "type": "object",
+          "title": "Quantity Selector",
+          "description": "Used for Gift Card only",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "a11y_qs_label",
+            "a11y_qs_description",
+            "a11y_predefined_quantity",
+            "a11y_predefined_description",
+            "a11y_add_label",
+            "quantities",
+            "step",
+            "max",
+            "a11y_custom_quantity",
+            "a11y_custom_description",
+            "label_choose_quantity",
+            "label_button_ok"
+          ],
+          "properties": {
+            "a11y_qs_label": {
+              "type": "string",
+              "title": "Quantity Selector: Main label",
+              "description": "Label for Accessibility",
+              "default": "Quantity selector"
+            },
+            "a11y_qs_description": {
+              "type": "string",
+              "title": "Quantity Selector: Main description",
+              "description": "Description for Accessibility",
+              "default": "Select a product quantity to add to your basket. To exit this quantity selector press ESCAPE key"
+            },
+            "a11y_predefined_quantity": {
+              "type": "string",
+              "title": "Quantity Selector: Predefined quantity label",
+              "description": "Label for Accessibility",
+              "default": "Choose a predefined quantity"
+            },
+            "a11y_predefined_description": {
+              "type": "string",
+              "title": "Quantity Selector: Predefined quantity description",
+              "description": "Description for Accessibility",
+              "default": "You can select predefined quantities using the buttons list below"
+            },
+            "a11y_add_label": {
+              "type": "string",
+              "title": "Quantity Selector: Add button Label",
+              "description": "Label for Accessibility",
+              "default": "Add"
+            },
+            "quantities": {
+              "type": "array",
+              "title": "Quantity Selector: Quantities",
+              "options": {
+                "collapsed": true,
+                "hidden": true
+              },
+              "items": {
+                "type": "number",
+                "minItems": 15,
+                "maxItems": 15,
+                "default": 0
+              },
+              "default": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            "step": {
+              "type": "number",
+              "title": "Quantity Selector: Step",
+              "description": "Step for adding products",
+              "options": {
+                "hidden": true
+              },
+              "default": 1
+            },
+            "max": {
+              "type": "number",
+              "title": "Quantity Selector: Maximum quantity",
+              "description": "Maximum quantity",
+              "options": {
+                "hidden": true
+              },
+              "default": 9990
+            },
+            "a11y_custom_quantity": {
+              "type": "string",
+              "title": "Quantity Selector: Custom quantity label",
+              "description": "Label for Accessibility",
+              "default": "Choose a custom quantity"
+            },
+            "a11y_custom_description": {
+              "type": "string",
+              "title": "Quantity Selector: Custom quantity description",
+              "description": "Description for Accessibility",
+              "default": "You can select a custom quantity using the field below. To validate press SPACE or ENTER key"
+            },
+            "label_choose_quantity": {
+              "type": "string",
+              "title": "Quantity Selector: Choose quantity label",
+              "description": "Input number placeholder",
+              "default": "Choose a quantity"
+            },
+            "label_button_ok": {
+              "type": "string",
+              "title": "Quantity Selector: Ok button label",
+              "default": "Ok"
+            }
+          }
+        }
+      },
+      "required": [
+        "show_sleeve",
+        "label_sleeve",
+        "label_sleeves",
+        "label_capsules",
+        "sleeve_syntax",
+        "show_capsule_price",
+        "show_sleeve_price",
+        "capsule_price_label",
+        "capsule_price_syntax",
+        "a11y_intensity_max",
+        "intensity_label",
+        "label_decaffeinato",
+        "is_headline_hidden",
+        "show_capsule_size",
+        "sizes_title",
+        "notes_title",
+        "packaging",
+        "show_slider",
+        "a11y_extra_color",
+        "show_ratings",
+        "minimum_rating",
+        "review_cta",
+        "reviews_cta",
+        "a11y_energy_label",
+        "label_button_3d",
+        "quantity_selector"
+      ],
+      "options": {
+        "collapsed": true
+      }
+    },
+    "products": {
+      "type": "array",
+      "title": "Product List",
+      "items": {
+        "type": "object",
+        "headerTemplate": "{{ i1 }} - {{ self.sku }}",
+        "properties": {
+          "sku": {
+            "type": "string",
+            "title": "Product SKU"
+          },
+          "highlighted": {
+            "type": "boolean",
+            "title": "Is highlighted?",
+            "description": "Display a predefined color on the top of the SKU card to highlight the product compare to others.",
+            "default": false
+          },
+          "labels": {
+            "type": "array",
+            "title": "Product label(s)",
+            "description": "Display a label on the upper left corner of the SKU card",
+            "items": {
+              "type": "object",
+              "headerTemplate": "{{ i1 }} - {{ self.name }}",
+              "properties": {
+                "bgColor": {
+                  "type": "string",
+                  "title": "Product Label Background"
+                },
+                "color": {
+                  "type": "string",
+                  "title": "Product Label Color Code"
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Product Label Text"
+                }
+              },
+              "required": [
+                "bgColor",
+                "color",
+                "name"
+              ]
+            },
+            "default": [
+              {
+                "bgColor": "#876C43",
+                "color": "#fff",
+                "name": "NEW"
+              }
+            ],
+            "options": {
+              "collapsed": true
+            }
+          },
+          "strikethrough_price": {
+            "type": "string",
+            "title": "Strikethrough Price",
+            "description": "Display a strike price on top of the current price.",
+            "default": ""
+          },
+          "additional_message": {
+            "type": "string",
+            "title": "Additional Message",
+            "description": "Display a message at the bottom of the SKU card",
+            "default": ""
+          },
+          "additional_message_icon": {
+            "type": "string",
+            "title": "Additional Message Icon",
+            "enum": [
+              "",
+              "upvote",
+              "19-bar",
+              "24-7-service",
+              "360-view",
+              "accessories-and-sweets",
+              "address-2",
+              "address",
+              "amex-card",
+              "android",
+              "apple-pay-card",
+              "apple-pay",
+              "apple",
+              "arrow-bottom",
+              "arrow-filled-down",
+              "arrow-left",
+              "arrow-right",
+              "arrow-top",
+              "assistance-alt",
+              "assistance-videos",
+              "assistance",
+              "boutique",
+              "brand_coffee_capsule-vl-carafe",
+              "brand_coffee_capsule-vl-double-espresso-gran-lungo",
+              "brand_coffee_capsule-vl-espresso",
+              "brand_coffee_capsule-vl-mug",
+              "brand_coffee_capsule_ol",
+              "brand_coffee_capsule_pro",
+              "brand_coffee_capsule_vl",
+              "brand_coffee_cereals",
+              "brand_coffee_citrus",
+              "brand_coffee_cocoa",
+              "brand_coffee_coffee-assortment",
+              "brand_coffee_coffee-discovery-set",
+              "brand_coffee_machines",
+              "brand_coffee_malted",
+              "brand_coffee_notes-herbal",
+              "brand_delivery_boutique-location",
+              "brand_delivery_delivery",
+              "brand_delivery_free_delivery",
+              "brand_delivery_package",
+              "brand_delivery_schedule_delivery",
+              "brand_general_coffee",
+              "brand_machines_auto_clean_system",
+              "brand_machines_automatic_off",
+              "brand_machines_digital_display",
+              "brand_machines_energy_class",
+              "brand_machines_fast_heat_up",
+              "brand_machines_low_water_alert",
+              "brand_machines_milk_frothing",
+              "brand_machines_pump_pressure_bar",
+              "brand_payment_credit_card",
+              "brand_payment_gift_card",
+              "brand_payment_invoice",
+              "brand_payment_secure",
+              "brand_services_assistance",
+              "brand_services_boutique",
+              "brand_services_easy_order",
+              "brand_services_help",
+              "brand_services_promotions",
+              "brand_services_recycling",
+              "brand_services_recycling_ol",
+              "brand_services_recycling_vl",
+              "brand_services_subscription",
+              "brand_services_sustainability",
+              "calendar",
+              "capsule-cupSize-Cappuccino-And-Latte-Macchiato",
+              "capsule-cupSize-Cortado-Cappuccino",
+              "capsule-cupSize-icedRecipe-vertuo",
+              "capsule-cupSize-icedRecipe",
+              "capsule-cupSize-alto",
+              "capsule-cupSize-carafe-vertuo",
+              "capsule-cupSize-coffee",
+              "capsule-cupSize-double-espresso-vertuo",
+              "capsule-cupSize-espresso-vertuo",
+              "capsule-cupSize-espresso",
+              "capsule-cupSize-gran-lungo",
+              "capsule-cupSize-lungo",
+              "capsule-cupSize-mug",
+              "capsule-cupSize-ristretto",
+              "capsule-cupSize-americano",
+              "capsule-cupSize-large-americano",
+              "check",
+              "chevron-down",
+              "chevron-left",
+              "chevron-right",
+              "chevron-up",
+              "check-mark",
+              "clock",
+              "close-2",
+              "close",
+              "coffee",
+              "coffee_capsule-ol_24",
+              "credit-card-flag",
+              "credit-card",
+              "delivery-fast",
+              "delivery-scheduled",
+              "delivery-standard",
+              "eco-mode",
+              "edit",
+              "error",
+              "espresso-vertuo-capsule",
+              "eye-closed",
+              "eye-opened",
+              "facebook",
+              "filter",
+              "find-us-alt",
+              "find-us",
+              "free-return",
+              "gift-card",
+              "globe",
+              "gran-lungo-vertuo-capsule",
+              "help",
+              "hero-chat",
+              "huawei",
+              "information-24",
+              "information",
+              "instagram",
+              "invoice",
+              "language",
+              "linkedin",
+              "link",
+              "live-chat",
+              "loading-nitro",
+              "loading",
+              "loan",
+              "logout",
+              "machine_machines_ol_24",
+              "machines-2",
+              "machines",
+              "mail",
+              "mastercard-card",
+              "mastercard",
+              "menu",
+              "minus-16",
+              "minus-24",
+              "minus-o",
+              "modal-alert",
+              "modal-check",
+              "more-info",
+              "nespresso-logo",
+              "nespresso-monogram",
+              "nespresso-professional-2",
+              "nespresso-professional",
+              "nespresso",
+              "notification",
+              "orders",
+              "original",
+              "package-box",
+              "payment-bcorp",
+              "payment-bvr",
+              "payment-google-pay",
+              "payment-ideal",
+              "payment-klarna",
+              "payment-lsv",
+              "payment-postfinance",
+              "payment-twint",
+              "paypal-card",
+              "paypal",
+              "phone",
+              "pin",
+              "pinterest",
+              "play-button",
+              "play-mini",
+              "play",
+              "plus-16",
+              "plus-24",
+              "plus-o",
+              "promotions",
+              "recycling-point",
+              "recycling",
+              "remove",
+              "search",
+              "secure",
+              "set-up",
+              "shopping-bag",
+              "signal-high",
+              "signal-low",
+              "signal-med",
+              "speed",
+              "star",
+              "rating",
+              "subscription-2",
+              "subscription",
+              "sustainability",
+              "tag",
+              "twitter",
+              "ui_payment_cash",
+              "ui_coffee_bergamot",
+              "ui_coffee_capsule-ol",
+              "ui_coffee_capsule-vl-carafe",
+              "ui_coffee_capsule-vl-double-espresso_gran-lungo",
+              "ui_coffee_capsule-vl-espresso",
+              "ui_coffee_capsule-vl-mug",
+              "ui_coffee_capsule-vl",
+              "ui_coffee_capsule_professional",
+              "ui_coffee_cardamom",
+              "ui_coffee_cocoa",
+              "ui_coffee_hazelnut",
+              "ui_coffee_honey",
+              "ui_coffee_notes-cereal",
+              "ui_coffee_notes-malted",
+              "ui_coffee_winey",
+              "ui_delivery_calendar",
+              "ui_delivery_clock",
+              "ui_general_alerts",
+              "ui_general_arrow-right",
+              "ui_general_check",
+              "ui_general_chevron-bottom",
+              "ui_general_chevron-left",
+              "ui_general_chevron-right",
+              "ui_general_chevron-top",
+              "ui_general_credit-card",
+              "ui_general_edit",
+              "ui_general_error",
+              "ui_general_eye-close",
+              "ui_general_eye-open",
+              "ui_general_faq",
+              "ui_general_filter",
+              "ui_general_gift-card",
+              "ui_general_globe",
+              "ui_general_information",
+              "ui_general_language",
+              "ui_general_link",
+              "ui_general_loading",
+              "ui_general_log-out",
+              "ui_general_map_view",
+              "ui_general_menu",
+              "ui_general_minus",
+              "ui_general_notification",
+              "ui_general_order",
+              "ui_general_play",
+              "ui_general_plus",
+              "ui_general_promotions",
+              "ui_general_remove",
+              "ui_general_search",
+              "ui_general_secure",
+              "ui_general_shopping-bag",
+              "ui_general_tag",
+              "ui_general_user-account",
+              "ui_general_warranty",
+              "ui_general_wifi",
+              "ui_general_x",
+              "ui_map_directions",
+              "ui_payment_invoice",
+              "ui_services_assistance",
+              "ui_services_delivery",
+              "ui_services_easy_order",
+              "ui_services_find-us",
+              "ui_services_free-return",
+              "ui_services_mail",
+              "ui_services_phone",
+              "ui_services_subscription",
+              "ui_sustainability_climate",
+              "ui_sustainability_recycling",
+              "ui_sustainability_recycling_ol",
+              "ui_sustainability_recycling_vl",
+              "ui_sustainability_social_sustainability",
+              "ui_user_member_status",
+              "ui_user_my-address",
+              "ui_user_my_information",
+              "ultra-compact",
+              "user-account",
+              "versatil-coffee-system",
+              "video-play",
+              "vertuo",
+              "visa-card",
+              "visa",
+              "warranty",
+              "youtube",
+              "services-anticipation-of-maintenance",
+              "services-assistance",
+              "services-avant-premiere",
+              "services-avant-premiere-ol",
+              "services-avant-premiere-vl",
+              "services-coffee-assortment",
+              "services-coffee-coffee-sample",
+              "services-coffee-discovery-set",
+              "services-coffee-experiences",
+              "services-contact-chat",
+              "services-contact-community-forum",
+              "services-contact-mobile",
+              "services-contact-sms",
+              "services-contact-video-assistance",
+              "services-contact-virtual",
+              "services-data-insight",
+              "services-delivery-boutique-location",
+              "services-delivery-boutique-pick-up",
+              "services-delivery-delivery",
+              "services-delivery-delivery-bike",
+              "services-delivery-delivery-fast",
+              "services-delivery-free-delivery",
+              "services-delivery-next-day-delivery",
+              "services-delivery-package",
+              "services-delivery-pick-up-points",
+              "services-delivery-schedule-delivery",
+              "services-easy-maintenance",
+              "services-easy-order",
+              "services-easy-stock-management",
+              "services-generic",
+              "services-gifting-card",
+              "services-help",
+              "services-orders",
+              "services-payments-credit-card",
+              "services-payments-gift-card",
+              "services-payments-invoice",
+              "services-phone",
+              "services-reorder",
+              "services-satisfied-or-reimbursed",
+              "services-services-boutique",
+              "services-subscription",
+              "services-vip-masterclass",
+              "services-voice-enabled",
+              "payments-cash",
+              "delivery-same-day-delivery",
+              "contact-voice-assistant-chatbot",
+              "contact-video-chat",
+              "contact-mobile-push-notification",
+              "contact-chat-bot",
+              "coffee-coffee-tasting",
+              "contact-video-assistance",
+              "filter-style_step-01",
+              "filter-style_step-02",
+              "filter-style_step-03",
+              "filter-style_step-04",
+              "notes-almonds",
+              "notes-balanced",
+              "notes-bergamot",
+              "notes-berry",
+              "notes-biscuity",
+              "notes-blueberry",
+              "notes-cardamom",
+              "notes-cereal",
+              "notes-citrus",
+              "notes-cocoa",
+              "notes-default",
+              "notes-flowery",
+              "notes-fruity",
+              "notes-hazelnut",
+              "notes-herbal",
+              "notes-honey",
+              "notes-leather",
+              "notes-malted",
+              "notes-roasted",
+              "notes-spicy",
+              "notes-sugar",
+              "notes-winey",
+              "notes-wood",
+              "notes-brand-coffee-roasted",
+              "notes-brand-coffee-caramel",
+              "notes-brand-coffee-intense-roasted",
+              "machine_technology_machine-ol",
+              "machine_technology_machine-vl",
+              "machine_details_deluxe-version",
+              "machine_details_machine-tutorial-ol",
+              "machine_details_machine-tutorial-vl",
+              "machine_warranty_warranty-ol",
+              "machine_warranty_warranty-vl",
+              "machine_features_generic",
+              "machine_features_auto-clean-system",
+              "machine_features_automatic-off",
+              "machine_features_blend-specific-brewing",
+              "machine_features_bluetooth",
+              "machine_features_capsule-ejection-ol",
+              "machine_features_capsule-ejection-vl",
+              "machine_features_centrifusion",
+              "machine_features_cold-foam-ol",
+              "machine_features_cold-foam-vl",
+              "machine_features_descale-alert",
+              "machine_features_descale",
+              "machine_features_digital-display",
+              "machine_features_dimensions",
+              "machine_features_eco-mode",
+              "machine_features_energy-class",
+              "machine_features_fast-heat-up",
+              "machine_features_hot-foam-ol",
+              "machine_features_hot-foam-vl",
+              "machine_features_hot-milk",
+              "machine_features_hot-foam",
+              "machine_features_hot-water",
+              "machine_features_low-water-alert",
+              "machine_features_manual-lever",
+              "machine_features_milk-frothing",
+              "machine_features_mobile-push-notification",
+              "machine_features_one-touch",
+              "machine_features_power-off",
+              "machine_features_pump-pressure-bar",
+              "machine_features_rinse",
+              "machine_features_settings",
+              "machine_features_steam",
+              "machine_features_temperature-settings-invert",
+              "machine_features_temperature-settings",
+              "machine_features_temperature",
+              "machine_features_ultra-compact",
+              "machine_features_water-tank",
+              "machine_features_weight"
+            ],
+            "description": "Display an icon side of the Additional Message",
+            "default": "notification"
+          },
+          "additional_message_link": {
+            "title": "Additional Message Link",
+            "type": "object",
+            "required": [
+              "color",
+              "size",
+              "link",
+              "label",
+              "seo_label",
+              "tracking_label"
+            ],
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "color": {
+                "type": "string",
+                "title": "Link text color",
+                "description": "",
+                "enum": [
+                  "gold",
+                  "black",
+                  "white"
+                ],
+                "default": "gold"
+              },
+              "size": {
+                "type": "string",
+                "title": "Link text size",
+                "description": "",
+                "enum": [
+                  "large",
+                  "medium",
+                  "small",
+                  "xsmall"
+                ],
+                "default": "large"
+              },
+              "link": {
+                "type": "string",
+                "title": "URL of the link",
+                "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+                "default": ""
+              },
+              "label": {
+                "type": "string",
+                "title": "Label of the link",
+                "description": "",
+                "default": "Discover more"
+              },
+              "seo_label": {
+                "type": "string",
+                "title": "SEO of the link",
+                "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+                "default": "Discover Limited Edition Collection with Nespresso."
+              },
+              "tracking_label": {
+                "type": "string",
+                "title": "Tracking Label",
+                "description": "Trigger on click in GA",
+                "default": ""
+              }
+            },
+            "default": {
+              "color": "gold",
+              "size": "large",
+              "seo_label": "Additional Message",
+              "tracking_label": "Additional Message - Click",
+              "label": "",
+              "link": ""
+            }
+          },
+          "api_override": {
+            "type": "object",
+            "title": "API Override",
+            "description": "Use those fields to override data coming from the API",
+            "required": [
+              "image",
+              "name",
+              "headline",
+              "description"
+            ],
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "image": {
+                "type": "string",
+                "title": "Product URL",
+                "default": "",
+                "description": "Overrides Image URL coming from API"
+              },
+              "name": {
+                "type": "string",
+                "title": "Product name",
+                "default": "",
+                "description": "Overrides Product Name coming from API"
+              },
+              "headline": {
+                "type": "string",
+                "title": "Product headline",
+                "default": "",
+                "description": "Overrides Product Headline coming from API"
+              },
+              "description": {
+                "type": "string",
+                "title": "Product description",
+                "default": "",
+                "description": "Overrides Product Description coming from API. Example allow to remove the HTML inside this field with a pure plain text."
+              }
+            }
+          },
+          "shop_similar": {
+            "type": "object",
+            "title": "Shop Similar",
+            "description": "-- WORK IN PROGRESS -- https://dsu-confluence.nestle.biz/x/_08gCQ Will create a popin to propose similar product to customers",
+            "required": [
+              "panel_type",
+              "image_url",
+              "image_alt_text",
+              "label_main_sku",
+              "label_unavailable",
+              "label_similar"
+            ],
+            "options": {
+              "collapsed": true
+            },
+            "properties": {
+              "panel_type": {
+                "type": "string",
+                "title": "Recommendation set name",
+                "description": "choose, which recommendation set will be displayed",
+                "default": ""
+              },
+              "image_url": {
+                "type": "string",
+                "title": "Product Image",
+                "description": "This image is displayed in the popin's header",
+                "default": ""
+              },
+              "image_alt_text": {
+                "type": "string",
+                "title": "Alt Text for accessibility",
+                "description": "Describe the image",
+                "default": ""
+              },
+              "label_main_sku": {
+                "type": "string",
+                "title": "This product's title",
+                "description": "Popin's heading",
+                "default": ""
+              },
+              "label_unavailable": {
+                "type": "string",
+                "title": "Availability mention",
+                "description": "Explains why this popin is suggested",
+                "default": ""
+              },
+              "label_similar": {
+                "type": "string",
+                "title": "Purchase suggestion",
+                "description": "Suggests to discover similar products",
+                "default": ""
+              }
+            }
+          },
+          "variant": {
+            "type": "object",
+            "title": "Product type",
+            "description": "Additional data to personalize the product.",
+            "oneOf": [
+              {
+                "title": "Capsule",
+                "options": {
+                  "collapsed": true
+                },
+                "additionalProperties": false,
+                "properties": {
+                  "is_capsule": {
+                    "type": "boolean",
+                    "default": true,
+                    "options": {
+                      "hidden": true
+                    }
+                  },
+                  "number_of_sleeves": {
+                    "type": "string",
+                    "title": "Number Of Sleeves",
+                    "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+                  },
+                  "number_of_capsules": {
+                    "type": "string",
+                    "title": "Number Of Capsules",
+                    "description": "${number_of_sleeves} ${label_sleeve} (${number_of_capsules} ${label_capsules})"
+                  },
+                  "bundle_details": {
+                    "type": "object",
+                    "title": "Bundle Details",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "popin_link_text": {
+                        "type": "string",
+                        "title": "Popin Link Text",
+                        "description": "Text to open the bundle popin"
+                      },
+                      "popin_label_close": {
+                        "type": "string",
+                        "title": "Bundle label Close",
+                        "description": "Bundle label Close"
+                      },
+                      "description": {
+                        "type": "string",
+                        "format": "html",
+                        "options": {
+                          "wysiwyg": false
+                        },
+                        "title": "Description",
+                        "description": "Description text for the bundle. Leave this blank to apply the description through API"
+                      },
+                      "other_skus": {
+                        "type": "string",
+                        "title": "SKUs inside the Bundle",
+                        "description": "List down the SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50,7553.50,7583.50)",
+                        "default": "7713.20,7715.20,7714.20,7711.20,7712.20"
+                      },
+                      "other_skus_quantity": {
+                        "type": "string",
+                        "title": "Quantity of each SKUs inside the Bundle",
+                        "description": "List down the quantity of each SKUs inside the bundle. Make sure to comma-separate them and without a space as shown in the example. (ex: 20,10,20,20)",
+                        "default": "10,10,10,10,10"
+                      }
+                    },
+                    "required": [
+                      "popin_link_text",
+                      "popin_label_close",
+                      "description",
+                      "other_skus",
+                      "other_skus_quantity"
+                    ]
+                  },
+                  "logos": {
+                    "type": "object",
+                    "title": "Card logos",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "fair_trade": {
+                        "type": "boolean",
+                        "title": "Show Fair trade logo",
+                        "default": false
+                      },
+                      "alt_fair_trade": {
+                        "type": "string",
+                        "title": "Alt Fair Trade",
+                        "default": "FAIRTRADE Mark logo"
+                      },
+                      "is_organic": {
+                        "type": "boolean",
+                        "title": "Show Organic logo",
+                        "default": false
+                      },
+                      "alt_organic": {
+                        "type": "string",
+                        "title": "Alt Organic",
+                        "default": "Organic Trade Mark logo"
+                      },
+                      "only_vertuo_next": {
+                        "type": "boolean",
+                        "title": "Show Only Vertuo Next logo",
+                        "description": "This logo is mainly for carafe",
+                        "default": false
+                      },
+                      "alt_vertuo_next": {
+                        "type": "string",
+                        "title": "Alt Vertuo Next Logo",
+                        "default": "Only for Vertuo Next logo"
+                      },
+                      "is_rainforest": {
+                        "type": "boolean",
+                        "title": "Show Rainforest logo",
+                        "default": false
+                      },
+                      "alt_rainforest": {
+                        "type": "string",
+                        "title": "Alt Rainforest",
+                        "default": "Rainforest Trade Mark logo"
+                      },
+                      "is_sustainable": {
+                        "type": "boolean",
+                        "title": "Show Sustainability logo",
+                        "default": false
+                      },
+                      "alt_sustainable": {
+                        "type": "string",
+                        "title": "Alt Sustainability",
+                        "default": "Sustainability Trade Mark logo"
+                      },
+                      "is_q_certified_arabica": {
+                        "type": "boolean",
+                        "title": "Show Q Certified Arabica logo",
+                        "default": false
+                      },
+                      "alt_q_certification_arabica": {
+                        "type": "string",
+                        "title": "Alt Certified Arabica",
+                        "default": "Q Certified Arabica Trade Mark logo"
+                      }
+                    },
+                    "required": [
+                      "fair_trade",
+                      "alt_fair_trade",
+                      "is_organic",
+                      "alt_organic",
+                      "only_vertuo_next",
+                      "alt_vertuo_next",
+                      "is_rainforest",
+                      "alt_rainforest",
+                      "is_sustainable",
+                      "alt_sustainable",
+                      "is_q_certified_arabica",
+                      "alt_q_certification_arabica"
+                    ]
+                  },
+                  "sku_timer": {
+                    "type": "object",
+                    "title": "SKU Timer",
+                    "description": "-- WORK IN PROGRESS -- https://dsu-confluence.nestle.biz/x/wqoaCQ Always on module for PLP, PDP and Landing Pages",
+                    "required": [
+                      "launch_date",
+                      "remaining_days",
+                      "remaining_day",
+                      "label",
+                      "a11y_label"
+                    ],
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "launch_date": {
+                        "type": "string",
+                        "title": "Launch Date",
+                        "default": "April 5, 2021"
+                      },
+                      "remaining_days": {
+                        "type": "string",
+                        "title": "Remaining Days",
+                        "description": "Days display in timers",
+                        "default": "{days} Days to go"
+                      },
+                      "remaining_day": {
+                        "type": "string",
+                        "title": "Remaining Day (Singular)",
+                        "description": "Day display in timers",
+                        "default": "1 Day to go"
+                      },
+                      "label": {
+                        "type": "string",
+                        "title": "Main Label",
+                        "default": "Farmers preparing next season’s coffee"
+                      },
+                      "a11y_label": {
+                        "type": "string",
+                        "title": "Alt Label",
+                        "default": ""
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "is_capsule",
+                  "is_capsule",
+                  "number_of_sleeves",
+                  "number_of_capsules",
+                  "bundle_details",
+                  "logos",
+                  "sku_timer"
+                ],
+                "default": {
+                  "is_capsule": true
+                }
+              },
+              {
+                "title": "Machine",
+                "options": {
+                  "collapsed": true
+                },
+                "additionalProperties": false,
+                "properties": {
+                  "is_machine": {
+                    "type": "boolean",
+                    "default": true,
+                    "options": {
+                      "hidden": true
+                    }
+                  },
+                  "colors": {
+                    "type": "array",
+                    "title": "Machine Colors: Product SKU",
+                    "items": {
+                      "type": "object",
+                      "headerTemplate": "{{ i1 }} - {{ self.sku }}",
+                      "properties": {
+                        "sku": {
+                          "type": "string",
+                          "title": "Product Color SKU",
+                          "description": "SKU of the next product color",
+                          "default": "M-XXX-XXX"
+                        },
+                        "code": {
+                          "type": "string",
+                          "title": "Product Color Hex code",
+                          "description": "Example: #a50d24",
+                          "default": "#a50d24"
+                        },
+                        "name": {
+                          "type": "string",
+                          "title": "Product Color Color name",
+                          "description": "Example: Cherry Red",
+                          "default": "Cherry Red"
+                        },
+                        "link": {
+                          "type": "string",
+                          "title": "Product Color Link",
+                          "description": "If you need another link than the PDP",
+                          "default": ""
+                        }
+                      },
+                      "required": [
+                        "sku",
+                        "code",
+                        "name",
+                        "link"
+                      ],
+                      "default": {
+                        "sku": "M-XXX-XXX",
+                        "code": "#a50d24",
+                        "name": "Cherry Red",
+                        "link": ""
+                      }
+                    }
+                  },
+                  "energy_level": {
+                    "type": "string",
+                    "options": {
+                      "enum_titles": [
+                        "None",
+                        "A+++",
+                        "A++",
+                        "A+",
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "E",
+                        "F",
+                        "G"
+                      ]
+                    },
+                    "enum": [
+                      "",
+                      "a1",
+                      "a2",
+                      "a3",
+                      "a4",
+                      "b",
+                      "c",
+                      "d",
+                      "e",
+                      "f",
+                      "g"
+                    ],
+                    "title": "EU Energy Label"
+                  },
+                  "key_3d": {
+                    "type": "string",
+                    "title": "AR: 3D Model key",
+                    "description": "E.g. vertuo-pop-blue. Find all keys https://dsu-confluence.nestle.biz/x/U4TEBw#AR3DModelsMachines-Models",
+                    "default": ""
+                  },
+                  "show_voltage": {
+                    "type": "boolean",
+                    "title": "Show Voltage?",
+                    "description": "Activate it only if you sell machines with different voltage",
+                    "default": false
+                  },
+                  "voltage_label": {
+                    "type": "string",
+                    "title": "Show Voltage: Label",
+                    "default": "Voltage"
+                  },
+                  "a11y_voltage_label": {
+                    "type": "string",
+                    "title": "Show Voltage: Alt txt",
+                    "default": "List of voltage available"
+                  },
+                  "voltage_list": {
+                    "type": "array",
+                    "title": "Show Voltage: List of Voltages",
+                    "items": {
+                      "type": "object",
+                      "headerTemplate": "{{ i1 }} - {{ self.label }}",
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "title": "Label set in machine Voltage",
+                          "default": "110V"
+                        }
+                      },
+                      "required": [
+                        "label"
+                      ]
+                    },
+                    "default": [
+                      {
+                        "label": "110V"
+                      },
+                      {
+                        "label": "220V"
+                      }
+                    ]
+                  },
+                  "logos": {
+                    "type": "object",
+                    "title": "Machine logos",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "required": [
+                      "is_design_award_2021",
+                      "alt_design_award_2021"
+                    ],
+                    "properties": {
+                      "is_design_award_2021": {
+                        "type": "boolean",
+                        "title": "Show Logo Design award 2021",
+                        "default": false
+                      },
+                      "alt_design_award_2021": {
+                        "type": "string",
+                        "title": "Alt Logo Design award 2021",
+                        "default": "Logo Design award 2021"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "is_machine",
+                  "is_machine",
+                  "colors",
+                  "energy_level",
+                  "key_3d",
+                  "show_voltage",
+                  "voltage_label",
+                  "a11y_voltage_label",
+                  "voltage_list",
+                  "logos"
+                ],
+                "default": {
+                  "is_machine": true
+                }
+              },
+              {
+                "title": "Accessory",
+                "options": {
+                  "collapsed": true
+                },
+                "additionalProperties": false,
+                "properties": {
+                  "is_accessory": {
+                    "type": "boolean",
+                    "default": true,
+                    "options": {
+                      "hidden": true
+                    }
+                  },
+                  "logos": {
+                    "type": "object",
+                    "title": "Accessory logos",
+                    "options": {
+                      "collapsed": true
+                    },
+                    "properties": {
+                      "only_vertuo_next": {
+                        "type": "boolean",
+                        "title": "Show Only Vertuo Next logo",
+                        "description": "This logo is mainly for carafe",
+                        "default": false
+                      },
+                      "alt_vertuo_next": {
+                        "type": "string",
+                        "title": "Alt Vertuo Next Logo",
+                        "default": "Only for Vertuo Next logo"
+                      }
+                    },
+                    "required": [
+                      "only_vertuo_next",
+                      "alt_vertuo_next"
+                    ]
+                  }
+                },
+                "required": [
+                  "is_accessory",
+                  "is_accessory",
+                  "logos"
+                ],
+                "default": {
+                  "is_accessory": true
+                }
+              },
+              {
+                "title": "Gift Card",
+                "options": {
+                  "collapsed": true
+                },
+                "additionalProperties": false,
+                "properties": {
+                  "is_giftcard": {
+                    "type": "boolean",
+                    "default": true,
+                    "options": {
+                      "hidden": true
+                    }
+                  },
+                  "giftcard_price": {
+                    "type": "string",
+                    "title": "Gift card price",
+                    "default": ""
+                  },
+                  "default_image": {
+                    "type": "string",
+                    "title": "Gift card default image",
+                    "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/gift-card/gift-card_L.png"
+                  }
+                },
+                "required": [
+                  "is_giftcard",
+                  "is_giftcard",
+                  "giftcard_price",
+                  "default_image"
+                ],
+                "default": {
+                  "is_giftcard": true
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "sku",
+          "variant",
+          "highlighted",
+          "labels",
+          "strikethrough_price",
+          "additional_message",
+          "additional_message_icon",
+          "additional_message_link",
+          "api_override",
+          "shop_similar"
+        ],
+        "options": {
+          "collapsed": true
+        },
+        "default": {
+          "sku": "C-O-12",
+          "labels": [
+            {
+              "bgColor": "#876C43",
+              "color": "#fff",
+              "name": "NEW"
+            },
+            {
+              "bgColor": "#C5C5C5",
+              "color": "#000",
+              "name": "Limited Edition"
+            }
+          ],
+          "highlighted": true,
+          "additional_message": "",
+          "additional_message_icon": "notification",
+          "strikethrough_price": "12",
+          "variant": {
+            "is_capsule": true,
+            "number_of_sleeves": "",
+            "logos": {
+              "fair_trade": true,
+              "alt_fair_trade": "FAIRTRADE Mark logo"
+            },
+            "bundle_details": {
+              "popin_link_text": "",
+              "popin_label_close": "",
+              "description": "",
+              "other_skus": "",
+              "other_skus_quantity": ""
+            },
+            "intensity_label": "Intensity"
+          },
+          "api_override": {
+            "image": "",
+            "name": "",
+            "headline": "",
+            "description": ""
+          }
+        }
+      },
+      "default": [
+        {
+          "sku": "C-O-12",
+          "labels": [
+            {
+              "bgColor": "#876C43",
+              "color": "#fff",
+              "name": "NEW"
+            },
+            {
+              "bgColor": "#C5C5C5",
+              "color": "#000",
+              "name": "Limited Edition"
+            }
+          ],
+          "highlighted": true,
+          "additional_message": "",
+          "additional_message_icon": "notification",
+          "strikethrough_price": "12",
+          "variant": {
+            "is_capsule": true,
+            "number_of_sleeves": "",
+            "logos": {
+              "fair_trade": true,
+              "alt_fair_trade": "FAIRTRADE Mark logo"
+            },
+            "bundle_details": {
+              "popin_link_text": "",
+              "popin_label_close": "",
+              "description": "",
+              "other_skus": "",
+              "other_skus_quantity": ""
+            },
+            "intensity_label": "Intensity"
+          },
+          "api_override": {
+            "image": "",
+            "name": "",
+            "headline": "",
+            "description": ""
+          }
+        }
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "dark",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb10"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://dsu-confluence.nestle.biz/x/z6gaCQ",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "URL to image 750 x 562 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/product-grid/product-grid-01_S.jpg"
+            },
+            "tablet": {
+              "type": "string",
+              "title": "URL image Tablet",
+              "description": "URL to image 1024 x 568 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/product-grid/product-grid-01_M.jpg"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 1168 x 568 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/product-grid/product-grid-01_L.jpg"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 2336 x 1136 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf-2021/product-grid/product-grid-01_XL.jpg"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "tablet",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_product_grid"
+          ],
+          "title": "Creative on site",
+          "default": "before_product_grid",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_product_grid",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "copywriting",
+    "options",
+    "products",
+    "layout",
+    "campaign"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "faqs",
+    "version": "1.1.1",
+    "description": "faqs element",
+    "folder": "/shared_res/agility/next-components/faqs/",
+    "tag": "nb-faqs",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/faqs/v1.1/css/faqs.css",
+        "module": "/shared_res/agility/next-components/faqs/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/faqs/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/faqs/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/accordion/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/collapse/",
+        "/shared_res/agility/next-components/link/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "420",
+            "desktop": "383"
+        }
+    }
+}

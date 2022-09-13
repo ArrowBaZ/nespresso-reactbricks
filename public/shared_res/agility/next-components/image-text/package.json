@@ -1,0 +1,29 @@
+{
+    "name": "image-text",
+    "version": "1.1.1",
+    "description": "image-text element",
+    "folder": "/shared_res/agility/next-components/image-text/",
+    "tag": "nb-image-text",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/image-text/v1.1/css/image-text.css",
+        "module": "/shared_res/agility/next-components/image-text/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/image-text/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/image-text/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/video/",
+        "/shared_res/agility/next-components/link/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "395",
+            "mobile": "809"
+        }
+    }
+}

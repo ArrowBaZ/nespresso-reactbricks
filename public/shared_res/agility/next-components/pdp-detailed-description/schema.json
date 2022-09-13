@@ -1,0 +1,320 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "PDP Detailed Description",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "header_title": {
+          "type": "string",
+          "title": "Title",
+          "default": "TASTE"
+        },
+        "description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "description",
+          "description": "You can add {aromatic} , {roasting} , {origin} in the field to get the HMC catalog data",
+          "default": "<p>This <b>Arabica coffee blend</b> is as rich and deep as the metallic <b>green Nespresso coffee capsule</b> its housed in.</p><p>The richness of the <b>Fortissio Lungo pod</b> is all in the balance of the <b>coffee origins</b>, their distinct processing methods, and the distinguished roasts.</p><p>Sweet cereal and malty toasted notes lie beneath a spray of acidity and a lively bitterness in this <b>Lungo coffee</b>.</p>"
+        },
+        "sizes_title": {
+          "type": "string",
+          "title": "Sizes Title",
+          "default": "Best served as"
+        },
+        "notes_title": {
+          "type": "string",
+          "title": "Notes Title",
+          "default": "Notes"
+        },
+        "a11y_level_of": {
+          "type": "string",
+          "title": "A11y Level Of",
+          "description": "Level alt text's \"Of\"",
+          "default": "of"
+        },
+        "levels": {
+          "type": "object",
+          "required": [
+            "levels_acidity_label",
+            "levels_acidity_info",
+            "levels_bitterness_label",
+            "levels_bitterness_info",
+            "levels_roastiness_label",
+            "levels_roastiness_info",
+            "level_list"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "levels_acidity_label": {
+              "type": "string",
+              "title": "Acidity label",
+              "description": "change the label without adding a level (ecapi data)",
+              "default": "Acidity"
+            },
+            "levels_acidity_info": {
+              "type": "string",
+              "title": "Acidity Info",
+              "description": "change the tooltip without adding a level (ecapi data)",
+              "default": ""
+            },
+            "levels_bitterness_label": {
+              "type": "string",
+              "title": "Bitterness label",
+              "description": "change the label without adding a level (ecapi data)",
+              "default": "Bitterness"
+            },
+            "levels_bitterness_info": {
+              "type": "string",
+              "title": "Bitterness Info",
+              "description": "change the tooltip without adding a level (ecapi data)",
+              "default": ""
+            },
+            "levels_roastiness_label": {
+              "type": "string",
+              "title": "Roastiness Label",
+              "description": "change the label without adding a level (ecapi data)",
+              "default": "Roastiness"
+            },
+            "levels_roastiness_info": {
+              "type": "string",
+              "title": "Roastiness Info",
+              "description": "change the tooltip without adding a level (ecapi data)",
+              "default": ""
+            },
+            "level_list": {
+              "type": "array",
+              "title": "Level List",
+              "description": "don't add acidity, bitterness and roastiness as they are already provided by ECAPI",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Label"
+                  },
+                  "value": {
+                    "type": "number",
+                    "title": "Value"
+                  },
+                  "information": {
+                    "type": "string",
+                    "title": "Information"
+                  }
+                },
+                "options": {
+                  "collapsed": true
+                },
+                "default": {
+                  "label": "Body",
+                  "value": 3,
+                  "information": ""
+                }
+              },
+              "options": {
+                "collapsed": true
+              },
+              "default": [
+                {
+                  "label": "Body",
+                  "value": 3,
+                  "information": ""
+                }
+              ]
+            }
+          }
+        },
+        "details_heading": {
+          "type": "string",
+          "title": "Details Title",
+          "description": "Collapsable Menu's Title",
+          "default": "Content & Allergens"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "header_title",
+        "description",
+        "sizes_title",
+        "notes_title",
+        "a11y_level_of",
+        "levels",
+        "details_heading"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "white_1000",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/-mR1CQ",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": "Arabica Coffee Blend"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 680 x 543 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/pdp-detailed-description/visual.png"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 1360 x 1086 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/pdp-detailed-description/visual.png"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_pdp_detailed_description"
+          ],
+          "title": "Creative on site",
+          "default": "before_pdp_detailed_description",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_pdp_detailed_description",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

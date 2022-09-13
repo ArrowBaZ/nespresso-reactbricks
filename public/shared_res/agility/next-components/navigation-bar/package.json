@@ -1,0 +1,28 @@
+{
+    "name": "navigation-bar",
+    "version": "1.1.1",
+    "description": "navigation-bar element",
+    "folder": "/shared_res/agility/next-components/navigation-bar/",
+    "tag": "nb-navigation-bar",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/navigation-bar/v1.1/css/navigation-bar.css",
+        "module": "/shared_res/agility/next-components/navigation-bar/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/navigation-bar/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/navigation-bar/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/slider-menu/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "108",
+            "mobile": "70"
+        }
+    }
+}

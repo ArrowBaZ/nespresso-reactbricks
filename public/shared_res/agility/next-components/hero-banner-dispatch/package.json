@@ -1,0 +1,26 @@
+{
+    "name": "hero-banner-dispatch",
+    "version": "1.1.1",
+    "description": "Display Hero banner Dispatch",
+    "folder": "/shared_res/agility/next-components/hero-banner-dispatch/",
+    "tag": "nb-hero-banner-dispatch",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/hero-banner-dispatch/v1.1/css/hero-banner-dispatch.css",
+        "module": "/shared_res/agility/next-components/hero-banner-dispatch/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/hero-banner-dispatch/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/hero-banner-dispatch/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "323",
+            "desktop": "318"
+        }
+    }
+}

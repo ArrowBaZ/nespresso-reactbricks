@@ -1,0 +1,297 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Progress Promotion Banner",
+  "description": "The main purpose of the Progress Promotion Banner component is to show users their progress in obtaining a gift or promotional offer. A progress bar will update dynamically along with the messaging featured on the banner. When you apply the progress promo banner, please make sure no other sticky elements are placed in the page, to not compromise the usability and user experience.",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "popin_id": {
+          "type": "string",
+          "title": "ID (Unique identifier)",
+          "default": "promo-progressBanner"
+        },
+        "technology": {
+          "type": "string",
+          "title": "Technology",
+          "options": {
+            "enum_titles": [
+              "Both",
+              "Original",
+              "Vertuo"
+            ]
+          },
+          "enum": [
+            "both",
+            "original",
+            "vertuo"
+          ],
+          "default": "both",
+          "description": "To restrict the capsules count for OL, VL or both. By default, both capsules are covered."
+        },
+        "exclude": {
+          "type": "string",
+          "title": "Exclude SKUs",
+          "description": "Option to exclude specific SKUs from increasing the count of the progress bar. Make sure to comma-separate them and without a space as shown in the example. (ex: 7579.50,7554.50)",
+          "default": ""
+        },
+        "heading": {
+          "type": "string",
+          "title": "Main Heading",
+          "default": "Gift for Free!"
+        },
+        "description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "General Promotion",
+          "default": "Buy <b>150 Capsules</b> to get the new Aeroccino <b>or buy 100 capsules</b> to get a Lume Collection"
+        },
+        "gifts_image": {
+          "type": "string",
+          "title": "Main Gifts Image",
+          "description": "Collage of gift images (width 36px, height 36px)",
+          "default": "/shared_res/agility/next-components/assets/commons/progress-promotion-banner/composition.png"
+        },
+        "offers": {
+          "type": "array",
+          "title": "Your Offers (Upto 5)",
+          "description": "Offer information",
+          "minItems": 1,
+          "maxItems": 5,
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "options": {
+              "collapsed": true
+            },
+            "headerTemplate": "Offer #{{ i1 }} - {{ self.capsule }} capsules",
+            "required": [
+              "title",
+              "message",
+              "image",
+              "alt",
+              "capsule",
+              "cumulative"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Offer heading",
+                "default": ""
+              },
+              "message": {
+                "type": "string",
+                "title": "Offer description",
+                "default": ""
+              },
+              "image": {
+                "type": "string",
+                "title": "Offer image path",
+                "default": "/shared_res/agility/next-components/assets/commons/progress-promotion-banner/cup.png",
+                "description": "Image width 36px & height 36px"
+              },
+              "alt": {
+                "type": "string",
+                "title": "Alternate text for gift image(SEO)",
+                "default": ""
+              },
+              "capsule": {
+                "type": "number",
+                "title": "Total capsules to get to the offer",
+                "default": ""
+              },
+              "cumulative": {
+                "type": "boolean",
+                "title": "Gift included(cumulative)",
+                "description": "When set true, this offer along with the previous offer is enabled",
+                "default": false
+              }
+            }
+          },
+          "default": [
+            {
+              "title": "Get a free Coffee Cup!",
+              "message": "Add <b>{countPlaceholder} capsules more</b> to get the Coffee Cup!",
+              "image": "/shared_res/agility/next-components/assets/commons/progress-promotion-banner/cup.png",
+              "alt": "coffee-cup",
+              "capsule": 50,
+              "cumulative": false
+            },
+            {
+              "title": "Coffee Cup is yours",
+              "message": "Add <b>{countPlaceholder} capsules more</b> to get your Lume Collection",
+              "image": "/shared_res/agility/next-components/assets/commons/progress-promotion-banner/cups_lume.png",
+              "alt": "lue-collection",
+              "capsule": 100,
+              "cumulative": false
+            },
+            {
+              "title": "Get a free Aeroccino",
+              "message": "Add <b>{countPlaceholder} capsules more</b> to get your Aeroccino",
+              "image": "/shared_res/agility/next-components/assets/commons/progress-promotion-banner/aeroccino.png",
+              "alt": "Aeroccino",
+              "capsule": 150,
+              "cumulative": false
+            }
+          ]
+        },
+        "success_heading": {
+          "type": "string",
+          "title": "Heading after successfully completing the total capsules purchase",
+          "default": "Congratulations! You did it!"
+        },
+        "success_description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Description after successfully completing the total capsules purchase",
+          "default": "Your Gift will be reflected at the checkout."
+        },
+        "disclaimer_txt": {
+          "type": "string",
+          "title": "Disclaimer text below the capsule meter",
+          "default": ""
+        },
+        "a11y_disclaimer_label": {
+          "type": "string",
+          "title": "Disclaimer translation for screen readers (accessiblity)",
+          "default": "Disclaimer"
+        },
+        "terms_link_txt": {
+          "type": "string",
+          "title": "Terms & Conditions link text",
+          "default": "See Terms & Conditions"
+        },
+        "terms_txt": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Details of Terms & conditions",
+          "default": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including advertising or promotional materials. Entry instructions are deemed to form part of these Terms and Conditions and by participating all participants will be deemed to have accepted and be bound by them. Please retain a copy for your information.</p><p><b>1. This promotion is open to all residents of the UK,</b> Channel Islands, Isle of Man and Republic of Ireland, aged 18 or over and excludes employees and their immediate families of Nestle S.A. and Nespresso, its agents or anyone professionally connected to the promotion. Participants must register or be registered with Nespresso to qualify for the offer.</p><p><b>2. Applicants must have purchased any Nespresso Essenza Mini or Essenza Mini Bundle and registered with Nespresso during the stated promotion period</b> (10.06.2020 and 18.08.2020) to qualify for the offer. The offer consists of 100 complimentary pre-selected Original Line capsules as a first gift, and one month’s free Nespresso Coffee Subscription worth £25/€30 as a second gift when they go on to register and activate a Coffee Subscription by 23:59 on 31.12.2020. The 100 complimentary capsules will be made up of a pre-selected Original Line range chosen by Nespresso which cannot be changed/substituted for any other variants.</p><p><b>3. The stated Nespresso machine must be purchased between the stated dates from one of the associated Nespresso retail partners,</b> or directly from Nespresso or by calling Nespresso on Freephone 0800 442 442 (UK), or 1800 812 660 (ROI), or at www.nespresso.com, or via the Nespresso App, or visiting a Nespresso Boutique where available. Maximum of one offer per machine purchased per Nespresso Member. Any additional machines purchased during the stated promotional period will not qualify for the offer. The qualifying Nespresso Coffee machine must be purchased in the UK, Channel Island, Isle of Man or Republic of Ireland. Due to the continuing COVID-19 situation, participants should check their local Nespresso Boutique opening days and times as these may vary. This can be done using www.nespresso.com/uk/en/store-locator. This page is updated regularly with the latest information and news relating to Nespresso Boutiques.</p>"
+        },
+        "close": {
+          "type": "string",
+          "title": "Label Close (accessibility)",
+          "default": "Close"
+        },
+        "label_expand": {
+          "type": "string",
+          "title": "Button expand label (for accessiblity)",
+          "default": "Expand banner"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "popin_id",
+        "technology",
+        "exclude",
+        "heading",
+        "description",
+        "gifts_image",
+        "offers",
+        "success_heading",
+        "success_description",
+        "disclaimer_txt",
+        "a11y_disclaimer_label",
+        "terms_link_txt",
+        "terms_txt",
+        "close",
+        "label_expand"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "required": [
+        "contrast"
+      ],
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      }
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_progress_promotion_banner"
+          ],
+          "title": "Creative on site",
+          "default": "before_progress_promotion_banner",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_progress_promotion_banner",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "COLOR",
+  "properties": {
+    "link": {
+      "type": "string",
+      "title": "COLOR url to PDP (Keep empty for a Button tag)",
+      "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path.",
+      "default": "https://www.nespresso.com"
+    },
+    "label": {
+      "type": "string",
+      "title": "COLOR Text",
+      "default": "Discover more"
+    },
+    "code": {
+      "type": "string",
+      "title": "COLOR HEX Code",
+      "default": "#000"
+    },
+    "a11y_label": {
+      "type": "string",
+      "title": "COLOR Aria Label",
+      "description": "This is adding more information for Screen Reader Users. Text will be read AFTER the color name",
+      "default": "color"
+    }
+  }
+}

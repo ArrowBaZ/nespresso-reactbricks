@@ -1,0 +1,21 @@
+{
+    "name": "modal-recipe",
+    "version": "1.1.1",
+    "description": "modal-recipe element",
+    "folder": "/shared_res/agility/next-components/modal-recipe/",
+    "tag": "nb-modal-recipe",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/modal-recipe/v1.1/css/modal-recipe.css",
+        "module": "/shared_res/agility/next-components/modal-recipe/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/modal-recipe/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/modal-recipe/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/video/",
+        "/shared_res/agility/next-components/cta/"
+    ]
+}

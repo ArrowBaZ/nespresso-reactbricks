@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "title": "Textarea",
+  "required": [
+    "element_id",
+    "element_name",
+    "label",
+    "helper_message",
+    "required_message",
+    "pattern",
+    "error_message"
+  ],
+  "properties": {
+    "element_id": {
+      "type": "string",
+      "title": "Element id",
+      "description": "Set a unique id for your form element"
+    },
+    "element_name": {
+      "type": "string",
+      "title": "Element name",
+      "description": "Allow to get data on server side"
+    },
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Label of your checkbox (displayed after your checkbox)"
+    },
+    "helper_message": {
+      "type": "string",
+      "title": "Helper message",
+      "description": "Helper message displayed below your field"
+    },
+    "required_message": {
+      "type": "string",
+      "title": "Required message",
+      "description": "Required message displayed if checkbox not checked (leave empty if optional)"
+    },
+    "pattern": {
+      "type": "string",
+      "title": "RegExp pattern",
+      "description": "RegExp pattern to check field value validity"
+    },
+    "error_message": {
+      "type": "string",
+      "title": "Error message",
+      "description": "Error message displayed if field value does not match RegExp pattern"
+    }
+  },
+  "options": {
+    "collapsed": true
+  }
+}

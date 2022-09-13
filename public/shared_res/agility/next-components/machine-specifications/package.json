@@ -1,0 +1,25 @@
+{
+    "name": "Machine Specifications",
+    "version": "1.1.1",
+    "description": "Machine Specifications section displays an Heading + list of machine specifications",
+    "folder": "/shared_res/agility/next-components/machine-specifications/",
+    "tag": "nb-machine-specifications",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/machine-specifications/v1.1/css/machine-specifications.css",
+        "module": "/shared_res/agility/next-components/machine-specifications/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/machine-specifications/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/machine-specifications/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "960",
+            "desktop": "434"
+        }
+    }
+}

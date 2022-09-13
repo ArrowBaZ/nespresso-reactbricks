@@ -1,0 +1,14 @@
+{
+    "name": "Field",
+    "version": "1.1.1",
+    "description": "Field",
+    "folder": "/shared_res/agility/next-components/field/",
+    "tag": "nb-field",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/field/v1.1/css/field.css",
+        "module": "/shared_res/agility/next-components/field/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/field/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/field/preview.png"
+}

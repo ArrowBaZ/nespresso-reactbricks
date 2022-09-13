@@ -1,0 +1,43 @@
+{
+    "name": "sku-main-info",
+    "version": "1.1.1",
+    "description": "SKU Main Info display header of PDP pages",
+    "folder": "/shared_res/agility/next-components/sku-main-info/",
+    "tag": "nb-sku-main-info",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/sku-main-info/v1.1/css/sku-main-info.css",
+        "module": "/shared_res/agility/next-components/sku-main-info/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/sku-main-info/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/sku-main-info/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/sku-accessory/",
+        "/shared_res/agility/next-components/sku-coffee/",
+        "/shared_res/agility/next-components/sku-machine/",
+        "/shared_res/agility/next-components/sku-gift-card/",
+        "/shared_res/agility/next-components/disclaimer/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/add-to-cart/",
+        "/shared_res/agility/next-components/card-labels/",
+        "/shared_res/agility/next-components/intensity/",
+        "/shared_res/agility/next-components/bundle-details/",
+        "/shared_res/agility/next-components/colors/",
+        "/shared_res/agility/next-components/rating/",
+        "/shared_res/agility/next-components/energy-label/",
+        "/shared_res/agility/next-components/add-gift-card/",
+        "/shared_res/agility/next-components/qs/",
+        "/shared_res/agility/next-components/tooltip/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "600",
+            "mobile": "750"
+        }
+    }
+}

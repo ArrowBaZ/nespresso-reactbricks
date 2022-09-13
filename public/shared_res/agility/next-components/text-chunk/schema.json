@@ -1,0 +1,242 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Text Chunk",
+  "description": "The main purpose of this component is to have a title (with other text hierarchies) for a specific topic in a page. https://wiki.nespresso.com/x/glOgCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "small_heading": {
+          "type": "string",
+          "title": "Small Heading",
+          "description": "",
+          "default": "the best coffee of your life"
+        },
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "",
+          "default": "Meet the Barista Creations"
+        },
+        "sub_heading": {
+          "type": "string",
+          "title": "Sub Heading",
+          "description": "",
+          "default": "For extra intense recipes with milk"
+        },
+        "description": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "title": "Description",
+          "description": "",
+          "default": "Great coffee draws its characteristics from its terroir: the result of harmony between soil, weather conditions, variety, aspect and altitude."
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "small_heading",
+        "heading",
+        "sub_heading",
+        "description"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "alignment": {
+          "type": "string",
+          "title": "Alignment",
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "center"
+        },
+        "restrict": {
+          "type": "boolean",
+          "title": "Restrict Width",
+          "description": "Restrict width for alignment",
+          "enum": [
+            true,
+            false
+          ],
+          "default": true
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "alignment",
+        "restrict"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_text_chunk"
+          ],
+          "title": "Creative on site",
+          "default": "before_text_chunk",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_text_chunk",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "campaign",
+    "layout",
+    "copywriting"
+  ],
+  "default": {
+    "campaign": {
+      "id": "",
+      "name": "",
+      "creative": "before_text_chunk",
+      "position": ""
+    },
+    "layout": {
+      "contrast": "light",
+      "background_color": "highlight_040",
+      "padding_top": "pt0",
+      "padding_bottom": "pb",
+      "alignment": "center"
+    },
+    "copywriting": {
+      "small_heading": "the best coffee of your life",
+      "heading": "Meet the Barista Creations",
+      "sub_heading": "For extra intense recipes with milk",
+      "description": "Great coffee draws its characteristics from its terroir: the result of harmony between soil, weather conditions, variety, aspect and altitude."
+    }
+  }
+}

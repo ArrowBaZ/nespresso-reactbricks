@@ -1,0 +1,16 @@
+{
+    "name": "layout-cards-2-col",
+    "version": "1.0.0",
+    "description": "Displays a layout which stacks the items on top of each other on small screens and on 2 columns on large screens",
+    "folder": "/shared_res/agility/next-components/layout-cards-2-col/",
+    "tag": "nb-layout-cards-2-col",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/layout-cards-2-col/v1.1/css/layout-cards-2-col.css",
+        "module": "/shared_res/agility/next-components/layout-cards-2-col/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/layout-cards-2-col/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/container/"
+    ]
+}

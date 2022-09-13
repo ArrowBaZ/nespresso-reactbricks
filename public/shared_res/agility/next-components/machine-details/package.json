@@ -1,0 +1,28 @@
+{
+    "name": "machine-details",
+    "version": "1.1.2",
+    "description": "Details about a machine",
+    "folder": "/shared_res/agility/next-components/machine-details/",
+    "tag": "nb-machine-details",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/machine-details/v1.1/css/machine-details.css",
+        "module": "/shared_res/agility/next-components/machine-details/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/machine-details/v1.1/index.legacy.min.js"
+    },
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/cta/",
+        "/shared_res/agility/next-components/cta-3d/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/loader/",
+        "/shared_res/agility/next-components/icon/"
+    ],
+    "preview": "/shared_res/agility/next-components/machine-details/preview.png",
+    "layout": {
+        "minHeight": {
+            "mobile": "1160",
+            "desktop": "480"
+        }
+    }
+}

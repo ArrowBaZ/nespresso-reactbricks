@@ -1,0 +1,14 @@
+{
+    "name": "Input Text",
+    "version": "1.1.1",
+    "description": "Input Text",
+    "folder": "/shared_res/agility/next-components/input-text/",
+    "tag": "nb-input-text",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/input-text/v1.1/css/input-text.css",
+        "module": "/shared_res/agility/next-components/input-text/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/input-text/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/input-text/preview.png"
+}

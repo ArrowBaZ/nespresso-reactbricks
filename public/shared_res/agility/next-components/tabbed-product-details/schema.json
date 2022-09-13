@@ -1,0 +1,1955 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Tabbed Product Details",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "title": "Heading",
+          "description": "Main Section heading",
+          "default": "The order plans"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "Main Section text",
+          "default": "Choose a machine with a discount per order"
+        },
+        "a11y_label_tablist": {
+          "type": "string",
+          "title": "Tablist label technology",
+          "description": "Accessible description for tablist",
+          "default": "Select capsules technology"
+        },
+        "tabs": {
+          "type": "array",
+          "title": "Tab items",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "label_mobile",
+              "a11y_label",
+              "link"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Tab label",
+                "description": "Label displayed in a tab"
+              },
+              "label_mobile": {
+                "type": "string",
+                "title": "Tab label for mobile",
+                "description": "To shorten the displayed label on mobile (e.g. Professional overflows in mobile)"
+              },
+              "a11y_label": {
+                "type": "string",
+                "title": "A11y label",
+                "description": "Accessible label read by screen readers when on a tab or a tabpanel"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Icon",
+                "description": "Choose the technology icon to display",
+                "options": {
+                  "enum_titles": [
+                    "Vertuo",
+                    "Original",
+                    "Professional"
+                  ]
+                },
+                "enum": [
+                  "brand_coffee_capsule_vl",
+                  "brand_coffee_capsule_ol",
+                  "brand_coffee_capsule_pro"
+                ]
+              },
+              "link": {
+                "type": "string",
+                "title": "URL of the link",
+                "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+                "default": ""
+              },
+              "products": {
+                "type": "array",
+                "title": "Product items",
+                "description": "Enter skus to display (maximum 4)",
+                "options": {
+                  "collapsed": true
+                },
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "sku",
+                    "show_slider",
+                    "subscription",
+                    "label_buy"
+                  ],
+                  "properties": {
+                    "sku": {
+                      "type": "string",
+                      "title": "Sku",
+                      "description": "(ex: 7579.50)"
+                    },
+                    "key_3d": {
+                      "type": "string",
+                      "title": "AR: 3D Model key",
+                      "description": "E.g. vertuo-pop-blue. Find all keys https://dsu-confluence.nestle.biz/x/U4TEBw#AR3DModelsMachines-Models",
+                      "default": ""
+                    },
+                    "colors": {
+                      "type": "array",
+                      "title": "Machine Colors: Product SKU",
+                      "items": {
+                        "type": "object",
+                        "headerTemplate": "{{ i1 }} - {{ self.sku }}",
+                        "properties": {
+                          "sku": {
+                            "type": "string",
+                            "title": "Product Color SKU",
+                            "description": "SKU of the next product color",
+                            "default": "M-XXX-XXX"
+                          },
+                          "code": {
+                            "type": "string",
+                            "title": "Product Color Hex code",
+                            "description": "Example: #a50d24",
+                            "default": "#a50d24"
+                          },
+                          "name": {
+                            "type": "string",
+                            "title": "Product Color Color name",
+                            "description": "Example: Cherry Red",
+                            "default": "Cherry Red"
+                          },
+                          "link": {
+                            "type": "string",
+                            "title": "Product Color Link",
+                            "description": "If you need another link than the PDP",
+                            "default": ""
+                          }
+                        },
+                        "required": [
+                          "sku",
+                          "code",
+                          "name",
+                          "link"
+                        ],
+                        "default": {
+                          "sku": "M-XXX-XXX",
+                          "code": "#a50d24",
+                          "name": "Cherry Red",
+                          "link": ""
+                        }
+                      }
+                    },
+                    "features": {
+                      "type": "array",
+                      "title": "Machine Features",
+                      "items": {
+                        "type": "object",
+                        "headerTemplate": "{{ i1 }} - {{ self.icon }}",
+                        "required": [
+                          "icon",
+                          "text"
+                        ],
+                        "properties": {
+                          "icon": {
+                            "type": "string",
+                            "title": "Icon",
+                            "enum": [
+                              "",
+                              "upvote",
+                              "19-bar",
+                              "24-7-service",
+                              "360-view",
+                              "accessories-and-sweets",
+                              "address-2",
+                              "address",
+                              "amex-card",
+                              "android",
+                              "apple-pay-card",
+                              "apple-pay",
+                              "apple",
+                              "arrow-bottom",
+                              "arrow-filled-down",
+                              "arrow-left",
+                              "arrow-right",
+                              "arrow-top",
+                              "assistance-alt",
+                              "assistance-videos",
+                              "assistance",
+                              "boutique",
+                              "brand_coffee_capsule-vl-carafe",
+                              "brand_coffee_capsule-vl-double-espresso-gran-lungo",
+                              "brand_coffee_capsule-vl-espresso",
+                              "brand_coffee_capsule-vl-mug",
+                              "brand_coffee_capsule_ol",
+                              "brand_coffee_capsule_pro",
+                              "brand_coffee_capsule_vl",
+                              "brand_coffee_cereals",
+                              "brand_coffee_citrus",
+                              "brand_coffee_cocoa",
+                              "brand_coffee_coffee-assortment",
+                              "brand_coffee_coffee-discovery-set",
+                              "brand_coffee_machines",
+                              "brand_coffee_malted",
+                              "brand_coffee_notes-herbal",
+                              "brand_delivery_boutique-location",
+                              "brand_delivery_delivery",
+                              "brand_delivery_free_delivery",
+                              "brand_delivery_package",
+                              "brand_delivery_schedule_delivery",
+                              "brand_general_coffee",
+                              "brand_machines_auto_clean_system",
+                              "brand_machines_automatic_off",
+                              "brand_machines_digital_display",
+                              "brand_machines_energy_class",
+                              "brand_machines_fast_heat_up",
+                              "brand_machines_low_water_alert",
+                              "brand_machines_milk_frothing",
+                              "brand_machines_pump_pressure_bar",
+                              "brand_payment_credit_card",
+                              "brand_payment_gift_card",
+                              "brand_payment_invoice",
+                              "brand_payment_secure",
+                              "brand_services_assistance",
+                              "brand_services_boutique",
+                              "brand_services_easy_order",
+                              "brand_services_help",
+                              "brand_services_promotions",
+                              "brand_services_recycling",
+                              "brand_services_recycling_ol",
+                              "brand_services_recycling_vl",
+                              "brand_services_subscription",
+                              "brand_services_sustainability",
+                              "calendar",
+                              "capsule-cupSize-Cappuccino-And-Latte-Macchiato",
+                              "capsule-cupSize-Cortado-Cappuccino",
+                              "capsule-cupSize-icedRecipe-vertuo",
+                              "capsule-cupSize-icedRecipe",
+                              "capsule-cupSize-alto",
+                              "capsule-cupSize-carafe-vertuo",
+                              "capsule-cupSize-coffee",
+                              "capsule-cupSize-double-espresso-vertuo",
+                              "capsule-cupSize-espresso-vertuo",
+                              "capsule-cupSize-espresso",
+                              "capsule-cupSize-gran-lungo",
+                              "capsule-cupSize-lungo",
+                              "capsule-cupSize-mug",
+                              "capsule-cupSize-ristretto",
+                              "capsule-cupSize-americano",
+                              "capsule-cupSize-large-americano",
+                              "check",
+                              "chevron-down",
+                              "chevron-left",
+                              "chevron-right",
+                              "chevron-up",
+                              "check-mark",
+                              "clock",
+                              "close-2",
+                              "close",
+                              "coffee",
+                              "coffee_capsule-ol_24",
+                              "credit-card-flag",
+                              "credit-card",
+                              "delivery-fast",
+                              "delivery-scheduled",
+                              "delivery-standard",
+                              "eco-mode",
+                              "edit",
+                              "error",
+                              "espresso-vertuo-capsule",
+                              "eye-closed",
+                              "eye-opened",
+                              "facebook",
+                              "filter",
+                              "find-us-alt",
+                              "find-us",
+                              "free-return",
+                              "gift-card",
+                              "globe",
+                              "gran-lungo-vertuo-capsule",
+                              "help",
+                              "hero-chat",
+                              "huawei",
+                              "information-24",
+                              "information",
+                              "instagram",
+                              "invoice",
+                              "language",
+                              "linkedin",
+                              "link",
+                              "live-chat",
+                              "loading-nitro",
+                              "loading",
+                              "loan",
+                              "logout",
+                              "machine_machines_ol_24",
+                              "machines-2",
+                              "machines",
+                              "mail",
+                              "mastercard-card",
+                              "mastercard",
+                              "menu",
+                              "minus-16",
+                              "minus-24",
+                              "minus-o",
+                              "modal-alert",
+                              "modal-check",
+                              "more-info",
+                              "nespresso-logo",
+                              "nespresso-monogram",
+                              "nespresso-professional-2",
+                              "nespresso-professional",
+                              "nespresso",
+                              "notification",
+                              "orders",
+                              "original",
+                              "package-box",
+                              "payment-bcorp",
+                              "payment-bvr",
+                              "payment-google-pay",
+                              "payment-ideal",
+                              "payment-klarna",
+                              "payment-lsv",
+                              "payment-postfinance",
+                              "payment-twint",
+                              "paypal-card",
+                              "paypal",
+                              "phone",
+                              "pin",
+                              "pinterest",
+                              "play-button",
+                              "play-mini",
+                              "play",
+                              "plus-16",
+                              "plus-24",
+                              "plus-o",
+                              "promotions",
+                              "recycling-point",
+                              "recycling",
+                              "remove",
+                              "search",
+                              "secure",
+                              "set-up",
+                              "shopping-bag",
+                              "signal-high",
+                              "signal-low",
+                              "signal-med",
+                              "speed",
+                              "star",
+                              "rating",
+                              "subscription-2",
+                              "subscription",
+                              "sustainability",
+                              "tag",
+                              "twitter",
+                              "ui_payment_cash",
+                              "ui_coffee_bergamot",
+                              "ui_coffee_capsule-ol",
+                              "ui_coffee_capsule-vl-carafe",
+                              "ui_coffee_capsule-vl-double-espresso_gran-lungo",
+                              "ui_coffee_capsule-vl-espresso",
+                              "ui_coffee_capsule-vl-mug",
+                              "ui_coffee_capsule-vl",
+                              "ui_coffee_capsule_professional",
+                              "ui_coffee_cardamom",
+                              "ui_coffee_cocoa",
+                              "ui_coffee_hazelnut",
+                              "ui_coffee_honey",
+                              "ui_coffee_notes-cereal",
+                              "ui_coffee_notes-malted",
+                              "ui_coffee_winey",
+                              "ui_delivery_calendar",
+                              "ui_delivery_clock",
+                              "ui_general_alerts",
+                              "ui_general_arrow-right",
+                              "ui_general_check",
+                              "ui_general_chevron-bottom",
+                              "ui_general_chevron-left",
+                              "ui_general_chevron-right",
+                              "ui_general_chevron-top",
+                              "ui_general_credit-card",
+                              "ui_general_edit",
+                              "ui_general_error",
+                              "ui_general_eye-close",
+                              "ui_general_eye-open",
+                              "ui_general_faq",
+                              "ui_general_filter",
+                              "ui_general_gift-card",
+                              "ui_general_globe",
+                              "ui_general_information",
+                              "ui_general_language",
+                              "ui_general_link",
+                              "ui_general_loading",
+                              "ui_general_log-out",
+                              "ui_general_map_view",
+                              "ui_general_menu",
+                              "ui_general_minus",
+                              "ui_general_notification",
+                              "ui_general_order",
+                              "ui_general_play",
+                              "ui_general_plus",
+                              "ui_general_promotions",
+                              "ui_general_remove",
+                              "ui_general_search",
+                              "ui_general_secure",
+                              "ui_general_shopping-bag",
+                              "ui_general_tag",
+                              "ui_general_user-account",
+                              "ui_general_warranty",
+                              "ui_general_wifi",
+                              "ui_general_x",
+                              "ui_map_directions",
+                              "ui_payment_invoice",
+                              "ui_services_assistance",
+                              "ui_services_delivery",
+                              "ui_services_easy_order",
+                              "ui_services_find-us",
+                              "ui_services_free-return",
+                              "ui_services_mail",
+                              "ui_services_phone",
+                              "ui_services_subscription",
+                              "ui_sustainability_climate",
+                              "ui_sustainability_recycling",
+                              "ui_sustainability_recycling_ol",
+                              "ui_sustainability_recycling_vl",
+                              "ui_sustainability_social_sustainability",
+                              "ui_user_member_status",
+                              "ui_user_my-address",
+                              "ui_user_my_information",
+                              "ultra-compact",
+                              "user-account",
+                              "versatil-coffee-system",
+                              "video-play",
+                              "vertuo",
+                              "visa-card",
+                              "visa",
+                              "warranty",
+                              "youtube",
+                              "services-anticipation-of-maintenance",
+                              "services-assistance",
+                              "services-avant-premiere",
+                              "services-avant-premiere-ol",
+                              "services-avant-premiere-vl",
+                              "services-coffee-assortment",
+                              "services-coffee-coffee-sample",
+                              "services-coffee-discovery-set",
+                              "services-coffee-experiences",
+                              "services-contact-chat",
+                              "services-contact-community-forum",
+                              "services-contact-mobile",
+                              "services-contact-sms",
+                              "services-contact-video-assistance",
+                              "services-contact-virtual",
+                              "services-data-insight",
+                              "services-delivery-boutique-location",
+                              "services-delivery-boutique-pick-up",
+                              "services-delivery-delivery",
+                              "services-delivery-delivery-bike",
+                              "services-delivery-delivery-fast",
+                              "services-delivery-free-delivery",
+                              "services-delivery-next-day-delivery",
+                              "services-delivery-package",
+                              "services-delivery-pick-up-points",
+                              "services-delivery-schedule-delivery",
+                              "services-easy-maintenance",
+                              "services-easy-order",
+                              "services-easy-stock-management",
+                              "services-generic",
+                              "services-gifting-card",
+                              "services-help",
+                              "services-orders",
+                              "services-payments-credit-card",
+                              "services-payments-gift-card",
+                              "services-payments-invoice",
+                              "services-phone",
+                              "services-reorder",
+                              "services-satisfied-or-reimbursed",
+                              "services-services-boutique",
+                              "services-subscription",
+                              "services-vip-masterclass",
+                              "services-voice-enabled",
+                              "payments-cash",
+                              "delivery-same-day-delivery",
+                              "contact-voice-assistant-chatbot",
+                              "contact-video-chat",
+                              "contact-mobile-push-notification",
+                              "contact-chat-bot",
+                              "coffee-coffee-tasting",
+                              "contact-video-assistance",
+                              "filter-style_step-01",
+                              "filter-style_step-02",
+                              "filter-style_step-03",
+                              "filter-style_step-04",
+                              "notes-almonds",
+                              "notes-balanced",
+                              "notes-bergamot",
+                              "notes-berry",
+                              "notes-biscuity",
+                              "notes-blueberry",
+                              "notes-cardamom",
+                              "notes-cereal",
+                              "notes-citrus",
+                              "notes-cocoa",
+                              "notes-default",
+                              "notes-flowery",
+                              "notes-fruity",
+                              "notes-hazelnut",
+                              "notes-herbal",
+                              "notes-honey",
+                              "notes-leather",
+                              "notes-malted",
+                              "notes-roasted",
+                              "notes-spicy",
+                              "notes-sugar",
+                              "notes-winey",
+                              "notes-wood",
+                              "notes-brand-coffee-roasted",
+                              "notes-brand-coffee-caramel",
+                              "notes-brand-coffee-intense-roasted",
+                              "machine_technology_machine-ol",
+                              "machine_technology_machine-vl",
+                              "machine_details_deluxe-version",
+                              "machine_details_machine-tutorial-ol",
+                              "machine_details_machine-tutorial-vl",
+                              "machine_warranty_warranty-ol",
+                              "machine_warranty_warranty-vl",
+                              "machine_features_generic",
+                              "machine_features_auto-clean-system",
+                              "machine_features_automatic-off",
+                              "machine_features_blend-specific-brewing",
+                              "machine_features_bluetooth",
+                              "machine_features_capsule-ejection-ol",
+                              "machine_features_capsule-ejection-vl",
+                              "machine_features_centrifusion",
+                              "machine_features_cold-foam-ol",
+                              "machine_features_cold-foam-vl",
+                              "machine_features_descale-alert",
+                              "machine_features_descale",
+                              "machine_features_digital-display",
+                              "machine_features_dimensions",
+                              "machine_features_eco-mode",
+                              "machine_features_energy-class",
+                              "machine_features_fast-heat-up",
+                              "machine_features_hot-foam-ol",
+                              "machine_features_hot-foam-vl",
+                              "machine_features_hot-milk",
+                              "machine_features_hot-foam",
+                              "machine_features_hot-water",
+                              "machine_features_low-water-alert",
+                              "machine_features_manual-lever",
+                              "machine_features_milk-frothing",
+                              "machine_features_mobile-push-notification",
+                              "machine_features_one-touch",
+                              "machine_features_power-off",
+                              "machine_features_pump-pressure-bar",
+                              "machine_features_rinse",
+                              "machine_features_settings",
+                              "machine_features_steam",
+                              "machine_features_temperature-settings-invert",
+                              "machine_features_temperature-settings",
+                              "machine_features_temperature",
+                              "machine_features_ultra-compact",
+                              "machine_features_water-tank",
+                              "machine_features_weight"
+                            ],
+                            "description": "Add icon",
+                            "default": ""
+                          },
+                          "text": {
+                            "type": "string",
+                            "title": "Feature text",
+                            "description": "Feature descriptive text"
+                          }
+                        },
+                        "default": {
+                          "icon": "ui_general_wifi",
+                          "text": "Connected machine (Wifi and Bluetooth)"
+                        }
+                      }
+                    },
+                    "labels": {
+                      "type": "array",
+                      "title": "Product label(s)",
+                      "items": {
+                        "type": "object",
+                        "headerTemplate": "{{ i1 }} - {{ self.name }}",
+                        "properties": {
+                          "bgColor": {
+                            "type": "string",
+                            "title": "Product Label Background"
+                          },
+                          "color": {
+                            "type": "string",
+                            "title": "Product Label Color Code"
+                          },
+                          "name": {
+                            "type": "string",
+                            "title": "Product Label Text"
+                          }
+                        },
+                        "required": [
+                          "bgColor",
+                          "color",
+                          "name"
+                        ]
+                      },
+                      "default": [
+                        {
+                          "bgColor": "#876C43",
+                          "color": "#fff",
+                          "name": "NEW"
+                        }
+                      ]
+                    },
+                    "show_ratings": {
+                      "type": "boolean",
+                      "title": "Show ratings",
+                      "description": "Show Ratings for product block (only for machines and accessories)",
+                      "default": false
+                    },
+                    "minimum_rating": {
+                      "type": "string",
+                      "title": "Minimum Rating",
+                      "description": "Rating below this value won't be display",
+                      "default": 3
+                    },
+                    "show_slider": {
+                      "type": "boolean",
+                      "title": "Show Slider ?",
+                      "description": "Display machine images slider",
+                      "default": true
+                    },
+                    "show_voltage": {
+                      "type": "boolean",
+                      "title": "Show Voltage?",
+                      "description": "Activate it only if you sell machines with different voltage",
+                      "default": false
+                    },
+                    "voltage_label": {
+                      "type": "string",
+                      "title": "Show Voltage: Label",
+                      "default": "Voltage"
+                    },
+                    "a11y_voltage_label": {
+                      "type": "string",
+                      "title": "Show Voltage: Alt txt",
+                      "default": "List of voltage available"
+                    },
+                    "voltage_list": {
+                      "type": "array",
+                      "title": "Show Voltage: List of Voltages",
+                      "items": {
+                        "type": "object",
+                        "headerTemplate": "{{ i1 }} - {{ self.label }}",
+                        "properties": {
+                          "label": {
+                            "type": "string",
+                            "title": "Label set in machine Voltage",
+                            "default": "110V"
+                          }
+                        },
+                        "required": [
+                          "label"
+                        ]
+                      },
+                      "default": [
+                        {
+                          "label": "110V"
+                        },
+                        {
+                          "label": "220V"
+                        }
+                      ]
+                    },
+                    "subscription": {
+                      "type": "object",
+                      "title": "Subscription informations",
+                      "required": [
+                        "text",
+                        "orders"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "title": "Subscription text",
+                          "format": "html",
+                          "options": {
+                            "wysiwyg": false
+                          },
+                          "description": "Subscription informational text (with placeholders)",
+                          "defaut": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>"
+                        },
+                        "orders": {
+                          "type": "number",
+                          "title": "Orders number (for price discount)",
+                          "description": "Number of orders after which machine will be refunded",
+                          "default": 10
+                        }
+                      }
+                    },
+                    "label_buy": {
+                      "type": "string",
+                      "title": "Label for buy button",
+                      "description": "Buy at"
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "label": "Vertuo",
+              "label_mobile": "Vertuo machines",
+              "a11y_label": "Vertuo machines",
+              "icon": "brand_coffee_capsule_vl",
+              "products": [
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx1",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx2",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx3",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx4",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "default": [
+            {
+              "label": "Vertuo",
+              "label_mobile": "Vertuo machines",
+              "a11y_label": "Vertuo machines",
+              "icon": "brand_coffee_capsule_vl",
+              "products": [
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx1",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx2",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx3",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx4",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Original",
+              "label_mobile": "Original machines",
+              "a11y_label": "Original machines",
+              "icon": "brand_coffee_capsule_ol",
+              "products": [
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx5",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx6",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                },
+                {
+                  "a11y_voltage_label": "List of voltage available",
+                  "colors": [
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-001",
+                      "code": "black",
+                      "name": "Black"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-002",
+                      "code": "white",
+                      "name": "White"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-003",
+                      "code": "#1152D4",
+                      "name": "Electric Blue"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-004",
+                      "code": "#F2930D",
+                      "name": "Electric Orange"
+                    },
+                    {
+                      "link": "",
+                      "a11y_label": "Color",
+                      "sku": "M-005",
+                      "code": "#400D60",
+                      "name": "Purple"
+                    }
+                  ],
+                  "key_3d": "vertuo-pop-blue",
+                  "features": [
+                    {
+                      "icon": "ui_general_wifi",
+                      "text": "Connected machine (Wifi and Bluetooth)"
+                    },
+                    {
+                      "icon": "accessories-and-sweets",
+                      "text": "Different cup sizes"
+                    },
+                    {
+                      "icon": "brand_machines_fast_heat_up",
+                      "text": "Fast heat up in 15 seconds"
+                    }
+                  ],
+                  "label_button_3d": "Check in 3D",
+                  "label_buy": "Buy at",
+                  "labels": [
+                    {
+                      "name": "Custom label",
+                      "bgColor": "#ff00ff",
+                      "color": "#FFFFFF"
+                    },
+                    {
+                      "name": "new",
+                      "bgColor": "#5C3289",
+                      "color": "#FFFFFF"
+                    }
+                  ],
+                  "show_ratings": true,
+                  "show_slider": true,
+                  "show_voltage": true,
+                  "subscription": {
+                    "text": "Get your machine fully refunded through <b>{price}</b> discount on the next <b>{orders} coffee orders!</b>",
+                    "orders": 10
+                  },
+                  "sku": "M-xx7",
+                  "voltage_label": "Voltage",
+                  "voltage_list": [
+                    {
+                      "label": "110V"
+                    },
+                    {
+                      "label": "220V"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "The difference",
+              "label_mobile": "",
+              "a11y_label": "The difference",
+              "icon": "",
+              "link": "https://www.nespresso.com/br/pt/vertuo-ou-original-qual-escolher",
+              "products": []
+            }
+          ]
+        },
+        "img_text_box": {
+          "type": "object",
+          "title": "Popin - Text and Image block",
+          "description": "Text and Image block at the bottom of popin (leave blank if not required)",
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "heading",
+            "subtitle",
+            "text",
+            "visual"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "title": "Title"
+            },
+            "subtitle": {
+              "type": "string",
+              "title": "Subtitle"
+            },
+            "text": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "title": "Text"
+            },
+            "visual": {
+              "type": "object",
+              "title": "Main image",
+              "options": {
+                "collapsed": false
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "alt"
+              ],
+              "properties": {
+                "mobile": {
+                  "type": "string",
+                  "title": "URL Image Set Mobile",
+                  "description": "URL to image 343 x 258 pixels (or 343 x 429 pixels if video)"
+                },
+                "desktop": {
+                  "type": "string",
+                  "title": "URL Image Set Desktop",
+                  "description": "URL to image 680 x 509 pixels (or 680 x 383 pixels if video)"
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Image set alternative text",
+                  "description": "Fill this field with a meaningful image description"
+                }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "description",
+        "a11y_label_tablist",
+        "tabs",
+        "img_text_box"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "light",
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background_color": {
+          "type": "string",
+          "title": "Background color",
+          "options": {
+            "enum_titles": [
+              "White / 1000",
+              "Highlight / 040",
+              "Gradient / Clear Gold",
+              "Partial background"
+            ]
+          },
+          "enum": [
+            "white_1000",
+            "highlight_040",
+            "gradient_clear_gold",
+            "highlight_040_partial"
+          ],
+          "default": "highlight_040",
+          "description": "Choose a background color"
+        },
+        "padding_top": {
+          "type": "string",
+          "title": "Padding top",
+          "enum": [
+            "pt0",
+            "pt7",
+            "pt8",
+            "pt9",
+            "pt10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pt9"
+        },
+        "padding_bottom": {
+          "type": "string",
+          "title": "Padding bottom",
+          "enum": [
+            "pb0",
+            "pb7",
+            "pb8",
+            "pb9",
+            "pb10"
+          ],
+          "options": {
+            "enum_titles": [
+              "None (0px desktop / 0px mobile)",
+              "Small (40px desktop / 32px mobile)",
+              "Medium (64px desktop / 40px mobile)",
+              "Large (80px desktop / 64px mobile)",
+              "Extra large (120px desktop / 80px mobile)"
+            ]
+          },
+          "description": "Recommended padding is Large",
+          "default": "pb9"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/AZqFC",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "",
+              "default": ""
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "",
+              "default": ""
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "",
+              "default": ""
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background_color",
+        "padding_top",
+        "padding_bottom",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_tabbed_product_details"
+          ],
+          "title": "Creative on site",
+          "default": "before_tabbed_product_details",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_tabbed_product_details",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "copywriting",
+    "layout",
+    "campaign"
+  ]
+}

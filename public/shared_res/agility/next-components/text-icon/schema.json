@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Text and icon",
+  "required": [
+    "color",
+    "size",
+    "icon_left",
+    "icon_right"
+  ],
+  "properties": {
+    "color": {
+      "type": "string",
+      "title": "Link text color",
+      "description": "",
+      "enum": [
+        "gold",
+        "black",
+        "white"
+      ],
+      "default": "gold"
+    },
+    "size": {
+      "type": "string",
+      "title": "Link text size",
+      "description": "",
+      "enum": [
+        "large",
+        "medium",
+        "small",
+        "plpCategory"
+      ],
+      "default": "large"
+    }
+  }
+}

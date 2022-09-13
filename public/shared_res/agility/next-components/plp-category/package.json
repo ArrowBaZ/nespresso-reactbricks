@@ -1,0 +1,19 @@
+{
+    "name": "plp-category",
+    "version": "1.1.1",
+    "description": "plp-category element",
+    "folder": "/shared_res/agility/next-components/plp-category/",
+    "tag": "nb-plp-category",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/plp-category/v1.1/css/plp-category.css",
+        "module": "/shared_res/agility/next-components/plp-category/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/plp-category/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/plp-category/preview.svg",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/icon/"
+    ]
+}

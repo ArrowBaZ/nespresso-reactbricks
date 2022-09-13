@@ -1,0 +1,15 @@
+{
+    "name": "intensity",
+    "version": "1.1.1",
+    "description": "coffee intensity",
+    "folder": "/shared_res/agility/next-components/intensity/",
+    "tag": "nb-intensity",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/intensity/v1.1/css/intensity.css",
+        "module": "/shared_res/agility/next-components/intensity/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/intensity/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/intensity/preview.svg",
+    "scriptDependencies": []
+}

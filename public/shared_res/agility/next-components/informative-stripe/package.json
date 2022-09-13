@@ -1,0 +1,29 @@
+{
+    "name": "informative-stripe",
+    "version": "1.1.1",
+    "description": "Informative Stripe for announcements",
+    "folder": "/shared_res/agility/next-components/informative-stripe/",
+    "tag": "nb-informative-stripe",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/informative-stripe/v1.1/css/informative-stripe.css",
+        "module": "/shared_res/agility/next-components/informative-stripe/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/informative-stripe/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/informative-stripe/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/link/",
+        "/shared_res/agility/next-components/popin/",
+        "/shared_res/agility/next-components/tooltip/",
+        "/shared_res/agility/next-components/cta/"
+    ],
+    "layout": {
+        "minHeight": {
+            "mobile": "640",
+            "desktop": "380"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "title": "Checkbox",
+  "required": [
+    "element_id",
+    "element_name",
+    "label",
+    "required_message"
+  ],
+  "properties": {
+    "element_id": {
+      "type": "string",
+      "title": "Element id",
+      "description": "Set a unique id for your form element"
+    },
+    "element_name": {
+      "type": "string",
+      "title": "Element name",
+      "description": "Allow to get data on server side"
+    },
+    "label": {
+      "type": "string",
+      "title": "Label",
+      "description": "Label of your checkbox (displayed after your checkbox)"
+    },
+    "required_message": {
+      "type": "string",
+      "title": "Required message",
+      "description": "Required message displayed if checkbox not checked (leave empty if optional)"
+    }
+  },
+  "options": {
+    "collapsed": true
+  }
+}

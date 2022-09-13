@@ -1,0 +1,371 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Card Highlight",
+  "description": "https://wiki.nespresso.com/x/fVOgCQ",
+  "properties": {
+    "copywriting": {
+      "type": "object",
+      "title": "Copy writing",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "",
+          "default": "Accessories"
+        },
+        "text": {
+          "type": "string",
+          "format": "html",
+          "options": {
+            "wysiwyg": false
+          },
+          "description": "",
+          "default": "We make countless uncompromising choices that go into every cup."
+        },
+        "visual": {
+          "type": "object",
+          "required": [
+            "src",
+            "alt"
+          ],
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "URL image",
+              "description": "URL to image 720 x 400 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/highlighted_card/highlighted_card.png"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt Visual image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": "Mug Origin"
+            }
+          },
+          "default": {
+            "src": "https://www.nespresso.com/shared_res/agility/next-components/assets/card/article/visual.jpg",
+            "alt": "Mug Origin"
+          }
+        },
+        "cta": {
+          "title": "Cta",
+          "type": "object",
+          "required": [
+            "contrast",
+            "variation",
+            "link",
+            "label",
+            "seo_label",
+            "tracking_label"
+          ],
+          "options": {
+            "collapsed": true
+          },
+          "properties": {
+            "contrast": {
+              "type": "string",
+              "title": "Contrast",
+              "options": {
+                "enum_titles": [
+                  "Dark background",
+                  "Light background"
+                ]
+              },
+              "enum": [
+                "dark",
+                "light"
+              ],
+              "default": "dark",
+              "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+            },
+            "variation": {
+              "type": "string",
+              "title": "CTA Look",
+              "description": "",
+              "enum": [
+                "primary",
+                "secondary",
+                "tertiary",
+                "linkType"
+              ],
+              "default": "primary"
+            },
+            "link": {
+              "type": "string",
+              "title": "URL of the link",
+              "description": "<a target=\"_blank\" href=\"https://www.webstix.com/knowledgebase/general/relative-links-vs-absolute-links\"/>Relative link</a> start with ./ to keep current path. Use {market} or {lang} variables, and they will be overwritten with your market's value if used.",
+              "default": ""
+            },
+            "label": {
+              "type": "string",
+              "title": "Label of the link",
+              "description": "",
+              "default": "Discover more"
+            },
+            "seo_label": {
+              "type": "string",
+              "title": "SEO of the link",
+              "description": "Don't duplicate the link text! <br>It's supposed to provide supplementary information and let the users know where the link will direct them to if they click on it.",
+              "default": "Discover Limited Edition Collection with Nespresso."
+            },
+            "tracking_label": {
+              "type": "string",
+              "title": "Tracking Label",
+              "description": "Trigger on click in GA",
+              "default": ""
+            }
+          },
+          "default": {
+            "contrast": "dark",
+            "seo_label": "Discover our new accessory offer",
+            "tracking_label": "Image & Text - Accessory offer - Click",
+            "label": "Discover more",
+            "link": "#cta",
+            "variation": "tertiary"
+          }
+        },
+        "popin": {
+          "type": "object",
+          "title": "Popin",
+          "required": [
+            "id",
+            "text",
+            "image",
+            "image_alt",
+            "heading",
+            "description",
+            "close"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Unique name for the popin",
+              "description": "Unique identifier for the popin (without space). Please keep as is.",
+              "default": "promo-dynamicBanner"
+            },
+            "text": {
+              "type": "string",
+              "title": "Link text",
+              "description": "Link text of the popin",
+              "default": "*See Terms and Conditions"
+            },
+            "image": {
+              "type": "string",
+              "title": "Popin image",
+              "description": "Image URL of the image inside popin 300 x 225 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/gift.png"
+            },
+            "image_alt": {
+              "type": "string",
+              "title": "Alternate text for Popin image",
+              "default": "gift"
+            },
+            "heading": {
+              "type": "string",
+              "title": "Popin heading",
+              "default": "Our Terms and Conditions"
+            },
+            "description": {
+              "type": "string",
+              "format": "html",
+              "options": {
+                "wysiwyg": false
+              },
+              "title": "Popin description",
+              "default": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including advertising or promotional materials. Entry instructions are deemed to form part of these Terms and Conditions and by participating all participants will be deemed to have accepted and be bound by them. Please retain a copy for your information.</p><p><b>1. This promotion is open to all residents of the UK,</b> Channel Islands, Isle of Man and Republic of Ireland, aged 18 or over and excludes employees and their immediate families of Nestle S.A. and Nespresso, its agents or anyone professionally connected to the promotion. Participants must register or be registered with Nespresso to qualify for the offer.</p><p><b>2. Applicants must have purchased any Nespresso Essenza Mini or Essenza Mini Bundle and registered with Nespresso during the stated promotion period</b> (10.06.2020 and 18.08.2020) to qualify for the offer. The offer consists of 100 complimentary pre-selected Original Line capsules as a first gift, and one month’s free Nespresso Coffee Subscription worth £25/€30 as a second gift when they go on to register and activate a Coffee Subscription by 23:59 on 31.12.2020. The 100 complimentary capsules will be made up of a pre-selected Original Line range chosen by Nespresso which cannot be changed/substituted for any other variants.</p><p><b>3. The stated Nespresso machine must be purchased between the stated dates from one of the associated Nespresso retail partners,</b> or directly from Nespresso or by calling Nespresso on Freephone 0800 442 442 (UK), or 1800 812 660 (ROI), or at www.nespresso.com, or via the Nespresso App, or visiting a Nespresso Boutique where available. Maximum of one offer per machine purchased per Nespresso Member. Any additional machines purchased during the stated promotional period will not qualify for the offer. The qualifying Nespresso Coffee machine must be purchased in the UK, Channel Island, Isle of Man or Republic of Ireland. Due to the continuing COVID-19 situation, participants should check their local Nespresso Boutique opening days and times as these may vary. This can be done using www.nespresso.com/uk/en/store-locator. This page is updated regularly with the latest information and news relating to Nespresso Boutiques.</p>"
+            },
+            "close": {
+              "type": "string",
+              "title": "Label Close (accessibility)",
+              "default": "Close"
+            }
+          },
+          "options": {
+            "collapsed": true
+          }
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "heading",
+        "text",
+        "visual",
+        "cta",
+        "popin"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "title": "Layout & Background",
+      "properties": {
+        "contrast": {
+          "type": "string",
+          "title": "Contrast",
+          "options": {
+            "enum_titles": [
+              "Dark background",
+              "Light background"
+            ]
+          },
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": {},
+          "description": "Handles text color. For dark backgrounds, we use a light text color (e.g. white). For light backgrounds, we use a dark text color (e.g. black)"
+        },
+        "background": {
+          "type": "object",
+          "title": "Background images",
+          "description": "Find all information about this component on https://wiki.nespresso.com/x/fVOgCQ",
+          "properties": {
+            "background_image_alt": {
+              "type": "string",
+              "title": "Alt Background image & SEO",
+              "description": "Describe the image used to drive customers and seo bot",
+              "default": ""
+            },
+            "mobile": {
+              "type": "string",
+              "title": "URL image Mobile",
+              "description": "URL to image 720 x 1094 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_m@1x.jpg"
+            },
+            "tablet": {
+              "type": "string",
+              "title": "URL image Tablet",
+              "description": "",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_t@1x.jpg"
+            },
+            "desktop": {
+              "type": "string",
+              "title": "URL image Desktop",
+              "description": "URL to image 2 cards: 560 x 642 pixels (width x height). 3 cards: 360 x 547 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_d@1x.jpg"
+            },
+            "retina": {
+              "type": "string",
+              "title": "URL image Retina",
+              "description": "URL to image 2 cards: 1120 x 1284 pixels (width x height). 3 cards: 720 x 1094 pixels (width x height)",
+              "default": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_r@1x.jpg"
+            }
+          },
+          "options": {
+            "collapsed": true
+          },
+          "required": [
+            "mobile",
+            "tablet",
+            "desktop",
+            "retina",
+            "background_image_alt"
+          ]
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "contrast",
+        "background"
+      ]
+    },
+    "campaign": {
+      "type": "object",
+      "title": "Campaign tracking",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "ID of the campaign",
+          "default": "Default campaign ID (tracking missing in Page Builder export)"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of your campaign",
+          "default": "Default campaign name (tracking missing in Page Builder export)"
+        },
+        "creative": {
+          "type": "string",
+          "enum": [
+            "before_card"
+          ],
+          "title": "Creative on site",
+          "default": "before_card",
+          "description": "e.g. `responsive_hp_main` please refer to wiki: INTERNAL CAMPAIGN TRACKING PROCESS"
+        },
+        "position": {
+          "type": "string",
+          "title": "Position on site",
+          "description": "e.g. `home-main`",
+          "default": "Default campaign Position (tracking missing in Page Builder export)"
+        }
+      },
+      "options": {
+        "collapsed": true
+      },
+      "required": [
+        "id",
+        "name",
+        "creative",
+        "position"
+      ],
+      "default": {
+        "id": "Default campaign ID (tracking missing in Page Builder export)",
+        "name": "Default campaign name (tracking missing in Page Builder export)",
+        "creative": "before_card",
+        "position": "Default campaign Position (tracking missing in Page Builder export)"
+      }
+    }
+  },
+  "required": [
+    "copywriting",
+    "layout",
+    "campaign"
+  ],
+  "default": {
+    "copywriting": {
+      "heading": "ACCESSORIES",
+      "text": "We make countless uncompromising choices that go into every cup.",
+      "visual": {
+        "src": "https://www.nespresso.com/shared_res/agility/next-components/assets/highlighted_card/highlighted_card.png",
+        "alt": "Mug Origin"
+      },
+      "cta": {
+        "label": "Discover more",
+        "link": "#link",
+        "variation": "tertiary",
+        "seo_label": "Discover our new accessory offer",
+        "tracking_label": "Image & Text - Accessory offer - Click"
+      },
+      "popin": {
+        "id": "promo-highlightedCard",
+        "text": "See Terms and Conditions",
+        "image": "https://www.nespresso.com/shared_res/agility/n-components/festive-bf/plp-dynamic-banner/gift.png",
+        "image_alt": "",
+        "heading": "Our Terms and Conditions",
+        "description": "<p>These Terms and Conditions prevail in the event of any conflict or inconsistency with any other communications, including...</p>",
+        "close": "Close"
+      }
+    },
+    "layout": {
+      "contrast": "light",
+      "background": {
+        "background_image_alt": "Mug Origin",
+        "mobile": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_m@1x.jpg",
+        "tablet": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_t@1x.jpg",
+        "desktop": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_d@1x.jpg",
+        "retina": "https://www.nespresso.com/shared_res/agility/next-components/assets/hero/background/Light_r@1x.jpg"
+      }
+    },
+    "campaign": {
+      "id": "Default campaign ID (tracking missing in Page Builder export)",
+      "name": "Default campaign name (tracking missing in Page Builder export)",
+      "creative": "before_card",
+      "position": "Default campaign Position (tracking missing in Page Builder export)"
+    }
+  }
+}

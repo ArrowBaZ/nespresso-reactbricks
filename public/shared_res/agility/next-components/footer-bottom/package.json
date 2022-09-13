@@ -1,0 +1,26 @@
+{
+    "name": "footer-bottom",
+    "version": "1.1.1",
+    "description": "Footer bottom",
+    "folder": "/shared_res/agility/next-components/footer-bottom/",
+    "tag": "nb-footer-bottom",
+    "author": "HQ Front end",
+    "scripts": {
+        "stylesheet": "/shared_res/agility/next-components/footer-bottom/v1.1/css/footer-bottom.css",
+        "module": "/shared_res/agility/next-components/footer-bottom/v1.1/index.es.min.js",
+        "nomodule": "/shared_res/agility/next-components/footer-bottom/v1.1/index.legacy.min.js"
+    },
+    "preview": "/shared_res/agility/next-components/footer-bottom/preview.png",
+    "scriptDependencies": [
+        "/shared_res/agility/next-components/foundations/",
+        "/shared_res/agility/next-components/container/",
+        "/shared_res/agility/next-components/icon/",
+        "/shared_res/agility/next-components/dropdown/"
+    ],
+    "layout": {
+        "minHeight": {
+            "desktop": "105",
+            "mobile": "560"
+        }
+    }
+}
